@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>AndroidResources</title>
+		<style type="text/css">
+			body{
+				background-color:#E1DEE6;
+				color:#222;
+				font-family:Arial,Helvetica,sans-serif;
+				font-size:14px;
+				margin:0;
+				padding:0;
+			}
+			h3{
+				background-color:#869BBF;
+				margin:0;
+				padding:5px;
+			}
+			ul{
+				list-style:none;
+				margin:5px;
+				padding:0;
+			}
+			ul li{
+				background-color:#FFF;
+				border:1px solid #666;
+				margin:0;
+				padding:5px;
+			}
+			ul li:first-child, h3{
+				border-top-left-radius:5px;
+				border-top-right-radius:5px;
+			}
+			ul li:last-child, h3{
+				border-bottom-left-radius:5px;
+				border-bottom-right-radius:5px;
+			}
+			ul h3:first-child{
+				background-color:#869BDF;
+				margin-bottom:5px;
+			}
+		</style>
+    </head>
+    <body><h3>AndroidResources</h3>
+<ul>
+<li><h3>AndroidResources</h3>
+<h3>Methods:</h3>
+<ul>
+<li><b>GetAndroidDrawable</b> (ResourceName <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>Drawable</span></b>
+<br><i>Get an android resource drawable by ResourceName.
+Returns Null if the Drawable is not found.</i>
+</li>
+<li><b>GetAndroidDrawableNames <span style='color:blue'>As</span> <span style='color:#008B8B'>List</span></b>
+<br><i>Get a List of all available android Drawable resource names.</i>
+</li>
+<li><b>GetAndroidDrawables</b> (ResourceNames <span style='color:blue'>As</span> <span style='color:#008B8B'>Map</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>Map</span></b>
+<br><i>Get one or more android resource Drawables.
+Pass a Map to this method where each Map key is an android Drawable resource name.
+The method will return the same Map object where the Map values are the android resource Drawables defined by the Map keys.
+If an android resource Drawable is not found the Map value will not be changed.</i>
+</li>
+<li><b>GetAndroidString</b> (ResourceName <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+<br><i>Get an android resource string by ResourceName.
+Returns Null if the String is not found.</i>
+</li>
+<li><b>GetAndroidStringNames <span style='color:blue'>As</span> <span style='color:#008B8B'>List</span></b>
+<br><i>Get a List of all available android String resource names.</i>
+</li>
+<li><b>GetAndroidStrings</b> (ResourceNames <span style='color:blue'>As</span> <span style='color:#008B8B'>Map</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>Map</span></b>
+<br><i>Get one or more android resource Strings.
+Pass a Map to this method where each Map key is an android String resource name.
+The method will return the same Map object where the Map values are the android resource Strings defined by the Map keys.
+If an android String is not found the Map value will not be changed.</i>
+</li>
+<li><b>GetApplicationDrawable</b> (ResourceName <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>Drawable</span></b>
+<br><i>Get an application resource Drawable by ResourceName.
+Returns Null if the Drawable is not found.</i>
+</li>
+<li><b>GetApplicationDrawables</b> (ResourceNames <span style='color:blue'>As</span> <span style='color:#008B8B'>Map</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>Map</span></b>
+<br><i>Get one or more application resource Drawables.
+Pass a Map to this method where each Map key is an application Drawable resource name.
+The method will return the same Map object where the Map values are the application resource Drawables defined by the Map keys.
+If an application resource Drawable is not found the Map value will not be changed.</i>
+</li>
+<li><b>GetApplicationRawResource</b> (ResourceName <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>InputStreamWrapper</span></b>
+<br><i>Get an application raw resource as an InputStream.
+The InputStream will not be initialized if the raw resource cannot be found.</i>
+</li>
+<li><b>GetApplicationResourceNames</b> (ResourceType <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>List</span></b>
+<br><i>Returns a List of Strings which are the application resource names for the ResourceType.
+ ResourceType must be one of the android R class nested class names.
+ ResourceType values such as color, drawable, integer, layout and string are valid.
+ All nested R class classes are documented here:
+ http://developer.android.com/reference/android/R.html</i>
+</li>
+<li><b>GetApplicationString</b> (ResourceName <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+<br><i>Get an application resource String by ResourceName.
+Returns Null if the String is not found.</i>
+</li>
+<li><b>GetApplicationStrings</b> (ResourceNames <span style='color:blue'>As</span> <span style='color:#008B8B'>Map</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>Map</span></b>
+<br><i>Get one or more application resource Strings.
+Pass a Map to this method where each Map key is an application String resource name.
+The method will return the same Map object where the Map values are the application resource Strings defined by the Map keys.
+If an application resource String is not found the Map value will not be changed.</i>
+</li>
+</ul>
+</ul>
+<ul><li><h3>Author: Martin Pearman</h3></li></ul>
+<ul><li><h3>Version: 1.6</h3></li></ul></body>
+</html>								

@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <doclet-version-NOT-library-version>1.05</doclet-version-NOT-library-version>
+    <class>
+        <name>com.tillekesoft.vlcb4a.MediaControllerWrapper</name>
+        <shortname>VLCMediaController</shortname>
+        <objectwrapper>org.videolan.libvlc.media.ExtMediaPlayerControl</objectwrapper>
+        <owner>activity</owner>
+        <event>onMediaControllerHidden</event>
+        <event>onMediaControllerShown</event>
+        <method>
+            <name>Hide</name>
+            <comment>Hide the controller on screen.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>IsShowing</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>IsInitialized</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>Initialize</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>pBA</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>BringToFront</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>SendToBack</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>SetVisibleAnimated</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg1</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+        <method>
+            <name>RemoveView</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>Invalidate3</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg1</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg2</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg3</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Invalidate2</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>android.graphics.Rect</type>
+            </parameter>
+        </method>
+        <method>
+            <name>SetColorAnimated</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg1</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg2</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>SetBackgroundImage</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>android.graphics.Bitmap</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Show2</name>
+            <comment>Shows the controller on screen.
+ It will go away automatically after 'timeout' milliseconds of inactivity.
+ Use 0 to show the controller until hide() is called.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Timeout</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Invalidate</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>Show</name>
+            <comment>Shows the controller on screen.
+ It will go away automatically after a default 3000 milliseconds of inactivity.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>SetLayoutAnimated</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg1</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <parameter>
+                <name>arg2</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <parameter>
+                <name>arg3</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <parameter>
+                <name>arg4</name>
+                <type Pixel="true">int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>RequestFocus</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <property>
+            <name>Background</name>
+            <returntype>android.graphics.drawable.Drawable</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>android.graphics.drawable.Drawable</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Parent</name>
+            <returntype>java.lang.Object</returntype>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Color</name>
+            <parameter>
+                <name>arg0</name>
+                <type>int</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Visible</name>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>boolean</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Enabled</name>
+            <returntype>boolean</returntype>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Tag</name>
+            <returntype>java.lang.Object</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>java.lang.Object</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <field>
+            <name>ba</name>
+            <comment></comment>
+            <returntype>anywheresoftware.b4a.BA</returntype>
+        </field>
+    </class>
+    <class>
+        <name>com.tillekesoft.vlcb4a.VideoViewWrapper</name>
+        <shortname>VLCVideoView</shortname>
+        <objectwrapper>org.videolan.libvlc.media.VideoView</objectwrapper>
+        <owner>process</owner>
+        <event>onPrepared</event>
+        <event>onError</event>
+        <event>onCompleted</event>
+        <permission>android.permission.INTERNET</permission>
+        <permission>android.permission.WAKE_LOCK</permission>
+        <method>
+            <name>CanSeekForward</name>
+            <comment>Verifies if the media can seek forward.</comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>Pause</name>
+            <comment>Pauses the playback.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>StopPlayback</name>
+            <comment>Stops the playback.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>SetVlcOptions</name>
+            <comment>Sets various VLC options. Must be set before calling VideoURI or SetVideoPath.
+ If you don't want any options, either don't call this method or pass null as value.
+ Options must be passed on in a list as strings.
+ Some options that are available:
+ --aout=opensles
+ --audio-time-stretch 'time stretching
+ -vvv 'verbosity
+ example:
+ Dim OptionList As List
+ OptionList.Initialize
+ OptionList.Add("--aout=opensles")
+ OptionList.Add("--audio-time-stretch")
+ VLCVideoView1.SetVlcOptions(OptionList)</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>VlcOptions</name>
+                <type>java.util.ArrayList</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Start</name>
+            <comment>Starts or resumes playing.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>IsInitialized</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>Initialize</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>resizeVideo</name>
+            <comment>Resizes the video.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>SeekTo</name>
+            <comment>Seeks to specified time position. Parameters: Milliseconds - the offset in milliseconds from the start to seek to.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Milliseconds</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>SetMediaController</name>
+            <comment>Sets the MediaController. Video must be prepared state to set it (use onPrepared).
+ To disable MediaController, set it to null.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>MediaController1</name>
+                <type>org.videolan.libvlc.media.ExtMediaPlayerControl</type>
+            </parameter>
+        </method>
+        <method>
+            <name>getVolume</name>
+            <comment>gets current Volume level
+ based on AudioManager</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>channel</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>SetLayout</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Top</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Left</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Width</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Height</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>BringToFront</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>setMute</name>
+            <comment>Enable or disable mute-status
+ true = ON, false = off
+ based on AudioManager</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>channel</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>state</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+        <method>
+            <name>SendToBack</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>SetVisibleAnimated</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg1</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+        <method>
+            <name>SetVideoPath</name>
+            <comment>Sets the local file path of the video to play.
+ example:
+ SetVideoPath(File.Combine(File.DirRootExternal, "test_video.mp4"))</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>VideoPath</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>RemoveView</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>Invalidate3</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg1</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg2</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg3</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Invalidate2</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>android.graphics.Rect</type>
+            </parameter>
+        </method>
+        <method>
+            <name>SetColorAnimated</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg1</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg2</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>setVolume</name>
+            <comment>sets Volume level. You need to get Max volume
+ first to know the range available
+ Range: zero(0) to MaxVolume
+ based on AudioManager</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>channel</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>level</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>SetBackgroundImage</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>android.graphics.Bitmap</type>
+            </parameter>
+        </method>
+        <method>
+            <name>CanSeekBackward</name>
+            <comment>Verifies if the media can seek backward.</comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>getMaxVolume</name>
+            <comment>gets Max Volume for device and type of audio
+ based on AudioManager</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>channel</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>currentVideoSize</name>
+            <comment>Returns current video-size.</comment>
+            <returntype>int</returntype>
+        </method>
+        <method>
+            <name>Invalidate</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>IsPlaying</name>
+            <comment>Tests whether the video is currently playing.</comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>SetLayoutAnimated</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg1</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <parameter>
+                <name>arg2</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <parameter>
+                <name>arg3</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <parameter>
+                <name>arg4</name>
+                <type Pixel="true">int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>RequestFocus</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>Resume</name>
+            <comment>Resumes the playback.</comment>
+            <returntype>void</returntype>
+        </method>
+        <property>
+            <name>AudioTrackDesc</name>
+            <returntype>anywheresoftware.b4a.objects.collections.Map.MyMap</returntype>
+            <comment>Returns a description of the AudioTracks.
+ Values returned are: id and name
+ id is used for setting which AudioTrack to play.
+ The values are available when the video is playing.
+ Assign the map to a map of your own.
+ example:
+ Dim audiotracks As Map = VLCVideoView1.AudioTrackDesc</comment>
+        </property>
+        <property>
+            <name>Left</name>
+            <returntype>int</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>AudioTracksCount</name>
+            <returntype>int</returntype>
+            <comment>Returns number of AudioTracks.</comment>
+        </property>
+        <property>
+            <name>Parent</name>
+            <returntype>java.lang.Object</returntype>
+            <comment></comment>
+        </property>
+        <property>
+            <name>SubtitleLocalSource</name>
+            <parameter>
+                <name>path</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <comment>Sets a local subtitle source (.srt).
+ example:
+ SetVideoPath(File.Combine(File.DirRootExternal, "sub.srt"))</comment>
+        </property>
+        <property>
+            <name>SubtitlesCount</name>
+            <returntype>int</returntype>
+            <comment>Returns number of Subtitles.</comment>
+        </property>
+        <property>
+            <name>CurrentPosition</name>
+            <returntype>long</returntype>
+            <comment>Returns the current playback position in units of milliseconds.</comment>
+        </property>
+        <property>
+            <name>VideoSize</name>
+            <parameter>
+                <name>currentSize</name>
+                <type>int</type>
+            </parameter>
+            <comment>Sets Video size. Available values are:
+ SURFACE_BEST_FIT = 0, SURFACE_FIT_HORIZONTAL = 1,
+ SURFACE_FIT_VERTICAL = 2, SURFACE_FILL = 3,
+ SURFACE_16_9 = 4, SURFACE_4_3 = 5,
+ SURFACE_ORIGINAL = 6
+ Default video size is SURFACE_BEST_FIT = 0</comment>
+        </property>
+        <property>
+            <name>Visible</name>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>boolean</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Height</name>
+            <returntype>int</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>SubtitleTrack</name>
+            <parameter>
+                <name>id</name>
+                <type>int</type>
+            </parameter>
+            <comment>Sets selected SubtitleTrack.</comment>
+        </property>
+        <property>
+            <name>Width</name>
+            <returntype>int</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>SubtitlesDesc</name>
+            <returntype>anywheresoftware.b4a.objects.collections.Map.MyMap</returntype>
+            <comment>Returns a description of the SubtitleTracks.
+ Values returned are: id and name
+ id is used for setting which SubtitleTrack to show.
+ The values are available when the video is playing.
+ Assign the map to a map of your own.
+ example:
+ Dim Subtitletracks As Map = VLCVideoView1.SubtitlesDesc</comment>
+        </property>
+        <property>
+            <name>Background</name>
+            <returntype>android.graphics.drawable.Drawable</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>android.graphics.drawable.Drawable</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Position</name>
+            <returntype>long</returntype>
+            <parameter>
+                <name>v</name>
+                <type>int</type>
+            </parameter>
+            <comment>Gets or sets the playing position (in milliseconds).</comment>
+        </property>
+        <property>
+            <name>Color</name>
+            <parameter>
+                <name>arg0</name>
+                <type>int</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Enabled</name>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>boolean</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Duration</name>
+            <returntype>long</returntype>
+            <comment>Returns the video duration in milliseconds.</comment>
+        </property>
+        <property>
+            <name>VideoURI</name>
+            <parameter>
+                <name>VideoPath</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <comment>Sets the URI stream of the video to play.
+ example:
+ VideoURI = "http://devimages.apple.com/iphone/samples/bipbop/bipbopall.m3u8"
+ VideoURI = "rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov"</comment>
+        </property>
+        <property>
+            <name>SubtitlesSurfaceView</name>
+            <parameter>
+                <name>B4APanel</name>
+                <type>android.view.ViewGroup</type>
+            </parameter>
+            <comment>Takes B4A panel (ViewGroup) and adds a SurfaceView
+ to use as a panel for the subtitles.
+ example:
+ in Globals
+ Dim subpanel As Panel 'for subtitles
+ in Activity_Create
+ subpanel.Initialize("subpanel")
+ mypanel.AddView(VLCVideoview1,0, 0, 100%x, 100%y)
+ mypanel.AddView(subpanel, 0, 0, 100%x, 100%y-20dip)
+ VLCVideoview1.SubtitlesSurfaceView = subpanel
+ VLCVideoview1.SubtitleLocalSource = File.Combine(File.DirRootExternal,"bb.srt")</comment>
+        </property>
+        <property>
+            <name>Top</name>
+            <returntype>int</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Volume</name>
+            <parameter>
+                <name>volume</name>
+                <type>int</type>
+            </parameter>
+            <comment>Sets volume as integer
+ This is the native volume control and is not based on AudioManager.
+ This control has been reported to have problems. If you have problems
+ you can use the other volume methods available based on AudioManager.
+ Range should be 0-200.
+ At 40 it seems to become hearable, above 100 it might cause distortion</comment>
+        </property>
+        <property>
+            <name>AudioTrack</name>
+            <parameter>
+                <name>id</name>
+                <type>int</type>
+            </parameter>
+            <comment>Sets selected AudioTrack.</comment>
+        </property>
+        <property>
+            <name>Tag</name>
+            <returntype>java.lang.Object</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>java.lang.Object</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <field>
+            <name>VOLUME_MUSIC</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>VOLUME_VOICE_CALL</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>ba</name>
+            <comment></comment>
+            <returntype>anywheresoftware.b4a.BA</returntype>
+        </field>
+    </class>
+    <version>0.77</version>
+    <author>moster67 Mikael Osterhed</author>
+    <dependsOn>vlcclasses</dependsOn>
+</root>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <doclet-version-NOT-library-version>1.07</doclet-version-NOT-library-version>
+    <class>
+        <name>com.aghajari.rvplugins.Amir_RVFanLayout</name>
+        <shortname>Amir_RVFanLayout</shortname>
+        <comment>Amir_RecyclerView Plugin</comment>
+        <owner>process</owner>
+        <event>onAnimationCancel (Tag As Object)</event>
+        <event>onAnimationEnd (Tag As Object)</event>
+        <event>onAnimationRepeat (Tag As Object)</event>
+        <event>onAnimationStart (Tag As Object)</event>
+        <method>
+            <name>EnableChildDrawingOrderCallback</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>DeselectItem</name>
+            <comment>Deselect selected item.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>Initializer</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVFanLayout.Builder</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>Recycler</name>
+                <type>android.support.v7.widget.RecyclerView</type>
+            </parameter>
+        </method>
+        <method>
+            <name>SaveState</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>StraightenSelectedItem</name>
+            <comment>Method need to remove bounce item rotation</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>Tag</name>
+                <type>java.lang.Object</type>
+            </parameter>
+        </method>
+        <method>
+            <name>ScrollToPosition</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>position</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Smooth</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+        <method>
+            <name>CollapseViews</name>
+            <comment>Method collapsed views (cards).</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>ScrollToCenter</name>
+            <comment>Scroll views left or right so nearest view will be in the middle of screen</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>SwitchItem</name>
+            <comment>Method change item state from close to open and open to close (switch state)
+selectedViewPosition: item view position</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>selectedViewPosition</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>RestoreBaseRotationSelectedItem</name>
+            <comment>Method need to restore base (bounce) rotation for item</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>Tag</name>
+                <type>java.lang.Object</type>
+            </parameter>
+        </method>
+        <property>
+            <name>FindCurrentCenterView</name>
+            <returntype>android.view.View</returntype>
+            <comment>Find view in the middle of screen</comment>
+        </property>
+        <property>
+            <name>FindCurrentCenterViewPos</name>
+            <returntype>int</returntype>
+            <comment>Find position of view in the middle of screen</comment>
+        </property>
+        <property>
+            <name>IsItemSelected</name>
+            <returntype>boolean</returntype>
+            <comment></comment>
+        </property>
+        <property>
+            <name>IsSelectedItemStraightened</name>
+            <returntype>boolean</returntype>
+            <comment>is selected item straightened or has base (bounce) rotation</comment>
+        </property>
+        <property>
+            <name>SelectedItemPosition</name>
+            <returntype>int</returntype>
+            <comment>selected item position</comment>
+        </property>
+    </class>
+    <class>
+        <name>com.aghajari.rvplugins.Amir_RVFanLayout.Builder</name>
+        <owner>process</owner>
+        <method>
+            <name>AngleItemBounce</name>
+            <comment>Sets the AngleItemBounce and returns a reference to this 
+ Builder so that the methods can be chained together.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVFanLayout.Builder</returntype>
+            <parameter>
+                <name>angleItemBounce</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Build</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>ViewHeight</name>
+            <comment>Sets the ViewHeight Dp and returns a reference to this 
+ Builder so that the methods can be chained together.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVFanLayout.Builder</returntype>
+            <parameter>
+                <name>Height</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>ViewWidth</name>
+            <comment>Sets the ViewWidth Dp and returns a reference to this 
+ Builder so that the methods can be chained together.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVFanLayout.Builder</returntype>
+            <parameter>
+                <name>Width</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>FanRadius</name>
+            <comment>Sets the fanRadius and returns a reference to this 
+ Builder so that the methods can be chained together.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVFanLayout.Builder</returntype>
+            <parameter>
+                <name>isFanRadiusEnable</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+    </class>
+    <version>1.0</version>
+    <author>AmirHosseinAghajari</author>
+</root>

@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+  <dependsOn>http</dependsOn>
+  <dependsOn>json</dependsOn>
+  <dependsOn>randomaccessfile</dependsOn>
+  <dependsOn>stringutils</dependsOn>
+  <dependsOn>webviewxtended</dependsOn>
+  <dependsOn>xmlsax</dependsOn>
+  <dependsOn>phone</dependsOn>
+  <class b4a_type="Service">
+    <name>anywheresoftware.b4a.samples.gmailcontacts.httputils2service</name>
+    <shortname>HttpUtils2Service</shortname>
+    <owner>process</owner>
+    <objectwrapper>java.lang.Class</objectwrapper>
+    <permission>android.permission.INTERNET</permission>
+    <field>
+      <name DesignerName="TempFolder">_tempfolder</name>
+      <returntype>String</returntype>
+    </field>
+    <method>
+      <name>process_globals</name>
+      <returntype>void</returntype>
+    </method>
+  </class>
+  <class b4a_type="Activity">
+    <name>anywheresoftware.b4a.samples.gmailcontacts.modrequest</name>
+    <shortname>modRequest</shortname>
+    <owner>process</owner>
+    <objectwrapper>java.lang.Class</objectwrapper>
+    <permission>android.permission.INTERNET</permission>
+    <field>
+      <name DesignerName="clsDr">_clsdr</name>
+      <returntype>anywheresoftware.b4a.samples.gmailcontacts.libgoogledrive</returntype>
+    </field>
+    <field>
+      <name DesignerName="ClientIDIntern">_clientidintern</name>
+      <returntype>String</returntype>
+    </field>
+    <field>
+      <name DesignerName="AuthorizationKey">_authorizationkey</name>
+      <returntype>String</returntype>
+    </field>
+    <field>
+      <name DesignerName="UserAbort">_userabort</name>
+      <returntype>boolean</returntype>
+    </field>
+    <method>
+      <name>process_globals</name>
+      <returntype>void</returntype>
+    </method>
+  </class>
+  <class b4a_type="Service">
+    <name>anywheresoftware.b4a.samples.gmailcontacts.svcmonitoring</name>
+    <shortname>svcMonitoring</shortname>
+    <owner>process</owner>
+    <objectwrapper>java.lang.Class</objectwrapper>
+    <field>
+      <name DesignerName="MonitorClass">_monitorclass</name>
+      <returntype>anywheresoftware.b4a.samples.gmailcontacts.libgoogledrive</returntype>
+    </field>
+    <method>
+      <name>process_globals</name>
+      <returntype>void</returntype>
+    </method>
+  </class>
+  <class>
+    <name>anywheresoftware.b4a.samples.gmailcontacts.libgoogledrive</name>
+    <shortname>libGoogleDrive</shortname>
+    <owner>process</owner>
+    <permission>android.permission.WRITE_EXTERNAL_STORAGE</permission>
+    <event>Connected(Settings as Map)</event>
+    <event>FileListResult(Filelist as List)</event>
+    <event>FileDownloaded</event>
+    <event>FileFound(ID as String)</event>
+    <event>FileUploaded(FileID as string)</event>
+    <event>UserAbortsRequest</event>
+    <event>GetMetadata(Data as Map)</event>
+    <event>NoInternetConnection</event>
+    <event>FolderFound(ID as String)</event>
+    <event>DriveFileIsNewer</event>
+    <event>DriveFileIsOlder</event>
+    <method>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>boolean</returntype>
+    </method>
+    <method>
+      <name DesignerName="ConnectToDrive">_connecttodrive</name>
+      <comment>Start the Connection to Google Drive.
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="CreateFolder">_createfolder</name>
+      <comment>Creates a folder
+If the new folder is a subfolder, the ID from the parent folder is needed. Else pass with "" for creating in main directory.
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Name</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>ParentFolder</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="DownloadFile">_downloadfile</name>
+      <comment>Download a file from Google Drive
+FileID : Is needed to download the correct file.
+LocalPath : Is all allowed excepted File.DirAssets
+LocalFilename : Name of the file. If the name should be the same like on Google Drive, pass with ""
+
+Event : FileDownloaded
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>FileID</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>LocalPath</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>LocalFilename</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="GetMetadata">_getmetadata</name>
+      <comment>Returns the meta data from a file. The FileID is needed.
+If you don't know the FileID, use "SearchForFileID" to find them.
+
+Events : GetMetadata(Data as Map)
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>FileID</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize</name>
+      <comment>Initializes the object. You can add parameters to this method if needed.
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>anywheresoftware.b4a.BA</type>
+      </parameter>
+      <parameter>
+        <name>CallbackModule</name>
+        <type>Object</type>
+      </parameter>
+      <parameter>
+        <name>cEventname</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>YourClientID</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>YourClientSecret</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="JobDone">_jobdone</name>
+      <comment>This function is only for intern proccesses.
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Job</name>
+        <type>anywheresoftware.b4a.samples.gmailcontacts.httpjob2</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Monitoring_ForceTransmission">_monitoring_forcetransmission</name>
+      <comment>Transfer the monitoring file if needed. This function ignores the command "TransferFile" in "Monitor_Start" function.
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="Monitoring_GetID">_monitoring_getid</name>
+      <comment>Returns a map with the storaged IDs from monitoring service
+Contents "fileid" and "folderid"
+If config file is not create, a uninitialized map will return
+</comment>
+      <returntype>anywheresoftware.b4a.objects.collections.Map</returntype>
+    </method>
+    <method>
+      <name DesignerName="Monitoring_Refresh">_monitoring_refresh</name>
+      <comment>Comparse the local file and the file on Google Drive. If there a difference, upload or download the file.
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="Monitoring_Start">_monitoring_start</name>
+      <comment>Comparse the selected file with google drive. If anything change, the monitoring will up- or download the file.
+Usefully as a backup or settings/database for difference devices.
+If Monitoring_Interval &gt; 0 then the procedure refresh automatically after x minutes. You can stop this service process with "Monitor_Stop"
+If DoNotTransmitUpdates = True then no data transmission startet automatically. Only the Event "DriveFileIsNewer" or "DriveFileIsOlder" will be raised.
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Foldername</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>LocalDir</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>LocalFile</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>Monitoring_Interval</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>DoNotTransmitUpdates</name>
+        <type>boolean</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Monitoring_Start2">_monitoring_start2</name>
+      <comment>Comparse the selected file with google drive. If anything change, the monitoring will up- or download the file. With forcing a fileID
+Usefully as a backup or settings/database for difference devices.
+If Monitoring_Interval &gt; 0 then the procedure refresh automatically after x minutes. You can stop this service process with "Monitor_Stop"
+If DoNotTransmitUpdates = True then no data transmission startet automatically. Only the Event "DriveFileIsNewer" or "DriveFileIsOlder" will be raised.
+ForceFileID - Force to monitoring this file on Google Drive. Useful after switching between different files.
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Foldername</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>localDir</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>LocalFile</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>Monitoring_Interval</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>DoNotTransmitUpdates</name>
+        <type>boolean</type>
+      </parameter>
+      <parameter>
+        <name>ForceFileID</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Monitoring_Stop">_monitoring_stop</name>
+      <comment>Stops the schedule of the monitor procedure
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="ResetAll">_resetall</name>
+      <comment>Delete all keys and logs
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="ResetMonitoring">_resetmonitoring</name>
+      <comment>Delete the monitoring values from internal storage
+If you have no fileID from the old file, you must for later access use the FindFileID-Method.
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="SearchForFileID">_searchforfileid</name>
+      <comment>Searching on Google Drive for a file with the filename. If founded the function returns the file ID, otherwise it returns ""
+This can need a lot of time if many files storage on Google Drive.
+If more than one file with the same filename found, the first result will return
+
+Event : FileFound(ID as String)
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Filename</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="SearchForFolderID">_searchforfolderid</name>
+      <comment>Searching on Google Drive for a folder. If founded the function returns the file ID, otherwise it returns ""
+This can need a lot of time if many files storage on Google Drive.
+If more than one file with the same folder found, the first result will return
+
+Event : FolderFound(ID as String)
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Foldername</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setHideProgressDialog" HideFromIDE="true">_sethideprogressdialog</name>
+      <comment>If true, the toastmessage dialog will not shown
+Default is False
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Val</name>
+        <type>boolean</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setLogging" HideFromIDE="true">_setlogging</name>
+      <comment>If true, some log data will shown and storage in "file.DirRootExternal/libDriveLog.txt"
+Default is False
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Val</name>
+        <type>boolean</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setMonitoring_OnlyWLAN" HideFromIDE="true">_setmonitoring_onlywlan</name>
+      <comment>If True, the Monitoring function will not work without WLAN
+Default is False
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Val</name>
+        <type>boolean</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setStorageKeys" HideFromIDE="true">_setstoragekeys</name>
+      <comment>If true, all access keys incl. refresh token and Authorization Key will storage and read from an intern file.
+Default is True
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Val</name>
+        <type>boolean</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setText_ToastMessage_GetFileList" HideFromIDE="true">_settext_toastmessage_getfilelist</name>
+      <comment>The text will be shown if the Toastmessage is visible and an Filelist request is in progress
+Default is "Get file list..."
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Text</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setText_ToastMessage_Upload" HideFromIDE="true">_settext_toastmessage_upload</name>
+      <comment>The text will be shown if the Toastmessage is visible and an Upload is in progress
+Default is "This can need a little while."
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Text</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="ShowTheFileList">_showthefilelist</name>
+      <comment>Returns a list of all files in gDrive. This can need some time.
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="UploadFile">_uploadfile</name>
+      <comment>Upload a file to Google Drive
+Title      - The title of the filename
+UploadDir  - The folder of the upload file.
+UploadFile - Filename of the upload file
+FileID     - The file ID on Google Drive. If not known, a new file will created.
+
+Events : FileUploadDone(FileID as string)
+(Save the file ID in a textfile or database to get fast access to the file)
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Title</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>LocalDir</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>LocalFilename</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>DriveFolder</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>FileId</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <property>
+      <name DesignerName="HideProgressDialog">_hideprogressdialog</name>
+      <comment>If true, the toastmessage dialog will not shown
+Default is False
+</comment>
+      <returntype>void</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>boolean</type>
+      </parameter>
+    </property>
+    <property>
+      <name DesignerName="Logging">_logging</name>
+      <comment>If true, some log data will shown and storage in "file.DirRootExternal/libDriveLog.txt"
+Default is False
+</comment>
+      <returntype>void</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>boolean</type>
+      </parameter>
+    </property>
+    <property>
+      <name DesignerName="Monitoring_OnlyWLAN">_monitoring_onlywlan</name>
+      <comment>If True, the Monitoring function will not work without WLAN
+Default is False
+</comment>
+      <returntype>void</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>boolean</type>
+      </parameter>
+    </property>
+    <property>
+      <name DesignerName="StorageKeys">_storagekeys</name>
+      <comment>If true, all access keys incl. refresh token and Authorization Key will storage and read from an intern file.
+Default is True
+</comment>
+      <returntype>void</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>boolean</type>
+      </parameter>
+    </property>
+    <property>
+      <name DesignerName="Text_ToastMessage_GetFileList">_text_toastmessage_getfilelist</name>
+      <comment>The text will be shown if the Toastmessage is visible and an Filelist request is in progress
+Default is "Get file list..."
+</comment>
+      <returntype>void</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>String</type>
+      </parameter>
+    </property>
+    <property>
+      <name DesignerName="Text_ToastMessage_Upload">_text_toastmessage_upload</name>
+      <comment>The text will be shown if the Toastmessage is visible and an Upload is in progress
+Default is "This can need a little while."
+</comment>
+      <returntype>void</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>String</type>
+      </parameter>
+    </property>
+  </class>
+  <class>
+    <name>anywheresoftware.b4a.samples.gmailcontacts.httpjob2</name>
+    <shortname>HttpJob2</shortname>
+    <owner>process</owner>
+    <method>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>boolean</returntype>
+    </method>
+    <method>
+      <name DesignerName="Class_Globals">_class_globals</name>
+      <comment>HttpUtils2 version 2.01
+Class module
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="Complete">_complete</name>
+      <comment>Called by the service when job completes
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>id</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Download">_download</name>
+      <comment>Submits a HTTP GET request.
+Consider using Download2 if the parameters should be escaped.
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Link</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Download2">_download2</name>
+      <comment>Submits a HTTP GET request.
+Encodes illegal parameter characters.
+&lt;code&gt;Example:
+job.Download2("http://www.example.com", _
+	Array As String("key1", "value1", "key2", "value2"))&lt;/code&gt;
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Link</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>Parameters</name>
+        <type>String[]</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="GetBitmap">_getbitmap</name>
+      <comment>Returns the response as a bitmap
+</comment>
+      <returntype>anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper</returntype>
+    </method>
+    <method>
+      <name DesignerName="GetInputStream">_getinputstream</name>
+      <returntype>anywheresoftware.b4a.objects.streams.File.InputStreamWrapper</returntype>
+    </method>
+    <method>
+      <name DesignerName="GetRequest">_getrequest</name>
+      <comment>Called by the service to get the request
+</comment>
+      <returntype>anywheresoftware.b4a.http.HttpClientWrapper.HttpUriRequestWrapper</returntype>
+    </method>
+    <method>
+      <name DesignerName="GetString">_getstring</name>
+      <comment>Returns the response as a string encoded with UTF-8.
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="GetString2">_getstring2</name>
+      <comment>Returns the response as a string.
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Encoding</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize</name>
+      <comment>Initializes the Job.
+Name - The job's name. Note that the name doesn't need to be unique.
+TargetModule - The activity or service that will handle the JobDone event.
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>anywheresoftware.b4a.BA</type>
+      </parameter>
+      <parameter>
+        <name>ClassRequest</name>
+        <type>anywheresoftware.b4a.samples.gmailcontacts.libgoogledrive</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="PostBytes">_postbytes</name>
+      <comment>Sends a POST request with the given string as the post data
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Link</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>Data</name>
+        <type>byte[]</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="PostFile">_postfile</name>
+      <comment>Sends a POST request with the given file as the post data.
+This method doesn't work with assets files.
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Link</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>Dir</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>FileName</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="PostString">_poststring</name>
+      <comment>Sends a POST request with the given data as the post data.
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Link</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>Text</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="PutBytes">_putbytes</name>
+      <comment>Sends a PUT request with the given string as the post data
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Link</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>Data</name>
+        <type>byte[]</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="PutFile">_putfile</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Link</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>Dir</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>FileName</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Release">_release</name>
+      <comment>Should be called to free resources held by this job.
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <field>
+      <name DesignerName="Success">_success</name>
+      <returntype>boolean</returntype>
+    </field>
+    <field>
+      <name DesignerName="Username">_username</name>
+      <returntype>String</returntype>
+    </field>
+    <field>
+      <name DesignerName="Password">_password</name>
+      <returntype>String</returntype>
+    </field>
+    <field>
+      <name DesignerName="ErrorMessage">_errormessage</name>
+      <returntype>String</returntype>
+    </field>
+    <field>
+      <name DesignerName="Tag">_tag</name>
+      <returntype>String</returntype>
+    </field>
+  </class>
+  <version>1</version>
+</root>

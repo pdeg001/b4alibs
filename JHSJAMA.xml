@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <doclet-version-NOT-library-version>1.04</doclet-version-NOT-library-version>
+    <class>
+        <name>jamawrapper.jamaWrapper</name>
+        <shortname>JamaMatrix</shortname>
+        <owner>process</owner>
+        <method>
+            <name>solveTranspose</name>
+            <comment>Solve X*A = B, which is also A'*X' = B'
+
+B    right hand side
+return     solution if A is square, least squares solution otherwise.</comment>
+            <returntype>jamawrapper.jamaWrapper</returntype>
+            <parameter>
+                <name>B</name>
+                <type>jamawrapper.jamaWrapper</type>
+            </parameter>
+        </method>
+        <method>
+            <name>constructWithCopy</name>
+            <comment>Construct a matrix from a copy of a 2-D array.
+
+A    Two-dimensional array of doubles.</comment>
+            <returntype>jamawrapper.jamaWrapper</returntype>
+            <parameter>
+                <name>A</name>
+                <type>double[][]</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Norm1</name>
+            <comment>One norm
+return    maximum column sum.</comment>
+            <returntype>double</returntype>
+        </method>
+        <method>
+            <name>SetSubMatrix2</name>
+            <comment>Set a submatrix.
+
+r    Array of row indices.
+c    Array of column indices.
+X    A(r(:),c(:))</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>r</name>
+                <type>int[]</type>
+            </parameter>
+            <parameter>
+                <name>c</name>
+                <type>int[]</type>
+            </parameter>
+            <parameter>
+                <name>X</name>
+                <type>jamawrapper.jamaWrapper</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Norm2</name>
+            <comment>Two norm
+return    maximum singular value.</comment>
+            <returntype>double</returntype>
+        </method>
+        <method>
+            <name>det</name>
+            <comment>Matrix determinant
+return     determinant</comment>
+            <returntype>double</returntype>
+        </method>
+        <method>
+            <name>SetSubMatrix1</name>
+            <comment>Set a submatrix.
+
+i0   Initial row index
+i1   Final row index
+j0   Initial column index
+j1   Final column index
+X    A(i0:i1,j0:j1)</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>i0</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>i1</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>j0</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>j1</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>X</name>
+                <type>jamawrapper.jamaWrapper</type>
+            </parameter>
+        </method>
+        <method>
+            <name>arrayTimesEquals</name>
+            <comment>Element-by-element multiplication in place, A = A.*B
+
+B    another matrix
+return     A.*B</comment>
+            <returntype>jamawrapper.jamaWrapper</returntype>
+            <parameter>
+                <name>B</name>
+                <type>jamawrapper.jamaWrapper</type>
+            </parameter>
+        </method>
+        <method>
+            <name>SetSubMatrix4</name>
+            <comment>Set a submatrix.
+
+i0   Initial row index
+i1   Final row index
+c    Array of column indices.
+X    A(i0:i1,c(:))</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>i0</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>i1</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>c</name>
+                <type>int[]</type>
+            </parameter>
+            <parameter>
+                <name>X</name>
+                <type>jamawrapper.jamaWrapper</type>
+            </parameter>
+        </method>
+        <method>
+            <name>SetSubMatrix3</name>
+            <comment>Set a submatrix.
+
+r    Array of row indices.
+j0   Initial column index
+j1   Final column index
+X    A(r(:),j0:j1)</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>r</name>
+                <type>int[]</type>
+            </parameter>
+            <parameter>
+                <name>j0</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>j1</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>X</name>
+                <type>jamawrapper.jamaWrapper</type>
+            </parameter>
+        </method>
+        <method>
+            <name>arrayRightDivideEquals</name>
+            <comment>Element-by-element right division in place, A = A./B
+
+B    another matrix
+return     A./B</comment>
+            <returntype>jamawrapper.jamaWrapper</returntype>
+            <parameter>
+                <name>B</name>
+                <type>jamawrapper.jamaWrapper</type>
+            </parameter>
+        </method>
+        <method>
+            <name>ReturnSingleElement</name>
+            <comment>Return a single element (type Double)
+
+i    Row index.
+j    Column index.
+return     A(i,j)</comment>
+            <returntype>double</returntype>
+            <parameter>
+                <name>i</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>j</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>timesByMatrix</name>
+            <comment>Linear algebraic matrix multiplication, A * B
+
+B    another matrix
+return     Matrix product, A * B</comment>
+            <returntype>jamawrapper.jamaWrapper</returntype>
+            <parameter>
+                <name>B</name>
+                <type>jamawrapper.jamaWrapper</type>
+            </parameter>
+        </method>
+        <method>
+            <name>identity</name>
+            <comment>Generate identity matrix
+
+m    Number of rows.
+n    Number of colums.
+return     An m-by-n matrix with ones on the diagonal and zeros elsewhere.</comment>
+            <returntype>jamawrapper.jamaWrapper</returntype>
+            <parameter>
+                <name>m</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>n</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>solve</name>
+            <comment>Solve A*X = B
+
+B    right hand side
+return     solution if A is square, least squares solution otherwise</comment>
+            <returntype>jamawrapper.jamaWrapper</returntype>
+            <parameter>
+                <name>B</name>
+                <type>jamawrapper.jamaWrapper</type>
+            </parameter>
+        </method>
+        <method>
+            <name>rank</name>
+            <comment>Matrix rank
+return     effective numerical rank, obtained from SVD.</comment>
+            <returntype>int</returntype>
+        </method>
+        <method>
+            <name>inverse</name>
+            <comment>Matrix inverse or pseudoinverse
+return     inverse(A) if A is square, pseudoinverse otherwise.</comment>
+            <returntype>jamawrapper.jamaWrapper</returntype>
+        </method>
+        <method>
+            <name>GetSubMatrix3</name>
+            <comment>Get a submatrix.
+
+i0   Initial row index
+i1   Final row index
+c    Array of column indices.
+return     A(i0:i1,c(:))</comment>
+            <returntype>jamawrapper.jamaWrapper</returntype>
+            <parameter>
+                <name>i0</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>i1</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>c</name>
+                <type>int[]</type>
+            </parameter>
+        </method>
+        <method>
+            <name>GetSubMatrix4</name>
+            <comment>Get a submatrix.
+
+r    Array of row indices.
+j0   Initial column index
+j1   Final column index
+return     A(r(:),j0:j1)</comment>
+            <returntype>jamawrapper.jamaWrapper</returntype>
+            <parameter>
+                <name>r</name>
+                <type>int[]</type>
+            </parameter>
+            <parameter>
+                <name>j0</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>j1</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>arrayTimes</name>
+            <comment>Element-by-element multiplication, C = A.*B
+
+B    another matrix
+return     A.*B</comment>
+            <returntype>jamawrapper.jamaWrapper</returntype>
+            <parameter>
+                <name>B</name>
+                <type>jamawrapper.jamaWrapper</type>
+            </parameter>
+        </method>
+        <method>
+            <name>GetSubMatrix1</name>
+            <comment>Get a submatrix.
+
+i0   Initial row index
+i1   Final row index
+j0   Initial column index
+j1   Final column index
+return     A(i0:i1,j0:j1)</comment>
+            <returntype>jamawrapper.jamaWrapper</returntype>
+            <parameter>
+                <name>i0</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>i1</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>j0</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>j1</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Initialize4</name>
+            <comment>Construct a matrix quickly without checking arguments.
+
+A    Two-dimensional array of doubles.
+m    Number of rows.
+n    Number of colums.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>A</name>
+                <type>double[][]</type>
+            </parameter>
+            <parameter>
+                <name>m</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>n</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>GetSubMatrix2</name>
+            <comment>Get a submatrix.
+
+r    Array of row indices.
+c    Array of column indices.
+return     A(r(:),c(:))</comment>
+            <returntype>jamawrapper.jamaWrapper</returntype>
+            <parameter>
+                <name>r</name>
+                <type>int[]</type>
+            </parameter>
+            <parameter>
+                <name>c</name>
+                <type>int[]</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Initialize5</name>
+            <comment>Construct a matrix from a one-dimensional packed array
+
+vals One-dimensional array of doubles, packed by columns (ala Fortran).
+m    Number of rows.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>vals</name>
+                <type>double[]</type>
+            </parameter>
+            <parameter>
+                <name>m</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Initialize2</name>
+            <comment>Construct an m-by-n constant matrix.
+
+m    Number of rows.
+n    Number of colums.
+s    Fill the matrix with this scalar value.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>m</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>n</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>s</name>
+                <type>double</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Initialize3</name>
+            <comment>Construct a matrix from a 2-D array.
+
+A    Two-dimensional array of doubles.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>A</name>
+                <type>double[][]</type>
+            </parameter>
+        </method>
+        <method>
+            <name>arrayLeftDivideEquals</name>
+            <comment>Element-by-element left division in place, A = A.\B
+
+B    another matrix
+return     A.\B</comment>
+            <returntype>jamawrapper.jamaWrapper</returntype>
+            <parameter>
+                <name>B</name>
+                <type>jamawrapper.jamaWrapper</type>
+            </parameter>
+        </method>
+        <method>
+            <name>copy</name>
+            <comment>Make a deep copy of a matrix</comment>
+            <returntype>jamawrapper.jamaWrapper</returntype>
+        </method>
+        <method>
+            <name>Initialize1</name>
+            <comment>Construct an m-by-n matrix of zeros. 
+
+m    Number of rows.
+n    Number of colums.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>m</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>n</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>minusEquals</name>
+            <comment>A = A - B
+
+B          another matrix
+return     A - B</comment>
+            <returntype>jamawrapper.jamaWrapper</returntype>
+            <parameter>
+                <name>B</name>
+                <type>jamawrapper.jamaWrapper</type>
+            </parameter>
+        </method>
+        <method>
+            <name>plus</name>
+            <comment>C = A + B
+
+B    another matrix
+return     A + B</comment>
+            <returntype>jamawrapper.jamaWrapper</returntype>
+            <parameter>
+                <name>B</name>
+                <type>jamawrapper.jamaWrapper</type>
+            </parameter>
+        </method>
+        <method>
+            <name>minus</name>
+            <comment>C = A - B
+
+B    another matrix
+return     A - B</comment>
+            <returntype>jamawrapper.jamaWrapper</returntype>
+            <parameter>
+                <name>B</name>
+                <type>jamawrapper.jamaWrapper</type>
+            </parameter>
+        </method>
+        <method>
+            <name>condition</name>
+            <comment>Matrix condition (2 norm)
+return     ratio of largest to smallest singular value.</comment>
+            <returntype>double</returntype>
+        </method>
+        <method>
+            <name>SetSingleElement</name>
+            <comment>Set a single element.
+i    Row index.
+j    Column index.
+s    A(i,j).</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>i</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>j</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>s</name>
+                <type>double</type>
+            </parameter>
+        </method>
+        <method>
+            <name>trace</name>
+            <comment>Matrix trace.
+return     sum of the diagonal elements.</comment>
+            <returntype>double</returntype>
+        </method>
+        <method>
+            <name>GetMatrixEntries</name>
+            <comment>Return the elements of the matrix as a two-dimensional array of doubles.</comment>
+            <returntype>double[][]</returntype>
+        </method>
+        <method>
+            <name>Transpose</name>
+            <comment>Matrix transpose.
+
+return    A'</comment>
+            <returntype>jamawrapper.jamaWrapper</returntype>
+        </method>
+        <method>
+            <name>random</name>
+            <comment>Generate matrix with random elements
+
+m    Number of rows.
+n    Number of colums.
+return     An m-by-n matrix with uniformly distributed random elements.</comment>
+            <returntype>jamawrapper.jamaWrapper</returntype>
+            <parameter>
+                <name>m</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>n</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>uminus</name>
+            <comment>Unary minus
+return    -A</comment>
+            <returntype>jamawrapper.jamaWrapper</returntype>
+        </method>
+        <method>
+            <name>timesByScalar</name>
+            <comment>Multiply a matrix by a scalar, C = s*A
+
+s    scalar
+return     s*A</comment>
+            <returntype>jamawrapper.jamaWrapper</returntype>
+            <parameter>
+                <name>s</name>
+                <type>double</type>
+            </parameter>
+        </method>
+        <method>
+            <name>arrayRightDivide</name>
+            <comment>Element-by-element right division, C = A./B
+
+B    another matrix
+return     A./B</comment>
+            <returntype>jamawrapper.jamaWrapper</returntype>
+            <parameter>
+                <name>B</name>
+                <type>jamawrapper.jamaWrapper</type>
+            </parameter>
+        </method>
+        <method>
+            <name>NormInf</name>
+            <comment>Infinity norm
+return    maximum row sum.</comment>
+            <returntype>double</returntype>
+        </method>
+        <method>
+            <name>timesEquals</name>
+            <comment>Multiply a matrix by a scalar in place, A = s*A
+
+s    scalar
+return     replace A by s*A</comment>
+            <returntype>jamawrapper.jamaWrapper</returntype>
+            <parameter>
+                <name>s</name>
+                <type>double</type>
+            </parameter>
+        </method>
+        <method>
+            <name>plusEquals</name>
+            <comment>A = A + B
+
+B    another matrix
+return     A + B</comment>
+            <returntype>jamawrapper.jamaWrapper</returntype>
+            <parameter>
+                <name>B</name>
+                <type>jamawrapper.jamaWrapper</type>
+            </parameter>
+        </method>
+        <method>
+            <name>NormF</name>
+            <comment>Frobenius norm
+return    sqrt of sum of squares of all elements.</comment>
+            <returntype>double</returntype>
+        </method>
+        <method>
+            <name>arrayLeftDivide</name>
+            <comment>Element-by-element left division, C = A.\B
+
+B    another matrix
+return     A.\B</comment>
+            <returntype>jamawrapper.jamaWrapper</returntype>
+            <parameter>
+                <name>B</name>
+                <type>jamawrapper.jamaWrapper</type>
+            </parameter>
+        </method>
+        <property>
+            <name>ColumnDimension</name>
+            <returntype>int</returntype>
+            <comment>Get column dimension.
+
+return     n (an int), the number of columns.</comment>
+        </property>
+        <property>
+            <name>ArrayCopy</name>
+            <returntype>double[][]</returntype>
+            <comment>Copy the internal two-dimensional array.
+
+return     Two-dimensional array copy of matrix elements.</comment>
+        </property>
+        <property>
+            <name>RowDimension</name>
+            <returntype>int</returntype>
+            <comment>Get row dimension.
+return     m (an int), the number of rows.</comment>
+        </property>
+        <property>
+            <name>ColumnPackedCopy</name>
+            <returntype>double[]</returntype>
+            <comment>Make a one-dimensional column packed copy of the internal array.
+
+return     Matrix elements packed in a one-dimensional array by columns.
+The returned one-dimensional array is of type Double</comment>
+        </property>
+        <property>
+            <name>RowPackedCopy</name>
+            <returntype>double[]</returntype>
+            <comment>Make a one-dimensional row packed copy of the internal array.
+
+return     Matrix elements packed in a one-dimensional array by rows.
+The returned one-dimensional array is of type Double</comment>
+        </property>
+    </class>
+    <version>1.0</version>
+    <author>Johan Schoeman</author>
+</root>

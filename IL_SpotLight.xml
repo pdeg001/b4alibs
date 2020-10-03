@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+  <dependsOn>javaobject</dependsOn>
+  <dependsOn>stringutils</dependsOn>
+  <class>
+    <name>b4a.example.spotlight._item</name>
+    <shortname>item</shortname>
+    <owner>process</owner>
+    <method>
+      <name>Initialize</name>
+      <comment>Initializes the fields to their default value.</comment>
+      <returntype>void</returntype>
+    </method>
+    <field>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>boolean</returntype>
+    </field>
+    <field>
+      <name>index</name>
+      <returntype>int</returntype>
+    </field>
+    <field>
+      <name>text</name>
+      <returntype>String</returntype>
+    </field>
+  </class>
+  <class>
+    <name>b4a.example.spotlight</name>
+    <shortname>SpotLight</shortname>
+    <owner>activity</owner>
+    <method>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>boolean</returntype>
+    </method>
+    <method>
+      <name DesignerName="additem">_additem</name>
+      <comment>Text = Set the Text of the Menuitem
+txtColor = Set the Textcolor
+txtsize = Set the Textsize
+bmp = set the icon bitmap
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Text</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>txtColor</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>txtsize</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>bmp</name>
+        <type>anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="dismiss">_dismiss</name>
+      <comment>Close the Menu if it's open
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="getItemHeight" HideFromIDE="true">_getitemheight</name>
+      <returntype>int</returntype>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize</name>
+      <comment>Target = is the Callback Activity that handle the _Clicked Event
+EventName = set the EventName for catching the item clicks
+Height = set the Height of all Menu items
+Right = if TRUE Menu will slide to the right (default is left)
+Down = if TRUE Menu will slide down (default is up)
+yAnim = if TRUE Menu Animation will be also in the y axis
+v = set the Target View (like a button, panel, label,...)
+Activity = set a reference to the Activity
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>anywheresoftware.b4a.BA</type>
+      </parameter>
+      <parameter>
+        <name>Target</name>
+        <type>Object</type>
+      </parameter>
+      <parameter>
+        <name>EventName</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>Height</name>
+        <type>float</type>
+      </parameter>
+      <parameter>
+        <name>Right</name>
+        <type>boolean</type>
+      </parameter>
+      <parameter>
+        <name>Down</name>
+        <type>boolean</type>
+      </parameter>
+      <parameter>
+        <name>yAnimation</name>
+        <type>boolean</type>
+      </parameter>
+      <parameter>
+        <name>V</name>
+        <type>anywheresoftware.b4a.objects.ConcreteViewWrapper</type>
+      </parameter>
+      <parameter>
+        <name>Activity</name>
+        <type>anywheresoftware.b4a.objects.ActivityWrapper</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="isOpen">_isopen</name>
+      <comment>Return True if Menu is Visible
+</comment>
+      <returntype>boolean</returntype>
+    </method>
+    <method>
+      <name DesignerName="ItemIcon">_itemicon</name>
+      <comment>Get the Imageview (icon) of the Menuitem
+</comment>
+      <returntype>anywheresoftware.b4a.objects.ButtonWrapper</returntype>
+      <parameter>
+        <name>index</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="ItemLabel">_itemlabel</name>
+      <comment>Get the Label of the Menuitem
+</comment>
+      <returntype>anywheresoftware.b4a.objects.LabelWrapper</returntype>
+      <parameter>
+        <name>index</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="ItemPanel">_itempanel</name>
+      <returntype>anywheresoftware.b4a.objects.PanelWrapper</returntype>
+      <parameter>
+        <name>index</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="itempnl_Touch">_itempnl_touch</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Action</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>X</name>
+        <type>float</type>
+      </parameter>
+      <parameter>
+        <name>Y</name>
+        <type>float</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="itemsList">_itemslist</name>
+      <comment>Get a list of all items (each item is a Panel that contains a label and an imageview)
+</comment>
+      <returntype>anywheresoftware.b4a.objects.collections.List</returntype>
+    </method>
+    <method>
+      <name DesignerName="show">_show</name>
+      <comment>Show the Menu
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="updatebmp">_updatebmp</name>
+      <comment>Return a round bitmap
+</comment>
+      <returntype>anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper</returntype>
+      <parameter>
+        <name>bmp</name>
+        <type>anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper</type>
+      </parameter>
+    </method>
+  </class>
+  <version>1.04</version>
+  <author>ilan</author>
+</root>

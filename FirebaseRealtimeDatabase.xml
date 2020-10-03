@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <doclet-version-NOT-library-version>1.05</doclet-version-NOT-library-version>
+    <class>
+        <name>de.donmanfred.DatabaseErrorWrapper</name>
+        <shortname>DatabaseError</shortname>
+        <objectwrapper>com.google.firebase.database.DatabaseError</objectwrapper>
+        <owner>process</owner>
+        <method>
+            <name>IsInitialized</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>Initialize</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>error</name>
+                <type>com.google.firebase.database.DatabaseError</type>
+            </parameter>
+        </method>
+        <property>
+            <name>Details</name>
+            <returntype>java.lang.String</returntype>
+            <comment>returns Human-readable details on the 
+ error and additional information, 
+ e.g. links to docs;</comment>
+        </property>
+        <property>
+            <name>Message</name>
+            <returntype>java.lang.String</returntype>
+            <comment>returns a human-readable description of the error</comment>
+        </property>
+        <property>
+            <name>Code</name>
+            <returntype>int</returntype>
+            <comment>returns One of the defined status codes, 
+ depending on the error</comment>
+        </property>
+        <field>
+            <name>MAX_RETRIES</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>OVERRIDDEN_BY_SET</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>DATA_STALE</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>OPERATION_FAILED</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>EXPIRED_TOKEN</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>UNKNOWN_ERROR</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>WRITE_CANCELED</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>DISCONNECTED</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>USER_CODE_EXCEPTION</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>INVALID_TOKEN</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>NETWORK_ERROR</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>UNAVAILABLE</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>PERMISSION_DENIED</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+    </class>
+    <class>
+        <name>de.donmanfred.DatabaseReferenceWrapper</name>
+        <shortname>DatabaseReference</shortname>
+        <objectwrapper>com.google.firebase.database.DatabaseReference</objectwrapper>
+        <owner>process</owner>
+        <event>onCancelled(errnum as Int,error As String, errObj As Object)</event>
+        <event>onDataChange(snapshot As Object)</event>
+        <event>onChildAdded(snapshot As Object, child As String)</event>
+        <event>onChildChanged(snapshot As Object, child As String)</event>
+        <event>onChildMoved(snapshot As Object, child As String)</event>
+        <event>onChildRemoved(snapshot As Object)</event>
+        <event>onComplete(errorCode As Int, errorMessage As String, errObj As Object, dbRef As Object)</event>
+        <method>
+            <name>LimitToLast</name>
+            <comment></comment>
+            <returntype>com.google.firebase.database.Query</returntype>
+            <parameter>
+                <name>count</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Parent</name>
+            <comment></comment>
+            <returntype>com.google.firebase.database.DatabaseReference</returntype>
+        </method>
+        <method>
+            <name>IsInitialized</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>Initialize</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>reference</name>
+                <type>com.google.firebase.database.DatabaseReference</type>
+            </parameter>
+        </method>
+        <method>
+            <name>goOffline</name>
+            <comment>Manually disconnect the Firebase Database 
+ client from the server and disable 
+ automatic reconnection.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>Database</name>
+            <comment>Gets the Database instance associated 
+ with this reference.</comment>
+            <returntype>com.google.firebase.database.FirebaseDatabase</returntype>
+        </method>
+        <method>
+            <name>Child</name>
+            <comment>Get a reference to location 
+ relative to this one</comment>
+            <returntype>com.google.firebase.database.DatabaseReference</returntype>
+            <parameter>
+                <name>child</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>orderByChild</name>
+            <comment></comment>
+            <returntype>com.google.firebase.database.Query</returntype>
+            <parameter>
+                <name>child</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>keepSynced</name>
+            <comment>By calling `keepSynced(true)` on a location, the data for that 
+ location will automatically be downloaded and kept in sync, 
+ even when no listeners are attached for that location.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>keepSynced</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+        <method>
+            <name>updateChildren</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>map</name>
+                <type>anywheresoftware.b4a.objects.collections.Map</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Root</name>
+            <comment></comment>
+            <returntype>com.google.firebase.database.DatabaseReference</returntype>
+        </method>
+        <method>
+            <name>orderByPriority</name>
+            <comment></comment>
+            <returntype>com.google.firebase.database.Query</returntype>
+        </method>
+        <method>
+            <name>orderByKey</name>
+            <comment></comment>
+            <returntype>com.google.firebase.database.Query</returntype>
+        </method>
+        <method>
+            <name>Value2Map</name>
+            <comment></comment>
+            <returntype>java.lang.Object</returntype>
+            <parameter>
+                <name>value</name>
+                <type>java.lang.Object</type>
+            </parameter>
+        </method>
+        <method>
+            <name>goOnline</name>
+            <comment>Manually reestablish a connection to the 
+ Firebase Database server and enable 
+ automatic reconnection.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>newMap</name>
+            <comment></comment>
+            <returntype>java.lang.Object</returntype>
+        </method>
+        <method>
+            <name>push</name>
+            <comment>Create a reference to an auto-
+ generated child location.</comment>
+            <returntype>com.google.firebase.database.DatabaseReference</returntype>
+        </method>
+        <method>
+            <name>LimitToFirst</name>
+            <comment></comment>
+            <returntype>com.google.firebase.database.Query</returntype>
+            <parameter>
+                <name>count</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Ref</name>
+            <comment></comment>
+            <returntype>com.google.firebase.database.DatabaseReference</returntype>
+        </method>
+        <method>
+            <name>removeValue</name>
+            <comment>Set the value at this location to 'null'</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>addListenerForSingleValueEvent</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>addChildEventListener</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>addValueEventListener</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>orderByValue</name>
+            <comment></comment>
+            <returntype>com.google.firebase.database.Query</returntype>
+        </method>
+        <property>
+            <name>Value</name>
+            <parameter>
+                <name>value</name>
+                <type>anywheresoftware.b4a.objects.collections.Map</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Key</name>
+            <returntype>java.lang.String</returntype>
+            <comment></comment>
+        </property>
+    </class>
+    <class>
+        <name>de.donmanfred.DatabaseReferenceWrapper.User</name>
+        <owner>process</owner>
+        <method>
+            <name>toString</name>
+            <comment></comment>
+            <returntype>java.lang.String</returntype>
+        </method>
+        <property>
+            <name>Phone</name>
+            <returntype>long</returntype>
+            <parameter>
+                <name>phone</name>
+                <type>long</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Surname</name>
+            <returntype>java.lang.String</returntype>
+            <parameter>
+                <name>surname</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Name</name>
+            <returntype>java.lang.String</returntype>
+            <parameter>
+                <name>name</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <comment></comment>
+        </property>
+    </class>
+    <class>
+        <name>de.donmanfred.DataSnapshotWrapper</name>
+        <shortname>DataSnapshot</shortname>
+        <objectwrapper>com.google.firebase.database.DataSnapshot</objectwrapper>
+        <owner>process</owner>
+        <method>
+            <name>Value2Map</name>
+            <comment></comment>
+            <returntype>java.lang.Object</returntype>
+            <parameter>
+                <name>value</name>
+                <type>java.lang.Object</type>
+            </parameter>
+        </method>
+        <method>
+            <name>hasChildren</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>getChild</name>
+            <comment>Get a DataSnapshot for the location 
+ at the specified relative path.</comment>
+            <returntype>com.google.firebase.database.DataSnapshot</returntype>
+            <parameter>
+                <name>path</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>IsInitialized</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>Initialize</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>snapshot</name>
+                <type>com.google.firebase.database.DataSnapshot</type>
+            </parameter>
+        </method>
+        <method>
+            <name>hasChild</name>
+            <comment>Can be used to determine if this 
+ DataSnapshot has data at a 
+ particular location</comment>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>child</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>exists</name>
+            <comment>Returns true if the snapshot 
+ contains a non-null value.</comment>
+            <returntype>boolean</returntype>
+        </method>
+        <property>
+            <name>Ref</name>
+            <returntype>com.google.firebase.database.DatabaseReference</returntype>
+            <comment>Used to obtain a reference to 
+ the source location for this 
+ snapshot.</comment>
+        </property>
+        <property>
+            <name>Priority</name>
+            <returntype>java.lang.Object</returntype>
+            <comment>Returns the priority of the data 
+ contained in this snapshot as a 
+ native type.</comment>
+        </property>
+        <property>
+            <name>Value</name>
+            <returntype>java.lang.Object</returntype>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Children</name>
+            <returntype>java.lang.Iterable</returntype>
+            <comment>Gives access to all of the 
+ immediate children of this snapshot.</comment>
+        </property>
+        <property>
+            <name>Key</name>
+            <returntype>java.lang.String</returntype>
+            <comment></comment>
+        </property>
+        <property>
+            <name>ChildrenCount</name>
+            <returntype>long</returntype>
+            <comment></comment>
+        </property>
+    </class>
+    <class>
+        <name>de.donmanfred.FirebaseDatabaseWrapper</name>
+        <shortname>FirebaseDatabase</shortname>
+        <objectwrapper>com.google.firebase.database.FirebaseDatabase</objectwrapper>
+        <owner>process</owner>
+        <method>
+            <name>getReferencefromUrl</name>
+            <comment>Gets a DatabaseReference 
+ for the provided URL.</comment>
+            <returntype>com.google.firebase.database.DatabaseReference</returntype>
+            <parameter>
+                <name>url</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>purgeOutstandingWrites</name>
+            <comment>The Firebase Database client automatically 
+ queues writes and sends them to the server 
+ at the earliest opportunity, depending on 
+ network connectivity.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>Value2Map</name>
+            <comment></comment>
+            <returntype>java.lang.Object</returntype>
+            <parameter>
+                <name>value</name>
+                <type>java.lang.Object</type>
+            </parameter>
+        </method>
+        <method>
+            <name>goOnline</name>
+            <comment>Resumes our connection to the Firebase 
+ Database backend after a previous 
+ goOffline() call.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>IsInitialized</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>Initialize</name>
+            <comment>Gets the instance of FirebaseDatabase 
+ for the default FirebaseApp.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>goOffline</name>
+            <comment>Shuts down our connection to the Firebase 
+ Database backend until goOnline() is called.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>getReference</name>
+            <comment>Gets a DatabaseReference for 
+ the provided path.</comment>
+            <returntype>com.google.firebase.database.DatabaseReference</returntype>
+            <parameter>
+                <name>path</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>orderByValue</name>
+            <comment></comment>
+            <returntype>com.google.firebase.database.Query</returntype>
+        </method>
+        <property>
+            <name>PersistenceEnabled</name>
+            <parameter>
+                <name>persistence</name>
+                <type>boolean</type>
+            </parameter>
+            <comment>The Firebase Database client will cache synchronized 
+ data and keep track of all writes you've initiated 
+ while your application is running.</comment>
+        </property>
+        <property>
+            <name>App</name>
+            <returntype>com.google.firebase.FirebaseApp</returntype>
+            <comment>Returns the FirebaseApp instance to 
+ which this FirebaseDatabase belongs.</comment>
+        </property>
+        <property>
+            <name>LogLevel</name>
+            <parameter>
+                <name>lvl</name>
+                <type EnumType="true">com.google.firebase.database.Logger.Level</type>
+            </parameter>
+            <comment>By default, this is set to INFO.</comment>
+        </property>
+    </class>
+    <class>
+        <name>de.donmanfred.QueryWrapper</name>
+        <shortname>Query</shortname>
+        <objectwrapper>com.google.firebase.database.Query</objectwrapper>
+        <owner>process</owner>
+        <method>
+            <name>endAtString</name>
+            <comment>Create a query constrained to only return child nodes 
+ with a value less than or equal to the given value, 
+ using the given orderBy directive or priority as 
+ default, and additionally only child nodes with a 
+ key key less than or equal to the given key.</comment>
+            <returntype>de.donmanfred.QueryWrapper</returntype>
+            <parameter>
+                <name>value</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>key</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>LimitToLast</name>
+            <comment>Create a query with limit and anchor it 
+ to the end of the window</comment>
+            <returntype>de.donmanfred.QueryWrapper</returntype>
+            <parameter>
+                <name>count</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>orderByPriority</name>
+            <comment>Create a query in which child nodes are 
+ ordered by their priorities.</comment>
+            <returntype>de.donmanfred.QueryWrapper</returntype>
+        </method>
+        <method>
+            <name>endAtBool</name>
+            <comment>Create a query constrained to only return child nodes 
+ with a value less than or equal to the given value, 
+ using the given orderBy directive or priority as 
+ default, and additionally only child nodes with a 
+ key less than or equal to the given key.</comment>
+            <returntype>de.donmanfred.QueryWrapper</returntype>
+            <parameter>
+                <name>value</name>
+                <type>boolean</type>
+            </parameter>
+            <parameter>
+                <name>key</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>orderByKey</name>
+            <comment>Create a query in which child nodes are 
+ ordered by their keys.</comment>
+            <returntype>de.donmanfred.QueryWrapper</returntype>
+        </method>
+        <method>
+            <name>query</name>
+            <comment></comment>
+            <returntype>com.google.firebase.database.Query</returntype>
+        </method>
+        <method>
+            <name>IsInitialized</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>Initialize</name>
+            <comment>The Query class (and its subclass, DatabaseReference) are 
+ used for reading data. Listeners are attached, and they will 
+ be triggered when the corresponding data changes.
+ 
+ Instances of Query are obtained by calling startAt(), 
+ endAt(), or limit() on a DatabaseReference.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>qry</name>
+                <type>com.google.firebase.database.Query</type>
+            </parameter>
+        </method>
+        <method>
+            <name>endAtBool2</name>
+            <comment>Create a query constrained to only return child nodes 
+ with a value less than or equal to the given value, 
+ using the given orderBy directive or priority as default.</comment>
+            <returntype>de.donmanfred.QueryWrapper</returntype>
+            <parameter>
+                <name>value</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+        <method>
+            <name>LimitToFirst</name>
+            <comment>Create a query with limit and anchor 
+ it to the start of the window</comment>
+            <returntype>de.donmanfred.QueryWrapper</returntype>
+            <parameter>
+                <name>count</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>endAtString2</name>
+            <comment>Create a query constrained to only return child nodes 
+ with a value less than or equal to the given value, 
+ using the given orderBy directive or priority as default.</comment>
+            <returntype>de.donmanfred.QueryWrapper</returntype>
+            <parameter>
+                <name>value</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>endAtDouble2</name>
+            <comment>Create a query constrained to only return child nodes 
+ with a value less than or equal to the given value, 
+ using the given orderBy directive or priority as default.</comment>
+            <returntype>de.donmanfred.QueryWrapper</returntype>
+            <parameter>
+                <name>value</name>
+                <type>double</type>
+            </parameter>
+        </method>
+        <method>
+            <name>orderByChild</name>
+            <comment>Create a query in which child nodes are 
+ ordered by the values of the specified path.</comment>
+            <returntype>de.donmanfred.QueryWrapper</returntype>
+            <parameter>
+                <name>child</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>keepSynced</name>
+            <comment>By calling `keepSynced(true)` on a location, the data for that 
+ location will automatically be downloaded and kept in sync, 
+ even when no listeners are attached for that location.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>keepSynced</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+        <method>
+            <name>endAtDouble</name>
+            <comment>Create a query constrained to only return child nodes 
+ with a value less than or equal to the given value, 
+ using the given orderBy directive or priority as 
+ default, and additionally only child nodes with a 
+ key less than or equal to the given key.</comment>
+            <returntype>de.donmanfred.QueryWrapper</returntype>
+            <parameter>
+                <name>value</name>
+                <type>double</type>
+            </parameter>
+            <parameter>
+                <name>key</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>orderByValue</name>
+            <comment>Create a query in which nodes are 
+ ordered by their value</comment>
+            <returntype>de.donmanfred.QueryWrapper</returntype>
+        </method>
+    </class>
+    <version>1.24</version>
+    <author>DonManfred (wrapper)</author>
+    <dependsOn>com.google.firebase:firebase-database</dependsOn>
+</root>

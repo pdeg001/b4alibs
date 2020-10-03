@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+  <dependsOn>reflection</dependsOn>
+  <class>
+    <name>b4a.example.horizontalcustomlistview</name>
+    <shortname>HorizontalCustomListView</shortname>
+    <owner>activity</owner>
+    <event>ItemClick (Index As Int, Value As Object)</event>
+    <method>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>boolean</returntype>
+    </method>
+    <method>
+      <name DesignerName="Add">_add</name>
+      <comment>Adds a custom item.
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Pnl</name>
+        <type>anywheresoftware.b4a.objects.PanelWrapper</type>
+      </parameter>
+      <parameter>
+        <name>ItemWidth</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>Value</name>
+        <type>Object</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="AsView">_asview</name>
+      <comment>Returns a view object that holds the list.
+</comment>
+      <returntype>anywheresoftware.b4a.objects.ConcreteViewWrapper</returntype>
+    </method>
+    <method>
+      <name DesignerName="Class_Globals">_class_globals</name>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="Clear">_clear</name>
+      <comment>Clears all items.
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="DesignerCreateView">_designercreateview</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>base</name>
+        <type>anywheresoftware.b4a.objects.PanelWrapper</type>
+      </parameter>
+      <parameter>
+        <name>lbl</name>
+        <type>anywheresoftware.b4a.objects.LabelWrapper</type>
+      </parameter>
+      <parameter>
+        <name>props</name>
+        <type>anywheresoftware.b4a.objects.collections.Map</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="GetItemFromView">_getitemfromview</name>
+      <comment>Returns the index of the item that holds the given view.
+</comment>
+      <returntype>int</returntype>
+      <parameter>
+        <name>v</name>
+        <type>anywheresoftware.b4a.objects.ConcreteViewWrapper</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="GetPanel">_getpanel</name>
+      <comment>Returns the Panel stored at the specified index.
+</comment>
+      <returntype>anywheresoftware.b4a.objects.PanelWrapper</returntype>
+      <parameter>
+        <name>Index</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="GetPanels">_getpanels</name>
+      <comment> Added by LucaMs
+</comment>
+      <returntype>anywheresoftware.b4a.objects.collections.List</returntype>
+    </method>
+    <method>
+      <name DesignerName="GetSize">_getsize</name>
+      <comment>Returns the number of items.
+</comment>
+      <returntype>int</returntype>
+    </method>
+    <method>
+      <name DesignerName="GetValue">_getvalue</name>
+      <comment>Returns the value stored at the specified index.
+</comment>
+      <returntype>Object</returntype>
+      <parameter>
+        <name>Index</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>anywheresoftware.b4a.BA</type>
+      </parameter>
+      <parameter>
+        <name>vCallback</name>
+        <type>Object</type>
+      </parameter>
+      <parameter>
+        <name>vEventName</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="InsertAt">_insertat</name>
+      <comment>Adds a custom item at the specified index.
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Index</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>Pnl</name>
+        <type>anywheresoftware.b4a.objects.PanelWrapper</type>
+      </parameter>
+      <parameter>
+        <name>ItemWidth</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>Value</name>
+        <type>Object</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="JumpToItem">_jumptoitem</name>
+      <comment>Scrolls the list to the specified item.
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Index</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="RemoveAt">_removeat</name>
+      <comment>Removes the item at the specified index.
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Index</name>
+        <type>int</type>
+      </parameter>
+    </method>
+  </class>
+  <version>1.01</version>
+  <author>DaniDPX</author>
+</root>

@@ -1,0 +1,1621 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <doclet-version-NOT-library-version>1.07</doclet-version-NOT-library-version>
+    <class>
+        <name>com.aghajari.rvplugins.Amir_RVAnimation</name>
+        <shortname>Amir_RVAnimation</shortname>
+        <comment>Amir RecyclerView Plugin
+ 
+ Make Animations For Set To RecyclerView Layout</comment>
+        <objectwrapper>android.view.animation.Animation</objectwrapper>
+        <owner>process</owner>
+        <event>onAnimationStart</event>
+        <event>onAnimationRepeat</event>
+        <event>onAnimationEnd</event>
+        <method>
+            <name>RepeatCount</name>
+            <comment>Sets how many times the animation should be repeated. If the repeat
+ count is 0, the animation is never repeated. If the repeat count is
+ greater than 0 or INFINITE, the repeat mode will be taken
+ into account. The repeat count is 0 by default.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimation</returntype>
+            <parameter>
+                <name>RepeatCount</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>StartOffset</name>
+            <comment>When this animation should start relative to the start time. This is most
+ useful when composing complex animations using an AnimationSet 
+ where some of the animations components start at different times.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimation</returntype>
+            <parameter>
+                <name>StartOffset</name>
+                <type>long</type>
+            </parameter>
+        </method>
+        <method>
+            <name>FillBefore</name>
+            <comment>If fillBefore is true, this animation will apply its transformation
+ before the start time of the animation. Defaults to true if not set.
+ Note that this applies when using an {@link
+ android.view.animation.AnimationSet AnimationSet} to chain
+ animations. The transformation is not applied before the AnimationSet
+ itself starts.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimation</returntype>
+            <parameter>
+                <name>FillBefore</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+        <method>
+            <name>StartTime</name>
+            <comment>When this animation should start. When the start time is set to
+  START_ON_FIRST_FRAME
+startTimeMillis: the start time in milliseconds</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimation</returntype>
+            <parameter>
+                <name>startTimeMillis</name>
+                <type>long</type>
+            </parameter>
+        </method>
+        <method>
+            <name>DetachWallpape</name>
+            <comment>If detachWallpaper is true, and this is a window animation of a window
+ that has a wallpaper background, then the window will be detached from
+ the wallpaper while it runs.  That is, the animation will only be applied
+ to the window, and the wallpaper behind it will remain static.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimation</returntype>
+            <parameter>
+                <name>DetachWallpape</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Duration</name>
+            <comment>How long this animation should last. The duration cannot be negative.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimation</returntype>
+            <parameter>
+                <name>durationMillis</name>
+                <type>long</type>
+            </parameter>
+        </method>
+        <method>
+            <name>RestrictDuration</name>
+            <comment>Ensure that the duration that this animation will run is not longer
+ than &lt;var&gt;durationMillis&lt;/var&gt;.  In addition to adjusting the duration
+ itself, this ensures that the repeat count also will not make it run
+ longer than the given time.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimation</returntype>
+            <parameter>
+                <name>durationMillis</name>
+                <type>long</type>
+            </parameter>
+        </method>
+        <method>
+            <name>IsInitialized</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>FillEnabled</name>
+            <comment>If fillEnabled is true, the animation will apply the value of fillBefore and
+ fillAfter. Otherwise, fillBefore and fillAfter are ignored and the animation
+ transformation is always applied.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimation</returntype>
+            <parameter>
+                <name>FillEnabled</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+        <method>
+            <name>RepeatMode</name>
+            <comment>Defines what this animation should do when it reaches the end. This
+ setting is applied only when the repeat count is either greater than
+ 0 or INFINITE. Defaults to RESTART.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimation</returntype>
+            <parameter>
+                <name>RepeatMode</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Initializer</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimation.AnimationTypes</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>ZAdjustment</name>
+            <comment>Set the Z ordering mode to use while running the animation.
+zAdjustment: The desired mode, one of  ZORDER_NORMAL,
+ ZORDER_TOP, or ZORDER_BOTTOM.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimation</returntype>
+            <parameter>
+                <name>zAdjustment</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Interpolator</name>
+            <comment>Sets the interpolator used to interpolate the delays between the
+ children.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimation.Interpolators</returntype>
+        </method>
+        <method>
+            <name>FillAfter</name>
+            <comment>If fillAfter is true, the transformation that this animation performed
+ will persist when it is finished. Defaults to false if not set.
+ Note that this applies when using an {@link
+ android.view.animation.AnimationSet AnimationSet} to chain
+ animations. The transformation is not applied before the AnimationSet
+ itself starts.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimation</returntype>
+            <parameter>
+                <name>FillAfter</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+        <method>
+            <name>BackgroundColor</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimation</returntype>
+            <parameter>
+                <name>bg</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <field>
+            <name>ABSOLUTE</name>
+            <comment>The specified dimension is an absolute number of pixels.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>ZORDER_NORMAL</name>
+            <comment>Requests that the content being animated be kept in its current Z
+ order.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>RELATIVE_TO_PARENT</name>
+            <comment>The specified dimension holds a float and should be multiplied by the
+ height or width of the parent of the object being animated.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>RESTART</name>
+            <comment>When the animation reaches the end and the repeat count is INFINTE_REPEAT
+ or a positive value, the animation restarts from the beginning.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>REVERSE</name>
+            <comment>When the animation reaches the end and the repeat count is INFINTE_REPEAT
+ or a positive value, the animation plays backward (and then forward again).</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>INFINITE</name>
+            <comment>Repeat the animation indefinitely.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>ZORDER_TOP</name>
+            <comment>Requests that the content being animated be forced on top of all other
+ content for the duration of the animation.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>START_ON_FIRST_FRAME</name>
+            <comment>Can be used as the start time to indicate the start time should be the current
+ time when getTransformation(long, Transformation) is invoked for the
+ first animation frame. This can is useful for short animations.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>RELATIVE_TO_SELF</name>
+            <comment>The specified dimension holds a float and should be multiplied by the
+ height or width of the object being animated.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>ZORDER_BOTTOM</name>
+            <comment>Requests that the content being animated be forced under all other
+ content for the duration of the animation.</comment>
+            <returntype>int</returntype>
+        </field>
+    </class>
+    <class>
+        <name>com.aghajari.rvplugins.Amir_RVAnimation.AnimationTypes</name>
+        <owner>process</owner>
+        <method>
+            <name>Rotate3</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>fromDegrees</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>toDegrees</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>pivotXtype</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>pivotXvalue</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>pivotYtype</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>pivotYvalue</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Rotate</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>fromDegrees</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>toDegrees</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Alpha</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>fromAlpha</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>toAlpha</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Resource</name>
+            <comment>Load Animation from Resource</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>Animation</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Scale3</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>fromX</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>toX</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>fromY</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>toY</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>pivotXtype</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>pivotXvalue</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>pivotYtype</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>pivotYvalue</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Scale</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>fromX</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>toX</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>fromY</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>toY</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Custom</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>anim</name>
+                <type>android.view.animation.Animation</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Scale2</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>fromX</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>toX</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>fromY</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>toY</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>pivotX</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>pivotY</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Translate2</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>fromXtype</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>fromXvalue</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>toXtype</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>toXvalue</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>fromYtype</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>fromYvalue</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>toYtype</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>toYvalue</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Translate</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>fromXDelta</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>toXDelta</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>fromYDelta</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>toYDelta</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Rotate2</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>fromDegrees</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>toDegrees</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>pivotX</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>pivotY</name>
+                <type>float</type>
+            </parameter>
+        </method>
+    </class>
+    <class>
+        <name>com.aghajari.rvplugins.Amir_RVAnimation.Interpolators</name>
+        <owner>process</owner>
+        <method>
+            <name>Path</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimation</returntype>
+            <parameter>
+                <name>controlX</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>controlY</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Accelerate2</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimation</returntype>
+            <parameter>
+                <name>factor</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Anticipate2</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimation</returntype>
+            <parameter>
+                <name>tension</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Decelerate2</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimation</returntype>
+            <parameter>
+                <name>factor</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Anticipate</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimation</returntype>
+        </method>
+        <method>
+            <name>Decelerate</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimation</returntype>
+        </method>
+        <method>
+            <name>Overshoot</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimation</returntype>
+        </method>
+        <method>
+            <name>Accelerate</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimation</returntype>
+        </method>
+        <method>
+            <name>AnticipateOvershoot3</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimation</returntype>
+            <parameter>
+                <name>tension</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>ExtraTension</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>AnticipateOvershoot2</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimation</returntype>
+            <parameter>
+                <name>tension</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Cycle</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimation</returntype>
+            <parameter>
+                <name>cycles</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Linear</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimation</returntype>
+        </method>
+        <method>
+            <name>AnticipateOvershoot</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimation</returntype>
+        </method>
+        <method>
+            <name>Path2</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimation</returntype>
+            <parameter>
+                <name>controlX</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>controlY</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>controlX2</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>controlY2</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>AccelerateDecelerate</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimation</returntype>
+        </method>
+        <method>
+            <name>Bounce</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimation</returntype>
+        </method>
+        <method>
+            <name>Overshoot2</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimation</returntype>
+            <parameter>
+                <name>tension</name>
+                <type>float</type>
+            </parameter>
+        </method>
+    </class>
+    <class>
+        <name>com.aghajari.rvplugins.Amir_RVAnimationSet</name>
+        <shortname>Amir_RVAnimationSet</shortname>
+        <comment>Amir RecyclerView Plugin 
+ 
+ Represents a group of Animations that should be played together.
+ The transformation of each individual animation are composed
+ together into a single transform.
+ If AnimationSet sets any properties that its children also set
+ (for example, duration or fillBefore), the values of AnimationSet
+ override the child values.</comment>
+        <objectwrapper>android.view.animation.AnimationSet</objectwrapper>
+        <owner>process</owner>
+        <method>
+            <name>RepeatCount</name>
+            <comment>Sets how many times the animation should be repeated. If the repeat
+ count is 0, the animation is never repeated. If the repeat count is
+ greater than 0 or INFINITE, the repeat mode will be taken
+ into account. The repeat count is 0 by default.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimationSet</returntype>
+            <parameter>
+                <name>RepeatCount</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>StartOffset</name>
+            <comment>When this animation should start relative to the start time. This is most
+ useful when composing complex animations using an AnimationSet 
+ where some of the animations components start at different times.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimationSet</returntype>
+            <parameter>
+                <name>StartOffset</name>
+                <type>long</type>
+            </parameter>
+        </method>
+        <method>
+            <name>FillBefore</name>
+            <comment>If fillBefore is true, this animation will apply its transformation
+ before the start time of the animation. Defaults to true if not set.
+ Note that this applies when using an {@link
+ android.view.animation.AnimationSet AnimationSet} to chain
+ animations. The transformation is not applied before the AnimationSet
+ itself starts.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimationSet</returntype>
+            <parameter>
+                <name>FillBefore</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+        <method>
+            <name>StartTime</name>
+            <comment>When this animation should start. When the start time is set to
+  START_ON_FIRST_FRAME
+startTimeMillis: the start time in milliseconds</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimationSet</returntype>
+            <parameter>
+                <name>startTimeMillis</name>
+                <type>long</type>
+            </parameter>
+        </method>
+        <method>
+            <name>DetachWallpape</name>
+            <comment>If detachWallpaper is true, and this is a window animation of a window
+ that has a wallpaper background, then the window will be detached from
+ the wallpaper while it runs.  That is, the animation will only be applied
+ to the window, and the wallpaper behind it will remain static.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimationSet</returntype>
+            <parameter>
+                <name>DetachWallpape</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Duration</name>
+            <comment>How long this animation should last. The duration cannot be negative.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimationSet</returntype>
+            <parameter>
+                <name>durationMillis</name>
+                <type>long</type>
+            </parameter>
+        </method>
+        <method>
+            <name>RestrictDuration</name>
+            <comment>Ensure that the duration that this animation will run is not longer
+ than &lt;var&gt;durationMillis&lt;/var&gt;.  In addition to adjusting the duration
+ itself, this ensures that the repeat count also will not make it run
+ longer than the given time.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimationSet</returntype>
+            <parameter>
+                <name>durationMillis</name>
+                <type>long</type>
+            </parameter>
+        </method>
+        <method>
+            <name>IsInitialized</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>Initialize</name>
+            <comment>Constructor to use when building an AnimationSet from code
+
+ &lt;b&gt;shareInterpolator : &lt;/b&gt;
+ Pass true if all of the animations in this set
+ should use the interpolator associated with this AnimationSet.
+ Pass false if each animation should use its own interpolator.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>shareInterpolator</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+        <method>
+            <name>FillEnabled</name>
+            <comment>If fillEnabled is true, the animation will apply the value of fillBefore and
+ fillAfter. Otherwise, fillBefore and fillAfter are ignored and the animation
+ transformation is always applied.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimationSet</returntype>
+            <parameter>
+                <name>FillEnabled</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+        <method>
+            <name>RepeatMode</name>
+            <comment>Defines what this animation should do when it reaches the end. This
+ setting is applied only when the repeat count is either greater than
+ 0 or INFINITE. Defaults to RESTART.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimationSet</returntype>
+            <parameter>
+                <name>RepeatMode</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>ZAdjustment</name>
+            <comment>Set the Z ordering mode to use while running the animation.
+zAdjustment: The desired mode, one of  ZORDER_NORMAL,
+ ZORDER_TOP, or ZORDER_BOTTOM.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimationSet</returntype>
+            <parameter>
+                <name>zAdjustment</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Interpolator</name>
+            <comment>Sets the interpolator used to interpolate the delays between the
+ children.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimationSet.Interpolators</returntype>
+        </method>
+        <method>
+            <name>FillAfter</name>
+            <comment>If fillAfter is true, the transformation that this animation performed
+ will persist when it is finished. Defaults to false if not set.
+ Note that this applies when using an {@link
+ android.view.animation.AnimationSet AnimationSet} to chain
+ animations. The transformation is not applied before the AnimationSet
+ itself starts.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimationSet</returntype>
+            <parameter>
+                <name>FillAfter</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+        <method>
+            <name>AddAnimation</name>
+            <comment>Add a child animation to this animation set.
+ The transforms of the child animations are applied in the order
+ that they were added</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Animation</name>
+                <type>android.view.animation.Animation</type>
+            </parameter>
+        </method>
+        <method>
+            <name>BackgroundColor</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimationSet</returntype>
+            <parameter>
+                <name>bg</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <property>
+            <name>Animations</name>
+            <returntype>java.util.List</returntype>
+            <comment>return All the child animations in this AnimationSet. Note that
+ this may include other AnimationSets, which are not expanded.</comment>
+        </property>
+        <field>
+            <name>ABSOLUTE</name>
+            <comment>The specified dimension is an absolute number of pixels.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>ZORDER_NORMAL</name>
+            <comment>Requests that the content being animated be kept in its current Z
+ order.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>RELATIVE_TO_PARENT</name>
+            <comment>The specified dimension holds a float and should be multiplied by the
+ height or width of the parent of the object being animated.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>RESTART</name>
+            <comment>When the animation reaches the end and the repeat count is INFINTE_REPEAT
+ or a positive value, the animation restarts from the beginning.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>REVERSE</name>
+            <comment>When the animation reaches the end and the repeat count is INFINTE_REPEAT
+ or a positive value, the animation plays backward (and then forward again).</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>INFINITE</name>
+            <comment>Repeat the animation indefinitely.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>ZORDER_TOP</name>
+            <comment>Requests that the content being animated be forced on top of all other
+ content for the duration of the animation.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>START_ON_FIRST_FRAME</name>
+            <comment>Can be used as the start time to indicate the start time should be the current
+ time when getTransformation(long, Transformation) is invoked for the
+ first animation frame. This can is useful for short animations.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>RELATIVE_TO_SELF</name>
+            <comment>The specified dimension holds a float and should be multiplied by the
+ height or width of the object being animated.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>ZORDER_BOTTOM</name>
+            <comment>Requests that the content being animated be forced under all other
+ content for the duration of the animation.</comment>
+            <returntype>int</returntype>
+        </field>
+    </class>
+    <class>
+        <name>com.aghajari.rvplugins.Amir_RVAnimationSet.Interpolators</name>
+        <owner>process</owner>
+        <method>
+            <name>Path</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimationSet</returntype>
+            <parameter>
+                <name>controlX</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>controlY</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Accelerate2</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimationSet</returntype>
+            <parameter>
+                <name>factor</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Anticipate2</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimationSet</returntype>
+            <parameter>
+                <name>tension</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Decelerate2</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimationSet</returntype>
+            <parameter>
+                <name>factor</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Anticipate</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimationSet</returntype>
+        </method>
+        <method>
+            <name>Decelerate</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimationSet</returntype>
+        </method>
+        <method>
+            <name>Overshoot</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimationSet</returntype>
+        </method>
+        <method>
+            <name>Accelerate</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimationSet</returntype>
+        </method>
+        <method>
+            <name>AnticipateOvershoot3</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimationSet</returntype>
+            <parameter>
+                <name>tension</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>ExtraTension</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>AnticipateOvershoot2</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimationSet</returntype>
+            <parameter>
+                <name>tension</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Cycle</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimationSet</returntype>
+            <parameter>
+                <name>cycles</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Linear</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimationSet</returntype>
+        </method>
+        <method>
+            <name>AnticipateOvershoot</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimationSet</returntype>
+        </method>
+        <method>
+            <name>Path2</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimationSet</returntype>
+            <parameter>
+                <name>controlX</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>controlY</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>controlX2</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>controlY2</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>AccelerateDecelerate</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimationSet</returntype>
+        </method>
+        <method>
+            <name>Bounce</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimationSet</returntype>
+        </method>
+        <method>
+            <name>Overshoot2</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVAnimationSet</returntype>
+            <parameter>
+                <name>tension</name>
+                <type>float</type>
+            </parameter>
+        </method>
+    </class>
+    <class>
+        <name>com.aghajari.rvplugins.Amir_RVGridLayoutAnimation</name>
+        <shortname>Amir_RVGridLayoutAnimation</shortname>
+        <comment>Amir_RecyclerView Plugin
+ 
+ add created Animation to recycler view with 
+ grid layout type</comment>
+        <owner>process</owner>
+        <method>
+            <name>Order</name>
+            <comment>Sets the order used to compute the delay of each child's animation.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVGridLayoutAnimation</returntype>
+            <parameter>
+                <name>order</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>DirectionPriority</name>
+            <comment>Specifies the direction priority of the animation. For instance,
+ PRIORITY_COLUMN will give priority to columns: the animation
+ will first play on the column, then on the rows.Z</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVGridLayoutAnimation</returntype>
+            <parameter>
+                <name>directionPriority</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>ScheduleLayoutAnimation</name>
+            <comment>Schedules the layout animation to be played after the next layout pass
+ of this view group. This can be used to restart the layout animation
+ when the content of the view group changes or when the activity is
+ paused and resumed.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVGridLayoutAnimation</returntype>
+        </method>
+        <method>
+            <name>ColumnDelay</name>
+            <comment>Sets the delay, as a fraction of the animation duration, by which the
+ children's animations are offset from one column to the other.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVGridLayoutAnimation</returntype>
+            <parameter>
+                <name>ColumnDelay</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Initialize</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Animation</name>
+                <type>android.view.animation.Animation</type>
+            </parameter>
+            <parameter>
+                <name>Recycler</name>
+                <type>com.aghajari.rv.Amir_RecyclerView</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Direction</name>
+            <comment>Sets the direction of the animation. The direction is expressed as an
+ integer containing a horizontal and vertical component.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVGridLayoutAnimation</returntype>
+            <parameter>
+                <name>Direction</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Delay</name>
+            <comment>Sets the delay, as a fraction of the animation duration, by which the
+ children's animations are offset. The general formula is:</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVGridLayoutAnimation</returntype>
+            <parameter>
+                <name>delay</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>RequestLayout</name>
+            <comment>Request Layout</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVGridLayoutAnimation</returntype>
+        </method>
+        <method>
+            <name>Initialize2</name>
+            <comment>Initialize and load animation from resource</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>Animation</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>Recycler</name>
+                <type>com.aghajari.rv.Amir_RecyclerView</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Build</name>
+            <comment>Set layout animation to RecyclerView</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>NotifiData</name>
+            <comment>Notifi Data Adapter</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVGridLayoutAnimation</returntype>
+        </method>
+        <method>
+            <name>Interpolator</name>
+            <comment>Sets the interpolator used to interpolate the delays between the
+ children.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVGridLayoutAnimation.Interpolators</returntype>
+        </method>
+        <method>
+            <name>RowDelay</name>
+            <comment>Sets the delay, as a fraction of the animation duration, by which the
+ children's animations are offset from one row to the other.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVGridLayoutAnimation</returntype>
+            <parameter>
+                <name>rowDelay</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <property>
+            <name>Animation</name>
+            <returntype>android.view.animation.Animation</returntype>
+            <comment></comment>
+        </property>
+        <field>
+            <name>DIRECTION_VERTICAL_MASK</name>
+            <comment>Bitmask used to retrieve the vertical component of the direction.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>DIRECTION_BOTTOM_TO_TOP</name>
+            <comment>Animates the children starting from the bottom of the grid to the top.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>PRIORITY_NONE</name>
+            <comment>Rows and columns are animated at the same time.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>ORDER_REVERSE</name>
+            <comment>Distributes the animation delays in the reverse order in which view were
+ added to their view group.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>DIRECTION_RIGHT_TO_LEFT</name>
+            <comment>Animates the children starting from the right of the grid to the left.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>ORDER_NORMAL</name>
+            <comment>Distributes the animation delays in the order in which view were added
+ to their view group.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>ORDER_RANDOM</name>
+            <comment>Randomly distributes the animation delays.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>DIRECTION_HORIZONTAL_MASK</name>
+            <comment>Bitmask used to retrieve the horizontal component of the direction.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>PRIORITY_COLUMN</name>
+            <comment>Columns are animated first.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>PRIORITY_ROW</name>
+            <comment>Rows are animated first.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>DIRECTION_LEFT_TO_RIGHT</name>
+            <comment>Animates the children starting from the left of the grid to the right.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>DIRECTION_TOP_TO_BOTTOM</name>
+            <comment>Animates the children starting from the top of the grid to the bottom.</comment>
+            <returntype>int</returntype>
+        </field>
+    </class>
+    <class>
+        <name>com.aghajari.rvplugins.Amir_RVGridLayoutAnimation.Interpolators</name>
+        <owner>process</owner>
+        <method>
+            <name>Path</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVGridLayoutAnimation</returntype>
+            <parameter>
+                <name>controlX</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>controlY</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Accelerate2</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVGridLayoutAnimation</returntype>
+            <parameter>
+                <name>factor</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Anticipate2</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVGridLayoutAnimation</returntype>
+            <parameter>
+                <name>tension</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Decelerate2</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVGridLayoutAnimation</returntype>
+            <parameter>
+                <name>factor</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Anticipate</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVGridLayoutAnimation</returntype>
+        </method>
+        <method>
+            <name>Decelerate</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVGridLayoutAnimation</returntype>
+        </method>
+        <method>
+            <name>Overshoot</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVGridLayoutAnimation</returntype>
+        </method>
+        <method>
+            <name>Accelerate</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVGridLayoutAnimation</returntype>
+        </method>
+        <method>
+            <name>AnticipateOvershoot3</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVGridLayoutAnimation</returntype>
+            <parameter>
+                <name>tension</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>ExtraTension</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>AnticipateOvershoot2</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVGridLayoutAnimation</returntype>
+            <parameter>
+                <name>tension</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Cycle</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVGridLayoutAnimation</returntype>
+            <parameter>
+                <name>cycles</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Linear</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVGridLayoutAnimation</returntype>
+        </method>
+        <method>
+            <name>AnticipateOvershoot</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVGridLayoutAnimation</returntype>
+        </method>
+        <method>
+            <name>Path2</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVGridLayoutAnimation</returntype>
+            <parameter>
+                <name>controlX</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>controlY</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>controlX2</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>controlY2</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>AccelerateDecelerate</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVGridLayoutAnimation</returntype>
+        </method>
+        <method>
+            <name>Bounce</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVGridLayoutAnimation</returntype>
+        </method>
+        <method>
+            <name>Overshoot2</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVGridLayoutAnimation</returntype>
+            <parameter>
+                <name>tension</name>
+                <type>float</type>
+            </parameter>
+        </method>
+    </class>
+    <class>
+        <name>com.aghajari.rvplugins.Amir_RVLinearLayoutAnimation</name>
+        <shortname>Amir_RVLinearLayoutAnimation</shortname>
+        <comment>Amir_RecyclerView Plugin
+ 
+ add created Animation to recycler view with 
+ linear layout type</comment>
+        <owner>process</owner>
+        <method>
+            <name>Order</name>
+            <comment>Sets the order used to compute the delay of each child's animation.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVLinearLayoutAnimation</returntype>
+            <parameter>
+                <name>order</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>RequestLayout</name>
+            <comment>Request Layout</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVLinearLayoutAnimation</returntype>
+        </method>
+        <method>
+            <name>Initialize2</name>
+            <comment>Initialize and load animation from resource</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>Animation</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>Recycler</name>
+                <type>com.aghajari.rv.Amir_RecyclerView</type>
+            </parameter>
+        </method>
+        <method>
+            <name>ScheduleLayoutAnimation</name>
+            <comment>Schedules the layout animation to be played after the next layout pass
+ of this view group. This can be used to restart the layout animation
+ when the content of the view group changes or when the activity is
+ paused and resumed.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVLinearLayoutAnimation</returntype>
+        </method>
+        <method>
+            <name>Build</name>
+            <comment>Set layout animation to RecyclerView</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>NotifiData</name>
+            <comment>Notifi Data Adapter</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVLinearLayoutAnimation</returntype>
+        </method>
+        <method>
+            <name>Interpolator</name>
+            <comment>Sets the interpolator used to interpolate the delays between the
+ children.</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVLinearLayoutAnimation.Interpolators</returntype>
+        </method>
+        <method>
+            <name>Initialize</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Animation</name>
+                <type>android.view.animation.Animation</type>
+            </parameter>
+            <parameter>
+                <name>Recycler</name>
+                <type>com.aghajari.rv.Amir_RecyclerView</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Delay</name>
+            <comment>Sets the delay, as a fraction of the animation duration, by which the
+ children's animations are offset. The general formula is:</comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVLinearLayoutAnimation</returntype>
+            <parameter>
+                <name>delay</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <property>
+            <name>Animation</name>
+            <returntype>android.view.animation.Animation</returntype>
+            <comment></comment>
+        </property>
+        <field>
+            <name>ORDER_REVERSE</name>
+            <comment>Distributes the animation delays in the reverse order in which view were
+ added to their view group.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>ORDER_NORMAL</name>
+            <comment>Distributes the animation delays in the order in which view were added
+ to their view group.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>ORDER_RANDOM</name>
+            <comment>Randomly distributes the animation delays.</comment>
+            <returntype>int</returntype>
+        </field>
+    </class>
+    <class>
+        <name>com.aghajari.rvplugins.Amir_RVLinearLayoutAnimation.Interpolators</name>
+        <owner>process</owner>
+        <method>
+            <name>Path</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVLinearLayoutAnimation</returntype>
+            <parameter>
+                <name>controlX</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>controlY</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Accelerate2</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVLinearLayoutAnimation</returntype>
+            <parameter>
+                <name>factor</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Anticipate2</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVLinearLayoutAnimation</returntype>
+            <parameter>
+                <name>tension</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Decelerate2</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVLinearLayoutAnimation</returntype>
+            <parameter>
+                <name>factor</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Anticipate</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVLinearLayoutAnimation</returntype>
+        </method>
+        <method>
+            <name>Decelerate</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVLinearLayoutAnimation</returntype>
+        </method>
+        <method>
+            <name>Overshoot</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVLinearLayoutAnimation</returntype>
+        </method>
+        <method>
+            <name>Accelerate</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVLinearLayoutAnimation</returntype>
+        </method>
+        <method>
+            <name>AnticipateOvershoot3</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVLinearLayoutAnimation</returntype>
+            <parameter>
+                <name>tension</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>ExtraTension</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>AnticipateOvershoot2</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVLinearLayoutAnimation</returntype>
+            <parameter>
+                <name>tension</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Cycle</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVLinearLayoutAnimation</returntype>
+            <parameter>
+                <name>cycles</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Linear</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVLinearLayoutAnimation</returntype>
+        </method>
+        <method>
+            <name>AnticipateOvershoot</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVLinearLayoutAnimation</returntype>
+        </method>
+        <method>
+            <name>Path2</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVLinearLayoutAnimation</returntype>
+            <parameter>
+                <name>controlX</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>controlY</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>controlX2</name>
+                <type>float</type>
+            </parameter>
+            <parameter>
+                <name>controlY2</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>AccelerateDecelerate</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVLinearLayoutAnimation</returntype>
+        </method>
+        <method>
+            <name>Bounce</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVLinearLayoutAnimation</returntype>
+        </method>
+        <method>
+            <name>Overshoot2</name>
+            <comment></comment>
+            <returntype>com.aghajari.rvplugins.Amir_RVLinearLayoutAnimation</returntype>
+            <parameter>
+                <name>tension</name>
+                <type>float</type>
+            </parameter>
+        </method>
+    </class>
+    <version>1.0</version>
+    <author>AmirHosseinAghajari</author>
+</root>

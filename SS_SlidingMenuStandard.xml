@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+  <dependsOn>animation</dependsOn>
+  <dependsOn>animationplus</dependsOn>
+  <dependsOn>icscontrols</dependsOn>
+  <dependsOn>reflection</dependsOn>
+  <dependsOn>phone</dependsOn>
+  <class>
+    <name>com.simplysoftware.slidingmenustandard.slidingmenustd</name>
+    <shortname>SlidingMenuStd</shortname>
+    <owner>activity</owner>
+    <event>BtnSlidingMenu_Click (ItemNo As Object)</event>
+    <method>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>boolean</returntype>
+    </method>
+    <method>
+      <name DesignerName="AddItem">_additem</name>
+      <comment>ADD ITEM TO MENU&lt;br /&gt;</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Text</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>Image</name>
+        <type>anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper</type>
+      </parameter>
+      <parameter>
+        <name>ReturnValue</name>
+        <type>Object</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="BarsOff">_barsoff</name>
+      <comment>TURN OFF BARS&lt;br /&gt;</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize</name>
+      <comment>Current activity, Menu top position, Menu Width, Menu color, Text size, Text color&lt;br /&gt;</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>anywheresoftware.b4a.BA</type>
+      </parameter>
+      <parameter>
+        <name>Activity</name>
+        <type>anywheresoftware.b4a.objects.ActivityWrapper</type>
+      </parameter>
+      <parameter>
+        <name>Top</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>SetMenuWidth</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>SetMenuColor</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>FontSize</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>FontColor</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="InitializeActionBar">_initializeactionbar</name>
+      <comment>Current activity, Action bar color, Thin line color, Action bar corner radius&lt;br /&gt;</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Activity</name>
+        <type>anywheresoftware.b4a.objects.ActivityWrapper</type>
+      </parameter>
+      <parameter>
+        <name>ActionBarColor</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>LineColor</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>Radius</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>MenuButton</name>
+        <type>boolean</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="InitializeSwipe">_initializeswipe</name>
+      <comment>Current activity, Current module name, Menu slide duration in milliseconds, FadeAlpha(0-255), Menu length(Full or just items)&lt;br /&gt;</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Activity</name>
+        <type>anywheresoftware.b4a.objects.ActivityWrapper</type>
+      </parameter>
+      <parameter>
+        <name>Module</name>
+        <type>Object</type>
+      </parameter>
+      <parameter>
+        <name>SetSlideDuration</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>SetFadeAlpha</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>SetMenuLength</name>
+        <type>boolean</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="MenuHide">_menuhide</name>
+      <comment>ANIMATE MENU AND BUTTON, LEFT - CLOSE&lt;br /&gt;</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="MenuShow">_menushow</name>
+      <comment>ANIMATE MENU AND BUTTON, RIGHT - OPEN&lt;br /&gt;</comment>
+      <returntype>String</returntype>
+    </method>
+    <field>
+      <name DesignerName="ActBarMsg">_actbarmsg</name>
+      <returntype>anywheresoftware.b4a.objects.LabelWrapper</returntype>
+    </field>
+    <field>
+      <name DesignerName="PnlSlide">_pnlslide</name>
+      <returntype>anywheresoftware.b4a.objects.PanelWrapper</returntype>
+    </field>
+  </class>
+  <version>1.35</version>
+  <author>Simply Software</author>
+</root>

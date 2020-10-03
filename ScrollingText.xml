@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+  <dependsOn>phone</dependsOn>
+  <class>
+    <name>B4A.ScrollingLabels.scrollingtext._scrollinglabel</name>
+    <shortname>ScrollingLabel</shortname>
+    <owner>activity</owner>
+    <method>
+      <name>Initialize</name>
+      <comment>Initializes the fields to their default value.</comment>
+      <returntype>void</returntype>
+    </method>
+    <field>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>boolean</returntype>
+    </field>
+    <field>
+      <name>lbl</name>
+      <returntype>anywheresoftware.b4a.objects.LabelWrapper</returntype>
+    </field>
+    <field>
+      <name>Canvas</name>
+      <returntype>anywheresoftware.b4a.objects.drawable.CanvasWrapper</returntype>
+    </field>
+    <field>
+      <name>Bitmap</name>
+      <returntype>anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper</returntype>
+    </field>
+    <field>
+      <name>SrcRect</name>
+      <returntype>anywheresoftware.b4a.objects.drawable.CanvasWrapper.RectWrapper</returntype>
+    </field>
+    <field>
+      <name>DestRect</name>
+      <returntype>anywheresoftware.b4a.objects.drawable.CanvasWrapper.RectWrapper</returntype>
+    </field>
+    <field>
+      <name>MoveLeft</name>
+      <returntype>boolean</returntype>
+    </field>
+    <field>
+      <name>Speed</name>
+      <returntype>int</returntype>
+    </field>
+    <field>
+      <name>BackgroundColor</name>
+      <returntype>int</returntype>
+    </field>
+    <field>
+      <name>tag</name>
+      <returntype>String</returntype>
+    </field>
+    <field>
+      <name>TextColor</name>
+      <returntype>int</returntype>
+    </field>
+  </class>
+  <class>
+    <name>B4A.ScrollingLabels.scrollingtext</name>
+    <shortname>ScrollingText</shortname>
+    <owner>activity</owner>
+    <method>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>boolean</returntype>
+    </method>
+    <method>
+      <name DesignerName="Class_Globals">_class_globals</name>
+      <comment>Class module
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize</name>
+      <comment>Initializes the object. You can add parameters to this method if needed.
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>anywheresoftware.b4a.BA</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="ListExists">_listexists</name>
+      <returntype>int</returntype>
+      <parameter>
+        <name>SL</name>
+        <type>B4A.ScrollingLabels.scrollingtext._scrollinglabel</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="StartScrolling">_startscrolling</name>
+      <comment>Sub AddLable(lbl As Label)
+
+End Sub
+Sub removeLable(lbl As Label)
+
+End Sub
+</comment>
+      <returntype>B4A.ScrollingLabels.scrollingtext._scrollinglabel</returntype>
+      <parameter>
+        <name>lbl</name>
+        <type>anywheresoftware.b4a.objects.LabelWrapper</type>
+      </parameter>
+      <parameter>
+        <name>txt</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>MoveLeft</name>
+        <type>boolean</type>
+      </parameter>
+      <parameter>
+        <name>Speed</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>SplitterBitmap</name>
+        <type>anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper</type>
+      </parameter>
+      <parameter>
+        <name>color</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Timer1_Tick">_timer1_tick</name>
+      <returntype>String</returntype>
+    </method>
+    <field>
+      <name DesignerName="Timer1">_timer1</name>
+      <returntype>anywheresoftware.b4a.objects.Timer</returntype>
+    </field>
+    <field>
+      <name DesignerName="CurrentScrollingText">_currentscrollingtext</name>
+      <returntype>B4A.ScrollingLabels.scrollingtext._scrollinglabel</returntype>
+    </field>
+    <field>
+      <name DesignerName="labelList">_labellist</name>
+      <returntype>anywheresoftware.b4a.objects.collections.List</returntype>
+    </field>
+  </class>
+  <class>
+    <name>B4A.ScrollingLabels.test</name>
+    <shortname>test</shortname>
+    <owner>process</owner>
+    <method>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>boolean</returntype>
+    </method>
+    <method>
+      <name DesignerName="Class_Globals">_class_globals</name>
+      <comment>Class module
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize</name>
+      <comment>Initializes the object. You can add parameters to this method if needed.
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>anywheresoftware.b4a.BA</type>
+      </parameter>
+    </method>
+  </class>
+  <version>1</version>
+</root>

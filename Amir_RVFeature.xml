@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <doclet-version-NOT-library-version>1.07</doclet-version-NOT-library-version>
+    <class>
+        <name>com.aghajari.rvplugins.Amir_RVFeature</name>
+        <shortname>Amir_RVFeature</shortname>
+        <comment>Amir_RecyclerView Plugin</comment>
+        <owner>process</owner>
+        <event>onItemBigResize (Item As Object,Position As Int,Offset As Float)</event>
+        <event>onItemSmallResize (Item As Object,Position As Int,Offset As Float)</event>
+        <method>
+            <name>SetViewAlpha</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>View</name>
+                <type>android.view.View</type>
+            </parameter>
+            <parameter>
+                <name>offset</name>
+                <type>float</type>
+            </parameter>
+        </method>
+        <method>
+            <name>SetSize</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>DefaultItemHeight</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>FeaturedItemHeight</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Initialize</name>
+            <comment>Initialize Feature RecyclerView
+ &lt;b&gt;Note : &lt;/b&gt; You should Initialize Amir_RecyclerView In ListView LayoutType !</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>RV</name>
+                <type>android.support.v7.widget.RecyclerView</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <property>
+            <name>PaddingLastItem</name>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>enabled</name>
+                <type>boolean</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Enabled</name>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>Enabled</name>
+                <type>boolean</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>ExtraLayoutSpace</name>
+            <returntype>int</returntype>
+            <parameter>
+                <name>ExtraLayoutSpace</name>
+                <type>int</type>
+            </parameter>
+            <comment></comment>
+        </property>
+    </class>
+    <version>1.0</version>
+    <author>AmirHosseinAghajari</author>
+</root>

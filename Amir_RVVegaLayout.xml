@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <doclet-version-NOT-library-version>1.07</doclet-version-NOT-library-version>
+    <class>
+        <name>com.aghajari.rvplugins.Amir_RVVega</name>
+        <shortname>Amir_RVVegaLayout</shortname>
+        <comment>Amir_RecyclerView Plugin</comment>
+        <owner>process</owner>
+        <method>
+            <name>Initialize</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Recycler</name>
+                <type>android.support.v7.widget.RecyclerView</type>
+            </parameter>
+        </method>
+        <property>
+            <name>SnapHeight</name>
+            <returntype>int</returntype>
+            <comment></comment>
+        </property>
+        <property>
+            <name>SnapView</name>
+            <returntype>android.view.View</returntype>
+            <comment></comment>
+        </property>
+        <property>
+            <name>FirstVisibleItemPosition</name>
+            <returntype>int</returntype>
+            <comment></comment>
+        </property>
+    </class>
+    <version>1.0</version>
+    <author>AmirHosseinAghajari</author>
+</root>

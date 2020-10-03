@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <doclet-version-NOT-library-version>1.01</doclet-version-NOT-library-version>
+    <class>
+        <name>media.browser.MediaBrowser</name>
+        <shortname>esAudioMedia</shortname>
+        <owner>activity</owner>
+        <event>MediaCompleted ()</event>
+        <permission>android.permission.ACCESS_NETWORK_STATE</permission>
+        <method>
+            <name>Initialize</name>
+            <comment>Common initialisations</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>MediaSeek</name>
+            <comment>the offset in milliseconds from the start to seek to
+position: </comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>position</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>MediaAudioPlay</name>
+            <comment>Raises "MediaCompleted" Event
+ID: </comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ID</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>MediaStop</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>MediaIsPlaying</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>MediaLength</name>
+            <comment>The duration of the audio file, in ms
+ returns -1 for error
+Return type: @return:</comment>
+            <returntype>int</returntype>
+        </method>
+        <method>
+            <name>MediaPosition</name>
+            <comment>the current position in milliseconds
+ returns -1 for error
+Return type: @return:</comment>
+            <returntype>int</returntype>
+        </method>
+        <method>
+            <name>MediaAudioList</name>
+            <comment>Returns a Map containing a list of all Audio files in the MediaStore which can be sorted
+ The allowed fields for sorting are
+ Null		if Null is used it will sort on the ID
+ "Title"
+ "Album"
+ "Artist"
+ "_data"
+ "_display_name"
+ "Duration"
+ 
+ 
+ The fields that are returned are
+ "Title"
+ "Album"
+ "Artist"
+ "ID"
+ "Data" location on device
+ "DisplayName"
+ "Duration" The duration of the audio file, in ms
+Return type: @return:</comment>
+            <returntype>anywheresoftware.b4a.objects.collections.Map</returntype>
+            <parameter>
+                <name>sortcol</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>MediaResume</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>MediaPause</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+    </class>
+    <version>1.1</version>
+    <author>Edward Smith</author>
+</root>

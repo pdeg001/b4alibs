@@ -1,0 +1,1147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <doclet-version-NOT-library-version>1.04</doclet-version-NOT-library-version>
+    <class>
+        <name>de.amberhome.locale.AHTranslator</name>
+        <shortname>AHTranslator</shortname>
+        <comment>With the Translator object you can make your programs support multiple
+ languages. It is very easy to create translations for your program and use
+ them.
+ 
+ Translation files have the following name convention:
+ [basename]_[language].lng
+ 
+ The format is a standard Java properties file. Special characters should be
+ converted to unicode sequences.
+ 
+ The translator object holds two Map Objects for the translations. One for the
+ existing translations in the language file and one for missing translations
+ in the language file. When you call GetText() with a string that is not in
+ the translation file then it will be added to the missing translations Map.</comment>
+        <owner>process</owner>
+        <method>
+            <name>Initialize</name>
+            <comment>Initializes a translation object with the device language. Tries to read a
+ translation file with the following name convention: basename_language.lng</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>dir</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>basename</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>WriteTranslation</name>
+            <comment>Writes two files to the specified dir. The current translation Map is
+ written to [filename]_[language].lng and the missing translation Map is
+ written to [filename]_miss_[language].lng</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>dir</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>filename</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>GetText2</name>
+            <comment>Searches for the text in the translation table and returns the translated
+ text.
+ 
+ You can use Placeholders in the form of {1} {2} etc. which will be
+ replaced with the content of the second parameter. {1} will be replaced
+ with the first item in the Array/List, {2} with the second one and so on.</comment>
+            <returntype>java.lang.String</returntype>
+            <parameter>
+                <name>text</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>params</name>
+                <type>anywheresoftware.b4a.objects.collections.List</type>
+            </parameter>
+        </method>
+        <method>
+            <name>GetText</name>
+            <comment>Searches for the text in the translation table. If a translation is
+ available it will be returned. If no translation is available the text is
+ added to the missing translation table and the original text is returned.
+ So you can write your whole program in a default language. If a
+ translation is available it will be used, if not, the text will be
+ returned in the default language.</comment>
+            <returntype>java.lang.String</returntype>
+            <parameter>
+                <name>text</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Initialize2</name>
+            <comment>Initializes a translation object with the given language. Tries to read a
+ translation file with the following name convention: basename_language.lng</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>dir</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>basename</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>language</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Initialize3</name>
+            <comment>Initializes a translation object with the given language and country code.
+ Tries to read a translation file with the following name
+ convention: basename_language_country.lng</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>dir</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>basename</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>language</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>country</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <property>
+            <name>TranslationMap</name>
+            <returntype>anywheresoftware.b4a.objects.collections.Map</returntype>
+            <parameter>
+                <name>transmap</name>
+                <type>anywheresoftware.b4a.objects.collections.Map</type>
+            </parameter>
+            <comment>Returns a Map object with the current translations</comment>
+        </property>
+        <property>
+            <name>Extension</name>
+            <returntype>java.lang.String</returntype>
+            <parameter>
+                <name>Extension</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <comment>Sets or gets the current file extension</comment>
+        </property>
+        <property>
+            <name>CurrentCountry</name>
+            <returntype>java.lang.String</returntype>
+            <comment>Returns the current County code</comment>
+        </property>
+        <property>
+            <name>MissingTranslationMap</name>
+            <returntype>anywheresoftware.b4a.objects.collections.Map</returntype>
+            <comment>Returns a Map object with all text phrases which are missing in the 
+ translation file.</comment>
+        </property>
+        <property>
+            <name>DefaultLanguage</name>
+            <returntype>java.lang.String</returntype>
+            <parameter>
+                <name>Language</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <comment>Sets or gets the default language. This is the language used when no language file is found.
+ If you don't set it the default language will be empty and is not used.</comment>
+        </property>
+        <property>
+            <name>CurrentLanguage</name>
+            <returntype>java.lang.String</returntype>
+            <comment>Returns current Language code</comment>
+        </property>
+        <property>
+            <name>CurrentFile</name>
+            <returntype>java.lang.String</returntype>
+            <comment>Returns current file name of language file</comment>
+        </property>
+    </class>
+    <class>
+        <name>de.amberhome.locale.AHTimezone</name>
+        <shortname>AHTimeZone</shortname>
+        <comment>With the AHTimezone object you can get information about device timezones.</comment>
+        <owner>process</owner>
+        <method>
+            <name>GetDisplayName2</name>
+            <comment>Returns the Display name of this timezone
+ 
+ DaylightTime - Set to true if you want to have DST included into the name
+ Style - AHTimeZone.SHORT or AHTimeZone.LONG format
+ Locale - a AHLocale object to set in which language you want the displayname</comment>
+            <returntype>java.lang.String</returntype>
+            <parameter>
+                <name>DaylightTime</name>
+                <type>boolean</type>
+            </parameter>
+            <parameter>
+                <name>Style</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Locale</name>
+                <type>de.amberhome.locale.AHLocale</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Initialize</name>
+            <comment>Initialize a AHTimeZone object with default timezone</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>GetOffset</name>
+            <comment>Returns the offset in milliseconds from UTC for this time zone at time.
+ The offset includes daylight savings time if the specified date is within the daylight savings time period.
+ 
+ Date - Date for which you want to have the info</comment>
+            <returntype>long</returntype>
+            <parameter>
+                <name>Date</name>
+                <type>long</type>
+            </parameter>
+        </method>
+        <method>
+            <name>InDaylightTime</name>
+            <comment>Returns true if Date is in a daylight savings time period for this time zone.
+ 
+ Date - Date for which you want to get the info</comment>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>Date</name>
+                <type>long</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Initialize2</name>
+            <comment>Initializes a AHTimeZone object with the given TimeZone ID
+ 
+ ID - TimeZone ID like "Europe/Berlin"</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ID</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>GetDisplayName</name>
+            <comment>Returns the Display name of this timezone
+ 
+ DaylightTime - Set to true if you want to have DST included into the name
+ Style - AHTimeZone.SHORT or AHTimeZone.LONG format</comment>
+            <returntype>java.lang.String</returntype>
+            <parameter>
+                <name>DaylightTime</name>
+                <type>boolean</type>
+            </parameter>
+            <parameter>
+                <name>Style</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <property>
+            <name>AvailableIds</name>
+            <returntype>anywheresoftware.b4a.objects.collections.List</returntype>
+            <comment>Returns a list of available timezone IDs on this device.
+ One of the results can be passed to the Initialize2() Method to reinitialize
+ an AHTimeZone object with a different timezone</comment>
+        </property>
+        <property>
+            <name>DSTSavings</name>
+            <returntype>long</returntype>
+            <comment>Returns the daylight savings offset in milliseconds for this time zone.
+ The base implementation returns 3600000 (1 hour) for time zones that use daylight savings
+ time and 0 for timezones that do not. 
+ Note that this method doesn't tell you whether or not to apply the offset: you need to call
+ InDaylightTime() for the specific time you're interested in. If this method returns a non-zero
+ offset, that only tells you that this TimeZone sometimes observes daylight savings.</comment>
+        </property>
+        <property>
+            <name>RawOffset</name>
+            <returntype>long</returntype>
+            <parameter>
+                <name>Offset</name>
+                <type>int</type>
+            </parameter>
+            <comment>Sets or gets the Raw offset for this timezone</comment>
+        </property>
+        <property>
+            <name>ID</name>
+            <returntype>java.lang.String</returntype>
+            <parameter>
+                <name>ID</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <comment>Gets or sets the timezone ID as String for this timezone</comment>
+        </property>
+        <field>
+            <name>STYLE_SHORT</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>STYLE_LONG</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+    </class>
+    <class>
+        <name>de.amberhome.locale.AHNumeric</name>
+        <shortname>AHNumeric</shortname>
+        <comment>With the AHNumeric object you can format and parse numbers, currency values
+ and percent values.
+ 
+ There are several Initialize methods to initialize different types of the
+ object. These differ normally in the pattern that is applied to the
+ NumberFormat object.
+ 
+ For further details see the &lt;link&gt;java.text.DecimalFormat|http://developer.android.com/reference/java/text/DecimalFormat.html&lt;/link&gt;
+ and &lt;link&gt;java.text.NumberFormat|http://developer.android.com/reference/java/text/NumberFormat.html&lt;/link&gt; documentation.</comment>
+        <owner>process</owner>
+        <method>
+            <name>Initialize</name>
+            <comment>Initializes a standard NumberFormat object with the standard locale</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>Format</name>
+            <comment>Format the number to a string using the pattern and rules of this object.</comment>
+            <returntype>java.lang.String</returntype>
+            <parameter>
+                <name>Value</name>
+                <type>double</type>
+            </parameter>
+        </method>
+        <method>
+            <name>InitializePercent</name>
+            <comment>Initializes a percent NumberFormat object with the standard locale</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>InitializeCurrency2</name>
+            <comment>Initializes a currency NumberFormat object with the given locale.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Locale</name>
+                <type>de.amberhome.locale.AHLocale</type>
+            </parameter>
+        </method>
+        <method>
+            <name>InitializeInteger</name>
+            <comment>Initializes an integer NumberFormat object with the standard locale</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>InitializeCurrency</name>
+            <comment>Initializes a currency NumberFormat object with the standard locale</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>InitializeNumber</name>
+            <comment>Initializes a standard NumberFormat object with the standard locale</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>Parse</name>
+            <comment>Parse the given string and convert it to a number. This may throw a
+ ParseException if the format of the string is not correct.</comment>
+            <returntype>java.lang.Number</returntype>
+            <parameter>
+                <name>Value</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Initialize2</name>
+            <comment>Initializes a standard NumberFormat object with the given locale.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Locale</name>
+                <type>de.amberhome.locale.AHLocale</type>
+            </parameter>
+        </method>
+        <method>
+            <name>InitializePercent2</name>
+            <comment>Initializes a percent NumberFormat object with the given locale.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Locale</name>
+                <type>de.amberhome.locale.AHLocale</type>
+            </parameter>
+        </method>
+        <method>
+            <name>InitializeInteger2</name>
+            <comment>Initializes an integer NumberFormat object with the given locale.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Locale</name>
+                <type>de.amberhome.locale.AHLocale</type>
+            </parameter>
+        </method>
+        <method>
+            <name>InitializeNumber2</name>
+            <comment>Initializes a standard NumberFormat object with the given locale.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Locale</name>
+                <type>de.amberhome.locale.AHLocale</type>
+            </parameter>
+        </method>
+        <property>
+            <name>MaximumIntegerDigits</name>
+            <returntype>int</returntype>
+            <parameter>
+                <name>Value</name>
+                <type>int</type>
+            </parameter>
+            <comment>Set or get the maximum integer digits.</comment>
+        </property>
+        <property>
+            <name>MinimumIntegerDigits</name>
+            <returntype>int</returntype>
+            <parameter>
+                <name>Value</name>
+                <type>int</type>
+            </parameter>
+            <comment>Set or get the minimum integer digits</comment>
+        </property>
+        <property>
+            <name>MaximumFractionDigits</name>
+            <returntype>int</returntype>
+            <parameter>
+                <name>Value</name>
+                <type>int</type>
+            </parameter>
+            <comment>Set or get the maximum fraction digits.</comment>
+        </property>
+        <property>
+            <name>Pattern</name>
+            <returntype>java.lang.String</returntype>
+            <parameter>
+                <name>Pattern</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <comment>Set or get the pattern that is used for formatting and parsing.</comment>
+        </property>
+        <property>
+            <name>MinimumFractionDigits</name>
+            <returntype>int</returntype>
+            <parameter>
+                <name>Value</name>
+                <type>int</type>
+            </parameter>
+            <comment>Set or get the minimum fraction digits.</comment>
+        </property>
+    </class>
+    <class>
+        <name>de.amberhome.locale.AHLocale</name>
+        <shortname>AHLocale</shortname>
+        <comment>The AHLocale object allows you to access many locale aware values such as
+ localized month names, day names or currency symbols.
+ 
+ There are also methods to find out which locales are available on your device
+ or which languages and countries can be used.</comment>
+        <owner>process</owner>
+        <method>
+            <name>Initialize</name>
+            <comment>Initializes the AHLocale object with the default locale.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>InitializeUS</name>
+            <comment>Initializes the AHLocale Object with &lt;strong&gt;en_US&lt;/strong&gt; locale. This locale is
+ available on every device.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>Initialize2</name>
+            <comment>Initializes the AHLocale object using the specified language.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>language</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Initialize3</name>
+            <comment>Initializes the AHLocale object using the specified language and country.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>language</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>country</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <property>
+            <name>FirstDayOfWeek</name>
+            <returntype>int</returntype>
+            <comment>Gets the first day of the week</comment>
+        </property>
+        <property>
+            <name>ShortWeekDays</name>
+            <returntype>java.lang.String[]</returntype>
+            <comment>Returns the array of strings containing the abbreviated names of the days of the week.</comment>
+        </property>
+        <property>
+            <name>ShortMonths</name>
+            <returntype>java.lang.String[]</returntype>
+            <comment>Returns the array of strings containing the abbreviated names of the months.</comment>
+        </property>
+        <property>
+            <name>DisplayCountry</name>
+            <returntype>java.lang.String</returntype>
+            <comment>Returns the name of this locale's country, localized to locale. Returns
+ the empty string if this locale does not correspond to a specific country</comment>
+        </property>
+        <property>
+            <name>EnglishLanguage</name>
+            <returntype>java.lang.String</returntype>
+            <comment>Returns the name of this locale's language in english. If the
+ language name is unknown, the language code is returned.</comment>
+        </property>
+        <property>
+            <name>Initialized</name>
+            <returntype>java.lang.Boolean</returntype>
+            <comment>Returns if the object is initialized</comment>
+        </property>
+        <property>
+            <name>EnglishCountry</name>
+            <returntype>java.lang.String</returntype>
+            <comment>Returns the name of this locale's country in english. Returns
+ the empty string if this locale does not correspond to a specific country</comment>
+        </property>
+        <property>
+            <name>WeekDays</name>
+            <returntype>java.lang.String[]</returntype>
+            <comment>Returns the array of strings containing the full names of the days of the week.</comment>
+        </property>
+        <property>
+            <name>AvailableLocales</name>
+            <returntype>anywheresoftware.b4a.objects.collections.List</returntype>
+            <comment>Returns the system's installed locales. These are returned as a B4A List of AHLocale Objects.
+ There are only locales in this list which have a non empty country and language.</comment>
+        </property>
+        <property>
+            <name>Country</name>
+            <returntype>java.lang.String</returntype>
+            <comment>Returns the country/region code for this locale, which will either be the
+ empty string or an uppercase ISO 3166 2-letter code.</comment>
+        </property>
+        <property>
+            <name>DisplayName</name>
+            <returntype>java.lang.String</returntype>
+            <comment>Returns this locale's language name, country name, and variant, localized
+ to locale. The exact output form depends on whether this locale
+ corresponds to a specific language, country and variant, such as:
+ English, English (United States), English (United States,Computer),
+ anglais (?tats-Unis), anglais (?tats-Unis,informatique).</comment>
+        </property>
+        <property>
+            <name>CurrencyCode</name>
+            <returntype>java.lang.String</returntype>
+            <comment>Returns this currency's ISO 4217 currency code.</comment>
+        </property>
+        <property>
+            <name>ISO3Country</name>
+            <returntype>java.lang.String</returntype>
+            <comment>Gets the three letter ISO country code which corresponds to the country
+ code for this Locale.</comment>
+        </property>
+        <property>
+            <name>AmPmStrings</name>
+            <returntype>java.lang.String[]</returntype>
+            <comment>Returns the array of strings which represent AM and PM.</comment>
+        </property>
+        <property>
+            <name>ISOCountries</name>
+            <returntype>java.lang.String[]</returntype>
+            <comment>Gets the list of two letter ISO country codes which can be used as the
+ country code for a Locale.</comment>
+        </property>
+        <property>
+            <name>CurrencyFractionDigits</name>
+            <returntype>int</returntype>
+            <comment>Returns the default number of fraction digits for this currency.</comment>
+        </property>
+        <property>
+            <name>Months</name>
+            <returntype>java.lang.String[]</returntype>
+            <comment>Returns the array of strings containing the full names of the months.</comment>
+        </property>
+        <property>
+            <name>ISOCode</name>
+            <returntype>java.lang.String</returntype>
+            <comment>Returns the ISO Code for this Locale such as &lt;strong&gt;en_US&lt;/strong&gt; or &lt;strong&gt;de_DE&lt;/strong&gt;</comment>
+        </property>
+        <property>
+            <name>EnglishName</name>
+            <returntype>java.lang.String</returntype>
+            <comment>Returns this locale's language name, country name, and variant in english.
+ The exact output form depends on whether this locale
+ corresponds to a specific language, country and variant, such as:
+ English, English (United States), English (United States,Computer),
+ anglais (?tats-Unis), anglais (?tats-Unis,informatique).</comment>
+        </property>
+        <property>
+            <name>DisplayLanguage</name>
+            <returntype>java.lang.String</returntype>
+            <comment>Returns the name of this locale's language, localized to locale. If the
+ language name is unknown, the language code is returned.</comment>
+        </property>
+        <property>
+            <name>Language</name>
+            <returntype>java.lang.String</returntype>
+            <comment>Gets the language code for this Locale or the empty string if no language
+ was set.</comment>
+        </property>
+        <property>
+            <name>ISOLanguages</name>
+            <returntype>java.lang.String[]</returntype>
+            <comment>Gets the list of two letter ISO language codes which can be used as the
+ language code for a Locale.</comment>
+        </property>
+        <property>
+            <name>ISO3Language</name>
+            <returntype>java.lang.String</returntype>
+            <comment>Gets the three letter ISO language code which corresponds to the language
+ code for this Locale.</comment>
+        </property>
+        <property>
+            <name>CurrencySymbol</name>
+            <returntype>java.lang.String</returntype>
+            <comment>Returns the localized currency symbol for this currency in locale.</comment>
+        </property>
+    </class>
+    <class>
+        <name>de.amberhome.locale.AHDateUtils</name>
+        <shortname>AHDateUtils</shortname>
+        <comment>With the AHDateUtils object you can format date and time strings with
+ standard device settings.
+ 
+ For more information have a look at the original &lt;link&gt;android.text.format.DateUtils|http://developer.android.com/reference/android/text/format/DateUtils.html&lt;/link&gt;documentation.</comment>
+        <owner>process</owner>
+        <method>
+            <name>FormatElapsedTime</name>
+            <comment>Formats an elapsed time in the form "MM:SS" or "H:MM:SS" for display on
+ the call-in-progress screen.
+ 
+ Seconds - the elapsed time in seconds.</comment>
+            <returntype>java.lang.String</returntype>
+            <parameter>
+                <name>Seconds</name>
+                <type>long</type>
+            </parameter>
+        </method>
+        <method>
+            <name>FormatDateTime</name>
+            <comment>Formats a date or a time according to the local conventions. There are
+ lots of options that allow the caller to control, for example, if the
+ time is shown, if the day of the week is shown, if the month name is
+ abbreviated, if noon is shown instead of 12pm, and so on.
+ 
+ Ticks - time/date to format
+ Flags - a bit mask of options</comment>
+            <returntype>java.lang.String</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>Ticks</name>
+                <type>long</type>
+            </parameter>
+            <parameter>
+                <name>Flags</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>GetRelativeDateTimeString</name>
+            <comment>Return string describing the elapsed time since startTime formatted like
+ "[relative time/date], [time]".
+ 
+ &lt;b&gt;Ticks&lt;/b&gt; - some time in the past.
+ 
+ &lt;b&gt;MinResolution&lt;/b&gt; - the minimum elapsed time (in milliseconds) to
+ report when showing relative times. For example, a time 3 seconds in the
+ past will be reported as "0 minutes ago" if this is set to
+ MINUTE_IN_MILLIS.
+ 
+ &lt;b&gt;TransitionResolution&lt;/b&gt; - the elapsed time (in milliseconds) at which
+ to stop reporting relative measurements. Elapsed times greater than this
+ resolution will default to normal date formatting. For example, will
+ transition from "6 days ago" to "Dec 12" when using WEEK_IN_MILLIS.
+ 
+ &lt;b&gt;Flags&lt;/b&gt; - a bit mask of options</comment>
+            <returntype>java.lang.CharSequence</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>Ticks</name>
+                <type>long</type>
+            </parameter>
+            <parameter>
+                <name>MinResolution</name>
+                <type>long</type>
+            </parameter>
+            <parameter>
+                <name>TransitionResolution</name>
+                <type>long</type>
+            </parameter>
+            <parameter>
+                <name>Flags</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>FormatDateRange</name>
+            <comment>Formats a date or a time range according to the local conventions.
+ 
+ Note that this is a convenience method. Using it involves creating an
+ internal Formatter instance on-the-fly, which is somewhat costly in terms
+ of memory and time.
+ 
+ StartTicks - start time 
+ EndTicks - end time 
+ Flags - a bit mask of options</comment>
+            <returntype>java.lang.String</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>StartTicks</name>
+                <type>long</type>
+            </parameter>
+            <parameter>
+                <name>EndTicks</name>
+                <type>long</type>
+            </parameter>
+            <parameter>
+                <name>Flags</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>IsToday</name>
+            <comment>Returns true if the supplied Ticks value is today else false</comment>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>Ticks</name>
+                <type>long</type>
+            </parameter>
+        </method>
+        <method>
+            <name>GetRelativeTimeSpanString</name>
+            <comment>Returns a string describing 'time' as a time relative to 'now'.
+ 
+ Time spans in the past are formatted like "42 minutes ago". Time spans in
+ the future are formatted like "in 42 minutes". Can use
+ FORMAT_ABBREV_RELATIVE flag to use abbreviated relative times, like
+ "42 mins ago".
+ 
+ &lt;b&gt;Ticks&lt;/b&gt; - the time to describe, in milliseconds
+
+ &lt;b&gt;Now&lt;/b&gt; - the current time in
+ milliseconds
+ 
+ &lt;b&gt;MinResolution&lt;/b&gt; - the minimum timespan to report. For example,
+ a time 3 seconds in the past will be reported as "0 minutes ago" if this
+ is set to MINUTE_IN_MILLIS. Pass one of 0, MINUTE_IN_MILLIS,
+ HOUR_IN_MILLIS, DAY_IN_MILLIS, WEEK_IN_MILLIS
+ 
+ &lt;b&gt;Flags&lt;/b&gt; - a bit mask of
+ formatting options, such as FORMAT_NUMERIC_DATE or FORMAT_ABBREV_RELATIVE</comment>
+            <returntype>java.lang.CharSequence</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>Ticks</name>
+                <type>long</type>
+            </parameter>
+            <parameter>
+                <name>Now</name>
+                <type>long</type>
+            </parameter>
+            <parameter>
+                <name>MinResolution</name>
+                <type>long</type>
+            </parameter>
+            <parameter>
+                <name>Flags</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <field>
+            <name>FORMAT_SHOW_TIME</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>FORMAT_ABBREV_MONTH</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>LENGTH_SHORT</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>FORMAT_NO_NOON_MIDNIGHT</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>FORMAT_12HOUR</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>FORMAT_SHOW_WEEKDAY</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>FORMAT_ABBREV_RELIVE</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>LENGTH_LONG</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>FORMAT_UTC</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>FORMAT_CAP_MIDNIGHT</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>FORMAT_NUMERIC_DATE</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>LENGTH_MEDIUM</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>FORMAT_ABBREV_WEEKDAY</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>LENGTH_SHORTER</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>FORMAT_NO_MIDNIGHT</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>FORMAT_NO_YEAR</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>FORMAT_NO_MONTH_DAY</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>FORMAT_CAP_AMPM</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>FORMAT_ABBREV_ALL</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>FORMAT_CAP_NOON_MIDNIGHT</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>LENGTH_SHORTEST</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>FORMAT_CAP_NOON</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>FORMAT_ABBREV_TIME</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>FORMAT_NO_NOON</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>FORMAT_SHOW_DATE</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>FORMAT_SHOW_YEAR</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>FORMAT_24HOUR</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+    </class>
+    <class>
+        <name>de.amberhome.locale.AHDateTime</name>
+        <shortname>AHDateTime</shortname>
+        <comment>With the AHDateTime object you can format and parse date and time strings.
+ 
+ The B4A builtin DateTime object always uses localized format strings so it is
+ not possible to parse something like "2011/05/19 01:45 PM" on a german device
+ because "PM" is "nachm." there. You can Initialize the AHDateTime object with
+ any locale you want and so you are totally free on date formats.</comment>
+        <owner>process</owner>
+        <method>
+            <name>Initialize</name>
+            <comment>Initializes the AHDateTime object with the default locale.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>Format</name>
+            <comment>Formats the specified ticks value to a string with the specified pattern.</comment>
+            <returntype>java.lang.String</returntype>
+            <parameter>
+                <name>ticks</name>
+                <type>long</type>
+            </parameter>
+        </method>
+        <method>
+            <name>GetDefaultDateTimePattern2</name>
+            <comment>Gets the DateTimePattern for the given Locale
+ 
+ DateStyle - Style for Date
+ TimeStyle - Style for Time</comment>
+            <returntype>java.lang.String</returntype>
+            <parameter>
+                <name>DateStyle</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>TimeStyle</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Locale</name>
+                <type>de.amberhome.locale.AHLocale</type>
+            </parameter>
+        </method>
+        <method>
+            <name>is24HourFormat</name>
+            <comment>Returns true if the user preference settings is 24 hour format.</comment>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+        </method>
+        <method>
+            <name>GetDefaultTimePattern2</name>
+            <comment>Gets the default TimePattern of given locale
+  
+ Style - Use constants SHORT, MEDIUM, LONG, FULL, DEFAULT
+ Locale - Reference to an AHLocale object</comment>
+            <returntype>java.lang.String</returntype>
+            <parameter>
+                <name>Style</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Locale</name>
+                <type>de.amberhome.locale.AHLocale</type>
+            </parameter>
+        </method>
+        <method>
+            <name>GetShortDatePatternWithoutYear</name>
+            <comment>Return a short date pattern without year information</comment>
+            <returntype>java.lang.String</returntype>
+        </method>
+        <method>
+            <name>InitializeUS</name>
+            <comment>Initializes the AHDateTime object with the &lt;strong&gt;en_US&lt;/strong&gt; locale.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>Parse</name>
+            <comment>Parses the specified string and returns a tick value.
+ 
+ Throws an exception if the string can not be parsed.</comment>
+            <returntype>long</returntype>
+            <parameter>
+                <name>date</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>GetDefaultDatePattern2</name>
+            <comment>Gets the default DatePattern of given locale
+  
+ Style - Use constants SHORT, MEDIUM, LONG, FULL, DEFAULT
+ Locale - Reference to an AHLocale object</comment>
+            <returntype>java.lang.String</returntype>
+            <parameter>
+                <name>Style</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Locale</name>
+                <type>de.amberhome.locale.AHLocale</type>
+            </parameter>
+        </method>
+        <method>
+            <name>GetDefaultTimePattern</name>
+            <comment>Gets the default TimePattern of the device default locale
+  
+ Style - Use constants SHORT, MEDIUM, LONG, FULL, DEFAULT</comment>
+            <returntype>java.lang.String</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>Style</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>GetDefaultDatePattern</name>
+            <comment>Gets the default DatePattern of the device default locale
+  
+ Style - Use constants SHORT, MEDIUM, LONG, FULL, DEFAULT</comment>
+            <returntype>java.lang.String</returntype>
+            <parameter>
+                <name>Style</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Initialize2</name>
+            <comment>Initializes the AHDateTime object with the given AHLocale object</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>locale</name>
+                <type>de.amberhome.locale.AHLocale</type>
+            </parameter>
+        </method>
+        <method>
+            <name>GetDefaultDateTimePattern</name>
+            <comment>Gets the device default DateTimePattern
+ 
+ DateStyle - Style for Date
+ TimeStyle - Style for Time</comment>
+            <returntype>java.lang.String</returntype>
+            <parameter>
+                <name>DateStyle</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>TimeStyle</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <property>
+            <name>Pattern</name>
+            <returntype>java.lang.String</returntype>
+            <parameter>
+                <name>pattern</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <comment>Sets or gets the Date/Time pattern
+ 
+ Default pattern is: &lt;strong&gt;yyyy-MM-dd HH:mm:ss&lt;/strong&gt;
+ 
+ For allowed placeholders look here: &lt;link&gt;SimpleDateFormat|http://developer.android.com/reference/java/text/SimpleDateFormat.html&lt;/link&gt;</comment>
+        </property>
+        <property>
+            <name>TimeZone</name>
+            <returntype>de.amberhome.locale.AHTimezone</returntype>
+            <parameter>
+                <name>TimeZone</name>
+                <type>de.amberhome.locale.AHTimezone</type>
+            </parameter>
+            <comment>Sets or gets the timezone for the AHDateTime object</comment>
+        </property>
+        <property>
+            <name>Lenient</name>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>value</name>
+                <type>boolean</type>
+            </parameter>
+            <comment>If you set this to true the parser is not very strict on his date format.</comment>
+        </property>
+        <field>
+            <name>SHORT</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>FULL</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>MEDIUM</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>LONG</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>DEFAULT</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+    </class>
+    <version>1.16</version>
+    <author>Markus Stipp</author>
+</root>

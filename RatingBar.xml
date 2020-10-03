@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <doclet-version-NOT-library-version>1.02</doclet-version-NOT-library-version>
+    <class>
+        <name>com.stevel05.myRatingBar.MyRatingBar</name>
+        <shortname>RatingBarLib</shortname>
+        <owner>activity</owner>
+        <event>_RatingChanged(Rating as int,UserChanged As Boolean)</event>
+        <method>
+            <name>setCallBack</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>Rb</name>
+                <type>android.widget.RatingBar</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+    </class>
+    <version>1.0</version>
+    <author>Steve Laming</author>
+</root>

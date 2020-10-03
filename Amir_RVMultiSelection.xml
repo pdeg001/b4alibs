@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <doclet-version-NOT-library-version>1.07</doclet-version-NOT-library-version>
+    <class>
+        <name>com.aghajari.rvplugins.Amir_RVMultiSelection</name>
+        <shortname>Amir_RVMultiSelection</shortname>
+        <comment>Amir_RecyclerView Plugin</comment>
+        <objectwrapper>com.aghajari.rvplugins.RVMultiSelectionAdapter</objectwrapper>
+        <owner>process</owner>
+        <event>onBindSelectionViewHolder (Item As Object,SelectionView As Object,Position As Int)</event>
+        <event>onCreateSelectionViewHolder (Item As Object,ViewType As Int) As View</event>
+        <event>onStopMultiSelection</event>
+        <event>onStartMultiSelection</event>
+        <event>onSingleSelect (Item As Object,SelectionView As Object,Position As Int)</event>
+        <event>onSelectedChange (Item As Object,SelectionView As Object,Position As Int,AdapterPosition As Int,Showing As Boolean,StartingMultiSelection As Boolean)</event>
+        <event>onHideSelectionView (Item As Object,SelectionView As Object,Position As Int,IsFirst As Boolean)</event>
+        <event>onShowSelectionView (Item As Object,SelectionView As Object,Position As Int,IsFirst As Boolean)</event>
+        <event>onSelectionItemClick (Item As Object,SelectionView As Object,Position As Int)</event>
+        <event>onFocused (Item As Object,SelectionView As Object,Position As Int)</event>
+        <event>onUnFocused (Item As Object,SelectionView As Object,Position As Int)</event>
+        <method>
+            <name>StopMultiSelection</name>
+            <comment>Stop MultiSelection Mode</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Notifi</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+        <method>
+            <name>GetAdapterPosition</name>
+            <comment></comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>Position</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>IntoRecyclerView</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Recycler</name>
+                <type>android.support.v7.widget.RecyclerView</type>
+            </parameter>
+        </method>
+        <method>
+            <name>IsSelected</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>Position</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>IsInitialized</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>Initialize</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Adapter</name>
+                <type>android.support.v7.widget.RecyclerView.Adapter</type>
+            </parameter>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>AddSelectionItem</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Position</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Notifi</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+        <method>
+            <name>ClearSelectionItems</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Notifi</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+        <method>
+            <name>NotifiSelectedItems</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>IsFirstHandle</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+        <method>
+            <name>RemoveSelectionItem</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Position</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Notifi</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+        <method>
+            <name>StartMultiSelection</name>
+            <comment>Start MultiSelection Mode</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Notifi</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+        <property>
+            <name>FirstUpdateListOnSelect</name>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>value</name>
+                <type>boolean</type>
+            </parameter>
+            <comment>call events after update list.
+ defualt is true</comment>
+        </property>
+        <property>
+            <name>FocusedSelectionView</name>
+            <returntype>android.view.View</returntype>
+            <comment></comment>
+        </property>
+        <property>
+            <name>FocusChangeOnSelectionViewClick</name>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>value</name>
+                <type>boolean</type>
+            </parameter>
+            <comment>call onFoucos when Select item with selection click
+ Defualt is false</comment>
+        </property>
+        <property>
+            <name>SelectWithSelectionViewClick</name>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>value</name>
+                <type>boolean</type>
+            </parameter>
+            <comment>select  item when click on Selection view. 
+ its working when multiselection is started.
+ you can enable SelectWhenFocused() for select 
+ with parent item click when view focused
+ Defualt is false</comment>
+        </property>
+        <property>
+            <name>FirstUpdateListOnUnselect</name>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>value</name>
+                <type>boolean</type>
+            </parameter>
+            <comment>call events after update list.
+ defualt is true</comment>
+        </property>
+        <property>
+            <name>SelectWhenFocused</name>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>value</name>
+                <type>boolean</type>
+            </parameter>
+            <comment>user can select view when view focused
+ Defualt is false</comment>
+        </property>
+        <property>
+            <name>UnselectWhenFocused</name>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>value</name>
+                <type>boolean</type>
+            </parameter>
+            <comment>user can unselect view when view focused
+ Defualt is false</comment>
+        </property>
+        <property>
+            <name>LastSelectedIndex</name>
+            <returntype>int</returntype>
+            <comment></comment>
+        </property>
+        <property>
+            <name>AutoNotifi</name>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>value</name>
+                <type>boolean</type>
+            </parameter>
+            <comment>Notifi Selected or Unselected item datas changed</comment>
+        </property>
+        <property>
+            <name>LastSelectedView</name>
+            <returntype>android.view.View</returntype>
+            <comment></comment>
+        </property>
+        <property>
+            <name>IsMultiSelection</name>
+            <returntype>boolean</returntype>
+            <comment>Checking if IsMultiSelection</comment>
+        </property>
+        <property>
+            <name>AutoNotifi2</name>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>value</name>
+                <type>boolean</type>
+            </parameter>
+            <comment>Notifi Data Set Changed when MultiSelection started</comment>
+        </property>
+        <property>
+            <name>SelectedIndex</name>
+            <returntype>int</returntype>
+            <comment></comment>
+        </property>
+        <property>
+            <name>LastSelectedSelectionView</name>
+            <returntype>android.view.View</returntype>
+            <comment></comment>
+        </property>
+        <property>
+            <name>AutoSetVisible</name>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>value</name>
+                <type>boolean</type>
+            </parameter>
+            <comment>Checking if it can be set Selection View Visible
+ Defualt is true</comment>
+        </property>
+        <property>
+            <name>SelectedSelectionView</name>
+            <returntype>android.view.View</returntype>
+            <comment></comment>
+        </property>
+        <property>
+            <name>CanStartMultiSelectionWithClick</name>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>value</name>
+                <type>boolean</type>
+            </parameter>
+            <comment>Checking if it can be start multiselection mode with item Click
+ Defualt is false</comment>
+        </property>
+        <property>
+            <name>MultiSelectionEnabled</name>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>value</name>
+                <type>boolean</type>
+            </parameter>
+            <comment>Checking if it can be start multiselection mode</comment>
+        </property>
+        <property>
+            <name>SelectWithStart</name>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>value</name>
+                <type>boolean</type>
+            </parameter>
+            <comment>Checking if it can be Select item when Selection is Starting
+ Defualt is true</comment>
+        </property>
+        <property>
+            <name>CanStartMultiSelectionWithLongClick</name>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>value</name>
+                <type>boolean</type>
+            </parameter>
+            <comment>Checking if it can be start multiselection mode with item LongClick
+ Defualt is true</comment>
+        </property>
+        <property>
+            <name>UnselectWithSelectionViewClick</name>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>value</name>
+                <type>boolean</type>
+            </parameter>
+            <comment>unselect  item when click on Selection view. 
+ its working when multiselection is started.
+ you can enable UnselectWhenFocused() for unselect 
+ with parent item click when view focused
+ Defualt is false</comment>
+        </property>
+        <property>
+            <name>FocusedView</name>
+            <returntype>android.view.View</returntype>
+            <comment></comment>
+        </property>
+        <property>
+            <name>SelectedCount</name>
+            <returntype>int</returntype>
+            <comment></comment>
+        </property>
+        <property>
+            <name>FocusedIndex</name>
+            <returntype>int</returntype>
+            <comment></comment>
+        </property>
+        <property>
+            <name>SelectedView</name>
+            <returntype>android.view.View</returntype>
+            <comment></comment>
+        </property>
+        <property>
+            <name>StopWhenUnselectItems</name>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>value</name>
+                <type>boolean</type>
+            </parameter>
+            <comment>Checking if it can be stop multiselection mode when unslecet all items
+ Defualt is false</comment>
+        </property>
+        <property>
+            <name>SelectedItems</name>
+            <returntype>anywheresoftware.b4a.objects.collections.List</returntype>
+            <comment></comment>
+        </property>
+    </class>
+    <version>1.0</version>
+    <author>AmirHosseinAghajari</author>
+</root>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <doclet-version-NOT-library-version>1.05</doclet-version-NOT-library-version>
+    <class>
+        <name>com.tillekesoft.characterencodingdetection.GuessEncoding</name>
+        <shortname>IcuB4A</shortname>
+        <owner>process</owner>
+        <permission>android.permission.WRITE_EXTERNAL_STORAGE</permission>
+        <method>
+            <name>readFileAsStringGuessEncoding</name>
+            <comment>Pass a filepath of a file which you want to guess the character encoding.
+ The result will be returned as a String showing encoding used and a value of confidence.
+ Sample usage:
+ Dim DetectEncoding as GuessEncoding
+ Dim guessedEncoding As String
+ guessedEncoding = DetectEncoding.readFileAsStringGuessEncoding(File.Combine(File.DirRootExternal,"bb.srt"))
+ Note: As with any method reading from a file, you should use Try and Catch to be on the safe side.</comment>
+            <returntype>java.lang.String</returntype>
+            <parameter>
+                <name>filePath</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+    </class>
+    <version>0.1</version>
+    <author>moster67/Mikael Osterhed</author>
+    <dependsOn>icu4j</dependsOn>
+</root>

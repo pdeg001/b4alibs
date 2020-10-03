@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <doclet-version-NOT-library-version>1.05</doclet-version-NOT-library-version>
+    <class>
+        <name>b4a.example.SV</name>
+        <shortname>MySecVault</shortname>
+        <owner>process</owner>
+        <property>
+            <name>MyMap</name>
+            <returntype>byte[]</returntype>
+            <comment></comment>
+        </property>
+        <property>
+            <name>MySpA</name>
+            <returntype>byte[]</returntype>
+            <comment></comment>
+        </property>
+    </class>
+    <version>1.0</version>
+    <author>FLM</author>
+</root>

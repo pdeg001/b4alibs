@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>XOM</title>
+		<style type="text/css">
+			body{
+				background-color:#E1DEE6;
+				color:#222;
+				font-family:Arial,Helvetica,sans-serif;
+				font-size:14px;
+				margin:0;
+				padding:0;
+			}
+			h3{
+				background-color:#869BBF;
+				margin:0;
+				padding:5px;
+			}
+			ul{
+				list-style:none;
+				margin:5px;
+				padding:0;
+			}
+			ul li{
+				background-color:#FFF;
+				border:1px solid #666;
+				margin:0;
+				padding:5px;
+			}
+			ul li:first-child, h3{
+				border-top-left-radius:5px;
+				border-top-right-radius:5px;
+			}
+			ul li:last-child, h3{
+				border-bottom-left-radius:5px;
+				border-bottom-right-radius:5px;
+			}
+			ul h3:first-child{
+				background-color:#869BDF;
+				margin-bottom:5px;
+			}
+		</style>
+    </head>
+    <body><h3>XOM</h3>
+<ul><li><h3>Comment:</h3></li><li>The B4A XOM library is a partial implementation of the java XOM library by Elliotte Rusty Harold.
+The java XOM library is licensed under the terms and conditions of the LGPL, http://www.gnu.org/licenses/lgpl.html
+More info can be found here: http://www.xom.nu/</li></ul>
+<ul>
+<li><h3>XOMAttribute</h3>
+<h3>Fields:</h3>
+<ul>
+<li><b>ATTRIBUTE_TYPE_CDATA <span style='color:blue'>As</span> <span style='color:#008B8B'>Type</span></b>
+</li>
+<li><b>ATTRIBUTE_TYPE_ENTITIES <span style='color:blue'>As</span> <span style='color:#008B8B'>Type</span></b>
+</li>
+<li><b>ATTRIBUTE_TYPE_ENTITY <span style='color:blue'>As</span> <span style='color:#008B8B'>Type</span></b>
+</li>
+<li><b>ATTRIBUTE_TYPE_ENUMERATION <span style='color:blue'>As</span> <span style='color:#008B8B'>Type</span></b>
+</li>
+<li><b>ATTRIBUTE_TYPE_ID <span style='color:blue'>As</span> <span style='color:#008B8B'>Type</span></b>
+</li>
+<li><b>ATTRIBUTE_TYPE_IDREF <span style='color:blue'>As</span> <span style='color:#008B8B'>Type</span></b>
+</li>
+<li><b>ATTRIBUTE_TYPE_IDREFS <span style='color:blue'>As</span> <span style='color:#008B8B'>Type</span></b>
+</li>
+<li><b>ATTRIBUTE_TYPE_NMTOKEN <span style='color:blue'>As</span> <span style='color:#008B8B'>Type</span></b>
+</li>
+<li><b>ATTRIBUTE_TYPE_NMTOKENS <span style='color:blue'>As</span> <span style='color:#008B8B'>Type</span></b>
+</li>
+<li><b>ATTRIBUTE_TYPE_NOTATION <span style='color:blue'>As</span> <span style='color:#008B8B'>Type</span></b>
+</li>
+<li><b>ATTRIBUTE_TYPE_UNDECLARED <span style='color:blue'>As</span> <span style='color:#008B8B'>Type</span></b>
+</li>
+</ul>
+<h3>Methods:</h3>
+<ul>
+<li><b>Copy <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMNode</span></b>
+<br><i>Creates a deep copy of this attribute that is not attached to an element.</i>
+</li>
+<li><b>Initialize</b> (LocalName <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>, Value <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b></b>
+<br><i>Creates a new attribute in no namespace with the specified name and value and undeclared type.</i>
+</li>
+<li><b>Initialize2</b> (LocalName <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>, Value <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>, AttributeType1 <span style='color:blue'>As</span> <span style='color:#008B8B'>Type</span>)<b></b>
+<br><i>Creates a new attribute in no namespace with the specified name, value, and type.</i>
+</li>
+<li><b>Initialize3</b> (LocalName <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>, Uri <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>, Value <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b></b>
+<br><i>Creates a new attribute in the specified namespace with the specified name and value and undeclared type.</i>
+</li>
+<li><b>Initialize4</b> (LocalName <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>, Uri <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>, Value <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>, AttributeType1 <span style='color:blue'>As</span> <span style='color:#008B8B'>Type</span>)<b></b>
+<br><i>Creates a new attribute in the specified namespace with the specified name, value, and type.</i>
+</li>
+<li><b>Initialize5</b> (Attribute1 <span style='color:blue'>As</span> <span style='color:#008B8B'>Attribute</span>)<b></b>
+<br><i>Creates a new attribute which is a deep copy of Attribute1.</i>
+</li>
+<li><b>IsInitialized <span style='color:blue'>As</span> <span style='color:#008B8B'>Boolean</span></b>
+</li>
+<li><b>SetNamespace</b> (Prefix <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>, URI <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b></b>
+<br><i>Set the attribute's namespace prefix and URI.</i>
+</li>
+<li><b>ToString <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+<br><i>Returns a string representation of the attribute suitable for debugging and diagnosis.</i>
+</li>
+<li><b>ToXML <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+<br><i>Returns a string representation of the attribute that is a well-formed XML attribute.</i>
+</li>
+</ul>
+<h3>Properties:</h3>
+<ul>
+<li><b>LocalName <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+<br><i>Get or Set the local name of this attribute, not including the prefix.</i>
+</li>
+<li><b>NameSpacePrefix <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b> <i>[read only]</i>
+<br><i>Get the prefix of this attribute, or the empty string if this attribute is not in a namespace.</i>
+</li>
+<li><b>NamespaceURI <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b> <i>[read only]</i>
+<br><i>Get the namespace URI of this attribute, or the empty string if this attribute is not in a namespace.</i>
+</li>
+<li><b>QualifiedName <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b> <i>[read only]</i>
+<br><i>Get the qualified name of this attribute, including the prefix if this attribute is in a namespace.</i>
+</li>
+<li><b>Type <span style='color:blue'>As</span> <span style='color:#008B8B'>Type</span></b>
+<br><i>Get or Set the DTD type of this attribute.</i>
+</li>
+<li><b>Value <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+<br><i>Get or Set the attribute value.</i>
+</li>
+</ul>
+</ul>
+<ul>
+<li><h3>XOMBuilder</h3>
+<h3>Events:</h3>
+<ul>
+<li><b>BuildDone</b> (XOMDocument1 <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMDocument</span>, Tag <span style='color:blue'>As</span> <span style='color:#008B8B'>Object</span>)</li>
+</ul>
+<h3>Methods:</h3>
+<ul>
+<li><b>BuildFromFile</b> (FilePath <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>, Tag <span style='color:blue'>As</span> <span style='color:#008B8B'>Object</span>)<b></b>
+<br><i>Build an XOMDocument from the file specified by FilePath.
+Tag - Pass any Object as the Tag and when the method has completed, the Tag Object is returned in the BuildDone event.</i>
+</li>
+<li><b>BuildFromInputStream</b> (InputStream1 <span style='color:blue'>As</span> <span style='color:#008B8B'>InputStream</span>, BaseUri <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>, AutoCloseStream <span style='color:blue'>As</span> <span style='color:#008B8B'>Boolean</span>, Tag <span style='color:blue'>As</span> <span style='color:#008B8B'>Object</span>)<b></b>
+<br><i>Build an XOMDocument from InputStream1.
+Tag - Pass any Object as the Tag and when the method has completed, the Tag Object is returned in the BuildDone event.</i>
+</li>
+<li><b>BuildFromString</b> (XmlString <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>, BaseUri <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>, Tag <span style='color:blue'>As</span> <span style='color:#008B8B'>Object</span>)<b></b>
+<br><i>Build an XOMDocument from the XmlString.
+Tag - Pass any Object as the Tag and when the method has completed, the Tag Object is returned in the BuildDone event.</i>
+</li>
+<li><b>BuildFromURL</b> (Url <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>, Tag <span style='color:blue'>As</span> <span style='color:#008B8B'>Object</span>)<b></b>
+<br><i>Build an XOMDocument from the document specified by Url.
+Tag - Pass any Object as the Tag and when the method has completed, the Tag Object is returned in the BuildDone event.</i>
+</li>
+<li><b>Initialize</b> (EventName <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b></b>
+</li>
+<li><b>IsInitialized <span style='color:blue'>As</span> <span style='color:#008B8B'>Boolean</span></b>
+</li>
+</ul>
+</ul>
+<ul>
+<li><h3>XOMComment</h3>
+<h3>Methods:</h3>
+<ul>
+<li><b>Copy <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMNode</span></b>
+</li>
+<li><b>Initialize</b> (Data <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b></b>
+<br><i>Creates a new comment node from string data.
+ A comment node cannot have any child nodes.
+ It can be a child of an Element or a Document.</i>
+</li>
+<li><b>IsInitialized <span style='color:blue'>As</span> <span style='color:#008B8B'>Boolean</span></b>
+</li>
+<li><b>ToString <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+</li>
+<li><b>ToXML <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+</li>
+</ul>
+<h3>Properties:</h3>
+<ul>
+<li><b>Value <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+<br><i>Get or Set the content of this comment.</i>
+</li>
+</ul>
+</ul>
+<ul>
+<li><h3>XOMDocType</h3>
+<h3>Methods:</h3>
+<ul>
+<li><b>Initialize</b> (RootElementName <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b></b>
+<br><i>Creates a new document type declaration with no public or system ID.</i>
+</li>
+<li><b>Initialize2</b> (RootElementName <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>, SystemId <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b></b>
+<br><i>Creates a new document type declaration with a system ID but no public ID.</i>
+</li>
+<li><b>Initialize3</b> (RootElementName <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>, SystemId <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>, PublicId <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b></b>
+<br><i>Creates a new document type declaration with a public ID and a system ID.</i>
+</li>
+<li><b>IsInitialized <span style='color:blue'>As</span> <span style='color:#008B8B'>Boolean</span></b>
+</li>
+<li><b>ToString <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+<br><i>Returns a string form of the DocType suitable for debugging and diagnosis.</i>
+</li>
+<li><b>ToXML <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+<br><i>Returns a string containing the actual XML form of the document type declaration represented by this object.</i>
+</li>
+</ul>
+<h3>Properties:</h3>
+<ul>
+<li><b>InternalDTDSubset <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+<br><i>Get or Set the internal DTD subset; that is the part of the DTD between [ and ].</i>
+</li>
+<li><b>PublicID <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+<br><i>Get or Set the public ID for the external DTD subset.</i>
+</li>
+<li><b>RootElementName <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+<br><i>Get or Set the name the document type declaration specifies for the root element.</i>
+</li>
+<li><b>SystemID <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+<br><i>Get or Set the system ID for the external DTD subset.</i>
+</li>
+</ul>
+</ul>
+<ul>
+<li><h3>XOMDocument</h3>
+<h3>Methods:</h3>
+<ul>
+<li><b>Copy <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMNode</span></b>
+</li>
+<li><b>Initialize</b> (RootElement <span style='color:blue'>As</span> <span style='color:#008B8B'>Element</span>)<b></b>
+<br><i>Creates a new Document object with the specified root element.</i>
+</li>
+<li><b>IsInitialized <span style='color:blue'>As</span> <span style='color:#008B8B'>Boolean</span></b>
+</li>
+<li><b>RemoveChild</b> (Position <span style='color:blue'>As</span> <span style='color:#008B8B'>Int</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMNode</span></b>
+</li>
+<li><b>RemoveChild2</b> (Node1 <span style='color:blue'>As</span> <span style='color:#008B8B'>Node</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMNode</span></b>
+</li>
+<li><b>ReplaceChild</b> (OldChild <span style='color:blue'>As</span> <span style='color:#008B8B'>Node</span>, NewChild <span style='color:blue'>As</span> <span style='color:#008B8B'>Node</span>)<b></b>
+</li>
+<li><b>ToString <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+</li>
+<li><b>ToXML <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+</li>
+</ul>
+<h3>Properties:</h3>
+<ul>
+<li><b>BaseURI <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+<br><i>Get or Set the URI from which this document was loaded, and against which relative URLs in this document will be resolved.</i>
+</li>
+<li><b>DocType <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMDocType</span></b>
+<br><i>Get or Set this document's document type declaration.</i>
+</li>
+<li><b>RootElement <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMElement</span></b>
+<br><i>Get or Set the document's current root element.</i>
+</li>
+<li><b>Value <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b> <i>[read only]</i>
+<br><i>Returns the value of the document as defined by XPath 1.0.</i>
+</li>
+</ul>
+</ul>
+<ul>
+<li><h3>XOMElement</h3>
+<h3>Methods:</h3>
+<ul>
+<li><b>AddAttribute</b> (Attribute1 <span style='color:blue'>As</span> <span style='color:#008B8B'>Attribute</span>)<b></b>
+</li>
+<li><b>AddNamespaceDeclaration</b> (Prefix <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>, Uri <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b></b>
+</li>
+<li><b>AppendChild</b> (Text <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b></b>
+<br><i>Converts a string to a text node and appends that node to the children of this node.</i>
+</li>
+<li><b>Copy <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMNode</span></b>
+</li>
+<li><b>GetAttributeByIndex</b> (Index <span style='color:blue'>As</span> <span style='color:#008B8B'>Int</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMAttribute</span></b>
+</li>
+<li><b>GetAttributeByName</b> (Name <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMAttribute</span></b>
+</li>
+<li><b>GetAttributeByNameAndNamespace</b> (Name <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>, Namespace <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMAttribute</span></b>
+</li>
+<li><b>GetAttributeValueByName</b> (Name <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+</li>
+<li><b>GetAttributeValueByNameAndNamespace</b> (Name <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>, Namespace <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+</li>
+<li><b>GetChildElements <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMElements</span></b>
+</li>
+<li><b>GetChildElementsByName</b> (Name <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMElements</span></b>
+</li>
+<li><b>GetChildElementsByNameAndNamespace</b> (Name <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>, Namespace <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMElements</span></b>
+</li>
+<li><b>GetFirstChildElementByName</b> (Name <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMElement</span></b>
+</li>
+<li><b>GetFirstChildElementByNameAndNamespace</b> (Name <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>, Namespace <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMElement</span></b>
+</li>
+<li><b>GetNamespacePrefix <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+<br><i>Returns the prefix of this element, or the empty string if this element does not have a prefix.</i>
+</li>
+<li><b>GetNamespacePrefix2</b> (Index <span style='color:blue'>As</span> <span style='color:#008B8B'>Int</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+<br><i>Returns the index'th namespace prefix declared on this element.</i>
+</li>
+<li><b>GetNamespaceURI <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+<br><i>Returns the namespace URI of this element, or the empty string if this element is not in a namespace.</i>
+</li>
+<li><b>Initialize</b> (Name <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b></b>
+<br><i>Creates a new element in no namespace.</i>
+</li>
+<li><b>Initialize2</b> (Name <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>, Uri <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b></b>
+<br><i>Creates a new element in a namespace.</i>
+</li>
+<li><b>Initialize3</b> (Element1 <span style='color:blue'>As</span> <span style='color:#008B8B'>Element</span>)<b></b>
+<br><i>Creates a new element which is a deep copy of Element1.</i>
+</li>
+<li><b>InsertChild</b> (Text <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>, Index <span style='color:blue'>As</span> <span style='color:#008B8B'>Int</span>)<b></b>
+</li>
+<li><b>IsInitialized <span style='color:blue'>As</span> <span style='color:#008B8B'>Boolean</span></b>
+</li>
+<li><b>RemoveAttribute</b> (Attribute1 <span style='color:blue'>As</span> <span style='color:#008B8B'>Attribute</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMAttribute</span></b>
+</li>
+<li><b>RemoveChildren <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMNodes</span></b>
+</li>
+<li><b>RemoveNamespaceDeclaration</b> (Prefix <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b></b>
+<br><i>Removes the mapping of the specified prefix.</i>
+</li>
+<li><b>SetNamespacePrefix</b> (NamespacePrefix <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b></b>
+<br><i>Sets the namespace prefix of this element.</i>
+</li>
+<li><b>SetNamespaceURI</b> (NamespaceURI <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b></b>
+<br><i>Sets the namespace URI of this element.</i>
+</li>
+<li><b>ToString <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+</li>
+<li><b>ToXML <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+</li>
+</ul>
+<h3>Properties:</h3>
+<ul>
+<li><b>AttributeCount <span style='color:blue'>As</span> <span style='color:#008B8B'>Int</span></b> <i>[read only]</i>
+</li>
+<li><b>BaseURI <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+<br><i>Get or Set the URI from which this element was loaded, and against which relative URLs in this element will be resolved, unless an xml:base attribute overrides this.</i>
+</li>
+<li><b>LocalName <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+<br><i>Get or Set the local name of this element, not including the namespace prefix or colon.</i>
+</li>
+<li><b>NamespaceDeclarationCount <span style='color:blue'>As</span> <span style='color:#008B8B'>Int</span></b> <i>[read only]</i>
+<br><i>Get the number of namespace declarations on this element.</i>
+</li>
+<li><b>QualifiedName <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b> <i>[read only]</i>
+<br><i>Get the complete name of this element, including the namespace prefix if this element has one.</i>
+</li>
+<li><b>Value <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b> <i>[read only]</i>
+</li>
+</ul>
+</ul>
+<ul>
+<li><h3>XOMElements</h3>
+<h3>Methods:</h3>
+<ul>
+<li><b>GetElement</b> (Index <span style='color:blue'>As</span> <span style='color:#008B8B'>Int</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMElement</span></b>
+</li>
+<li><b>IsInitialized <span style='color:blue'>As</span> <span style='color:#008B8B'>Boolean</span></b>
+</li>
+<li><b>Size <span style='color:blue'>As</span> <span style='color:#008B8B'>Int</span></b>
+</li>
+</ul>
+</ul>
+<ul>
+<li><h3>XOMNamespace</h3>
+<h3>Methods:</h3>
+<ul>
+<li><b>Copy <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMNode</span></b>
+</li>
+<li><b>Detach</b>
+</li>
+<li><b>GetChild</b> (Index <span style='color:blue'>As</span> <span style='color:#008B8B'>Int</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMNode</span></b>
+</li>
+<li><b>IsInitialized <span style='color:blue'>As</span> <span style='color:#008B8B'>Boolean</span></b>
+</li>
+<li><b>ToString <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+</li>
+<li><b>ToXML <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+</li>
+</ul>
+<h3>Properties:</h3>
+<ul>
+<li><b>ChildCount <span style='color:blue'>As</span> <span style='color:#008B8B'>Int</span></b> <i>[read only]</i>
+</li>
+<li><b>Prefix <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b> <i>[read only]</i>
+</li>
+<li><b>Value <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b> <i>[read only]</i>
+</li>
+</ul>
+</ul>
+<ul>
+<li><h3>XOMNode</h3>
+<h3>Methods:</h3>
+<ul>
+<li><b>Copy <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMNode</span></b>
+</li>
+<li><b>Detach</b>
+</li>
+<li><b>GetChild</b> (Index <span style='color:blue'>As</span> <span style='color:#008B8B'>Int</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMNode</span></b>
+</li>
+<li><b>HashCode <span style='color:blue'>As</span> <span style='color:#008B8B'>Int</span></b>
+</li>
+<li><b>IsInitialized <span style='color:blue'>As</span> <span style='color:#008B8B'>Boolean</span></b>
+</li>
+<li><b>Query</b> (XPath <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMNodes</span></b>
+<br><i>Returns the nodes selected by the XPath expression in the context of this node in document order as defined by XSLT.</i>
+</li>
+<li><b>ToXML <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+</li>
+</ul>
+<h3>Properties:</h3>
+<ul>
+<li><b>BaseURI <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b> <i>[read only]</i>
+</li>
+<li><b>ChildCount <span style='color:blue'>As</span> <span style='color:#008B8B'>Int</span></b> <i>[read only]</i>
+</li>
+<li><b>Document <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMDocument</span></b> <i>[read only]</i>
+</li>
+<li><b>Parent <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMParentNode</span></b> <i>[read only]</i>
+</li>
+<li><b>Value <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b> <i>[read only]</i>
+</li>
+</ul>
+</ul>
+<ul>
+<li><h3>XOMNodes</h3>
+<h3>Methods:</h3>
+<ul>
+<li><b>AppendNode</b> (Node1 <span style='color:blue'>As</span> <span style='color:#008B8B'>Node</span>)<b></b>
+</li>
+<li><b>ContainsNode</b> (Node1 <span style='color:blue'>As</span> <span style='color:#008B8B'>Node</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>Boolean</span></b>
+</li>
+<li><b>GetNode</b> (Index <span style='color:blue'>As</span> <span style='color:#008B8B'>Int</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMNode</span></b>
+</li>
+<li><b>Initialize</b>
+<br><i>Creates an empty node list.</i>
+</li>
+<li><b>InsertNode</b> (Node1 <span style='color:blue'>As</span> <span style='color:#008B8B'>Node</span>, Index <span style='color:blue'>As</span> <span style='color:#008B8B'>Int</span>)<b></b>
+</li>
+<li><b>IsInitialized <span style='color:blue'>As</span> <span style='color:#008B8B'>Boolean</span></b>
+</li>
+<li><b>RemoveNode</b> (Index <span style='color:blue'>As</span> <span style='color:#008B8B'>Int</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMNode</span></b>
+</li>
+<li><b>Size <span style='color:blue'>As</span> <span style='color:#008B8B'>Int</span></b>
+</li>
+</ul>
+</ul>
+<ul>
+<li><h3>XOMParentNode</h3>
+<h3>Methods:</h3>
+<ul>
+<li><b>AppendChild</b> (Node1 <span style='color:blue'>As</span> <span style='color:#008B8B'>Node</span>)<b></b>
+</li>
+<li><b>GetChild</b> (index <span style='color:blue'>As</span> <span style='color:#008B8B'>Int</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMNode</span></b>
+</li>
+<li><b>GetChildCount <span style='color:blue'>As</span> <span style='color:#008B8B'>Int</span></b>
+</li>
+<li><b>IndexOf</b> (Node1 <span style='color:blue'>As</span> <span style='color:#008B8B'>Node</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>Int</span></b>
+</li>
+<li><b>InsertChild</b> (Node1 <span style='color:blue'>As</span> <span style='color:#008B8B'>Node</span>, Index <span style='color:blue'>As</span> <span style='color:#008B8B'>Int</span>)<b></b>
+</li>
+<li><b>IsInitialized <span style='color:blue'>As</span> <span style='color:#008B8B'>Boolean</span></b>
+</li>
+<li><b>RemoveChild</b> (Index <span style='color:blue'>As</span> <span style='color:#008B8B'>Int</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMNode</span></b>
+</li>
+<li><b>RemoveChild2</b> (Node1 <span style='color:blue'>As</span> <span style='color:#008B8B'>Node</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMNode</span></b>
+</li>
+<li><b>ReplaceChild</b> (OldChild <span style='color:blue'>As</span> <span style='color:#008B8B'>Node</span>, NewChild <span style='color:blue'>As</span> <span style='color:#008B8B'>Node</span>)<b></b>
+</li>
+<li><b>SetBaseURI</b> (Uri <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b></b>
+<br><i>Sets the URI against which relative URIs in this node will be resolved.</i>
+</li>
+</ul>
+</ul>
+<ul>
+<li><h3>XOMProcessingInstruction</h3>
+<h3>Methods:</h3>
+<ul>
+<li><b>Copy <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMNode</span></b>
+</li>
+<li><b>IsInitialized <span style='color:blue'>As</span> <span style='color:#008B8B'>Boolean</span></b>
+</li>
+<li><b>ToString <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+</li>
+<li><b>ToXML <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+</li>
+</ul>
+<h3>Properties:</h3>
+<ul>
+<li><b>Target <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+</li>
+<li><b>Value <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+</li>
+</ul>
+</ul>
+<ul>
+<li><h3>XOMSerializer</h3>
+<h3>Methods:</h3>
+<ul>
+<li><b>Flush</b>
+<br><i>Flushes the data onto the output stream.</i>
+</li>
+<li><b>Initialize</b> (OutputStream1 <span style='color:blue'>As</span> <span style='color:#008B8B'>OutputStream</span>)<b></b>
+<br><i>Create a new serializer that uses the UTF-8 encoding.</i>
+</li>
+<li><b>Initialize2</b> (OutputStream1 <span style='color:blue'>As</span> <span style='color:#008B8B'>OutputStream</span>, Encoding <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b></b>
+<br><i>Create a new serializer that uses the specified encoding.</i>
+</li>
+<li><b>IsInitialized <span style='color:blue'>As</span> <span style='color:#008B8B'>Boolean</span></b>
+</li>
+<li><b>SetOutputStream</b> (OutputStream1 <span style='color:blue'>As</span> <span style='color:#008B8B'>OutputStream</span>)<b></b>
+<br><i>Flushes the previous output stream and redirects further output to the new output stream.</i>
+</li>
+<li><b>Write</b> (Document1 <span style='color:blue'>As</span> <span style='color:#008B8B'>Document</span>)<b></b>
+<br><i>Serializes Document1 onto the output stream using the current options.</i>
+</li>
+</ul>
+<h3>Properties:</h3>
+<ul>
+<li><b>Encoding <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b> <i>[read only]</i>
+<br><i>Get the name of the character encoding used by this serializer.</i>
+</li>
+<li><b>Indent <span style='color:blue'>As</span> <span style='color:#008B8B'>Int</span></b>
+<br><i>Get or Set the number of spaces this serializer indents.</i>
+</li>
+<li><b>LineSeparator <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+<br><i>Get or Set the string used as a line separator.</i>
+</li>
+<li><b>MaxLength <span style='color:blue'>As</span> <span style='color:#008B8B'>Int</span></b>
+<br><i>Get or Set the preferred maximum line length.</i>
+</li>
+<li><b>PreserveBaseURI <span style='color:blue'>As</span> <span style='color:#008B8B'>Boolean</span></b>
+<br><i>Get or Set whether this serializer inserts extra xml:base attributes to attempt to preserve base URI information from the document.</i>
+</li>
+<li><b>UnicodeNormalizationFormC <span style='color:blue'>As</span> <span style='color:#008B8B'>Boolean</span></b>
+<br><i>Get or Set whether serialization will perform Unicode normalization on all data using normalization form C (NFC).</i>
+</li>
+</ul>
+</ul>
+<ul>
+<li><h3>XOMText</h3>
+<h3>Methods:</h3>
+<ul>
+<li><b>Copy <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMNode</span></b>
+</li>
+<li><b>GetChild</b> (Index <span style='color:blue'>As</span> <span style='color:#008B8B'>Int</span>)<b> <span style='color:blue'>As</span> <span style='color:#008B8B'>XOMNode</span></b>
+</li>
+<li><b>Initialize</b> (Data <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span>)<b></b>
+<br><i>Creates a new Text object with the value of Data.</i>
+</li>
+<li><b>IsInitialized <span style='color:blue'>As</span> <span style='color:#008B8B'>Boolean</span></b>
+</li>
+<li><b>ToString <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+</li>
+<li><b>ToXML <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b>
+</li>
+</ul>
+<h3>Properties:</h3>
+<ul>
+<li><b>ChildCount <span style='color:blue'>As</span> <span style='color:#008B8B'>Int</span></b> <i>[read only]</i>
+</li>
+<li><b>Value <span style='color:blue'>As</span> <span style='color:#008B8B'>String</span></b> <i>[read only]</i>
+<br><i>Returns the XPath 1.0 string-value of this Text node.</i>
+</li>
+</ul>
+</ul>
+<ul><li><h3>Author: Martin Pearman</h3></li></ul>
+<ul><li><h3>Version: 1.20</h3></li></ul></body>
+</html>								

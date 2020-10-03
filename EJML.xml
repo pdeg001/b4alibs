@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <doclet-version-NOT-library-version>1.02</doclet-version-NOT-library-version>
+    <class>
+        <name>anywheresoftware.b4a.agraham.ejml.SimpleSVDWrapper</name>
+        <shortname>SimpleSVD</shortname>
+        <comment>This object holds the Singular Value Decomposition (SVD) of a matrix, which is defined as A = U * W * V^T 
+where A is m by n, and U and V are orthogonal matrices, and W is a diagonal matrix. 
+
+The dimension of U,W,V depends if it is a compact SVD or not.
+If not compact then U is m by m, *W is m by n, V is n by n.
+If compact then let s be the number of singular values, U is m by s, W is s by s, and V is n by s.</comment>
+        <owner>process</owner>
+        <method>
+            <name>Nullity</name>
+            <comment>Returns the nullity of the decomposed matrix.</comment>
+            <returntype>int</returntype>
+        </method>
+        <method>
+            <name>NumCols</name>
+            <comment>Returns the number of columns in the decomposed matrix.</comment>
+            <returntype>int</returntype>
+        </method>
+        <method>
+            <name>Rank</name>
+            <comment>Returns the rank of the decomposed matrix.</comment>
+            <returntype>int</returntype>
+        </method>
+        <method>
+            <name>NullSpace</name>
+            <comment>Returns the computed null space of the decomposed matrix as a SimpleMatrix. 
+The null space is a set of non-zero vectors that when multiplied by the original matrix return zero. 
+The null space is found by extracting the columns in V that are associated singular values less than or equal to the threshold.
+In some situations a non-compact SVD is required.</comment>
+            <returntype>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</returntype>
+        </method>
+        <method>
+            <name>NumRows</name>
+            <comment>Returns the number of rows in the decomposed matrix.</comment>
+            <returntype>int</returntype>
+        </method>
+        <method>
+            <name>GetU</name>
+            <comment>Returns the orthogonal 'U' m x m matrix as a SimpleMatrix</comment>
+            <returntype>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</returntype>
+        </method>
+        <method>
+            <name>GetV</name>
+            <comment>Returns the orthogonal 'V' n x n matrix as a SimpleMatrix</comment>
+            <returntype>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</returntype>
+        </method>
+        <method>
+            <name>GetW</name>
+            <comment>Returns a diagonal matrix with the singular values along the diagonal as a SimpleMatrix.
+The singular values are ordered from largest to smallest.</comment>
+            <returntype>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</returntype>
+        </method>
+        <method>
+            <name>GetSingularValues</name>
+            <comment>Returns all the singular values as a Double array.</comment>
+            <returntype>double[]</returntype>
+            <parameter>
+                <name>index</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>NumberOfSingularValues</name>
+            <comment>Returns the number of singular values in the decomposed matrix.</comment>
+            <returntype>int</returntype>
+        </method>
+        <method>
+            <name>IsCompact</name>
+            <comment>If true then compact matrices are returned.</comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>GetSingleValue</name>
+            <comment>Returns the specified singular value.</comment>
+            <returntype>double</returntype>
+            <parameter>
+                <name>index</name>
+                <type>int</type>
+            </parameter>
+        </method>
+    </class>
+    <class>
+        <name>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</name>
+        <shortname>SimpleMatrix</shortname>
+        <comment>SimpleMatrix is an interface that provides an easy to use object oriented way of doing linear algebra.
+It is a wrapper around the operation interface in EJML and was originally inspired by Jama.
+When using SimpleMatrix memory management is automatically handled and it allows commands to be chained
+together as many of the operations return the SimpleMatrix itself.
+
+For example A.Transpose().Mult(B).Scale(12).Invert. Such expressions are evaluated left to right.
+
+The typical method in SimpleMatrix takes at least one SimpleMatrix as an input and returns a SimpleMatrix.
+None of the input matrices are modified during function calls, a new matrix is always returned.
+
+The names of the methods in this library are as far as possible the names in the original EJML libray.
+
+The EJML documentation should be studied for more information on SimpleMatrix.
+&lt;link&gt;SimpleMatrix|http://code.google.com/p/efficient-java-matrix-library/wiki/SimpleMatrix&lt;/link&gt;</comment>
+        <owner>process</owner>
+        <method>
+            <name>ElementMaxAbs</name>
+            <comment>Returns the maximum absolute value of all the elements in this matrix.
+This is equivalent the the infinite p-norm of the matrix.</comment>
+            <returntype>double</returntype>
+        </method>
+        <method>
+            <name>GetElement1D</name>
+            <comment></comment>
+            <returntype>double</returntype>
+            <parameter>
+                <name>index</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Kron</name>
+            <comment>Returns the computed Kronecker product between this matrix and the provided B matrix:
+C = kron(A,B)</comment>
+            <returntype>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</returntype>
+            <parameter>
+                <name>B</name>
+                <type>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Zero</name>
+            <comment>Sets all the elements in this matrix equal to zero.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>SetElement1D</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>index</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>value</name>
+                <type>double</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Reshape</name>
+            <comment>Reshapes the matrix to the specified number of rows and columns.
+If the total number of elements is &lt;= number of elements it had before the data is saved.
+Otherwise a new internal array is declared and the old data lost. 
+This method is one of the few that changes this matrix rather returning a new one.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>numRows</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>numCols</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Initialize6</name>
+            <comment>Creates a new SimpleMatrix with random elements drawn from a uniform distribution from minValue to maxValue.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>numRows</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>numCols</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>minValue</name>
+                <type>double</type>
+            </parameter>
+            <parameter>
+                <name>maxValue</name>
+                <type>double</type>
+            </parameter>
+        </method>
+        <method>
+            <name>ConditionP2</name>
+            <comment>The condition p = 2 number of a matrix is used to measure the sensitivity of the linear system Ax=b.
+A value near one indicates that it is a well conditioned matrix.</comment>
+            <returntype>double</returntype>
+        </method>
+        <method>
+            <name>Initialize4</name>
+            <comment>Creates a new identity matrix with the specified size</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>width</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>SetDouble</name>
+            <comment>Sets all the elements in this matrix equal to the specified value.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>val</name>
+                <type>double</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Initialize5</name>
+            <comment>Creates a matrix where all but the diagonal elements are zero.
+The values of the diagonal elements are specified by the parameter 'values'.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>values</name>
+                <type>double[]</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Scale</name>
+            <comment>Returns a new matrix, the result of scaling each element by 'val': Bi,j = val*Ai,j</comment>
+            <returntype>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</returntype>
+            <parameter>
+                <name>val</name>
+                <type>double</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Initialize2</name>
+            <comment>Creates a matrix with the values and shape defined by the 2D array 'data'.
+It is assumed that 'data' has a row-major formatting: data[ row ][ column ]</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>double2Darray</name>
+                <type>double[][]</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Invert</name>
+            <comment>Returns the inverse of this matrix: B = A^-1
+If the matrix could not be inverted then SingularMatrixException is thrown.
+Even if no exception is thrown the matrix could still be singular or nearly singular.</comment>
+            <returntype>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</returntype>
+        </method>
+        <method>
+            <name>Initialize3</name>
+            <comment>Creats a new copy of a SimpleMatrix which is identical to the original. 
+Note that
+&lt;code&gt;Dim NewMatrix As SimpleMatrix
+NewMatrix.Initialize3(OldMatrix)&lt;/code&gt;
+
+is identical to
+
+&lt;code&gt;Dim NewMatrix As SimpleMatrix
+NewMatrix = OldMatrix.Copy&lt;/code&gt;</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>simplematrix</name>
+                <type>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</type>
+            </parameter>
+        </method>
+        <method>
+            <name>PlusScaled</name>
+            <comment>Returns a new matrix, the result of matrix addition and scaling: C = A + beta*B
+where C is the returned matrix, Z is this matrix, and B is the passed in matrix.</comment>
+            <returntype>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</returntype>
+            <parameter>
+                <name>beta</name>
+                <type>double</type>
+            </parameter>
+            <parameter>
+                <name>B</name>
+                <type>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Solve</name>
+            <comment>Solves for X in the following equation: x = A^-1 * B
+where 'A' is this matrix and 'B' is an n by p matrix. 
+
+If the system could not be solved then a SingularMatrixException is thrown.
+Even if no exception is thrown 'A' could still be singular or nearly singular.</comment>
+            <returntype>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</returntype>
+            <parameter>
+                <name>B</name>
+                <type>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Initialize</name>
+            <comment>Creates a new matrix that is initially set to zero with the specified dimensions.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>numRows</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>numCols</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>ExtractDiag</name>
+            <comment>Extracts the diagonal from this matrix and returns the values inside a column vector.</comment>
+            <returntype>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</returntype>
+        </method>
+        <method>
+            <name>NumCols</name>
+            <comment>Returns the number of columns in this matrix.</comment>
+            <returntype>int</returntype>
+        </method>
+        <method>
+            <name>Transpose</name>
+            <comment>Returns a new matrix which is the transpose of this matrix</comment>
+            <returntype>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</returntype>
+        </method>
+        <method>
+            <name>InsertIntoThis</name>
+            <comment>Copy matrix B into this matrix at location (insertRow, insertCol).
+This method is one of the few that changes this matrix rather returning a new one.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>insertRow</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>insertCol</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>B</name>
+                <type>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Negative</name>
+            <comment>Returns a new matrix whose elements are the negative of 'this' matrix's elements</comment>
+            <returntype>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</returntype>
+        </method>
+        <method>
+            <name>IsVector</name>
+            <comment>Returns true if this matrix is a vector.</comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>ElementSum</name>
+            <comment>Returns the sum of all the elements in the matrix.</comment>
+            <returntype>double</returntype>
+        </method>
+        <method>
+            <name>NumRows</name>
+            <comment>Returns the number of rows in this matrix.</comment>
+            <returntype>int</returntype>
+        </method>
+        <method>
+            <name>GetElement</name>
+            <comment>Returns the value of the specified matrix element.
+Performs a bounds check to make sure the requested element is part of the matrix.</comment>
+            <returntype>double</returntype>
+            <parameter>
+                <name>row</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>col</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>LoadCSV</name>
+            <comment>Returns a new matrix loaded from a CSV file.</comment>
+            <returntype>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</returntype>
+            <parameter>
+                <name>pathandfileName</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>LoadBinary</name>
+            <comment>Returns a new matrix loaded from a serialized binary file.</comment>
+            <returntype>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</returntype>
+            <parameter>
+                <name>pathandfileName</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>ElementMult</name>
+            <comment>Returns a matrix which is the result of an element by element multiplication of 'this' and 'B'
+ Ci,j = Ai,j*Bi,j</comment>
+            <returntype>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</returntype>
+            <parameter>
+                <name>B</name>
+                <type>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</type>
+            </parameter>
+        </method>
+        <method>
+            <name>IsInBounds</name>
+            <comment>Returns true if the specified matrix element is a valid element inside this matrix.</comment>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>row</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>col</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Copy</name>
+            <comment>Creates and returns a matrix which is idential to this one.</comment>
+            <returntype>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</returntype>
+        </method>
+        <method>
+            <name>SetElement</name>
+            <comment>Assigns the pscified element in the Matrix to the specified value</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>row</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>col</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>value</name>
+                <type>double</type>
+            </parameter>
+        </method>
+        <method>
+            <name>GetIndex</name>
+            <comment></comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>row</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>col</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>ToString</name>
+            <comment>Converts the array into a string format for display purposes.</comment>
+            <returntype>java.lang.String</returntype>
+        </method>
+        <method>
+            <name>SetMatrix</name>
+            <comment>Sets the elements in this matrix to be equal to the elements in the passed in matrix.
+Both matrix must have the same dimension.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>A</name>
+                <type>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Divide</name>
+            <comment>Returns a new matrix, the result of dividing each element of 'this' by 'val': Bi,j = Ai,j/val</comment>
+            <returntype>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</returntype>
+            <parameter>
+                <name>val</name>
+                <type>double</type>
+            </parameter>
+        </method>
+        <method>
+            <name>GetNumElements</name>
+            <comment>Returns the number of elements in this matrix
+which is equal to the number of rows times the number of columns.</comment>
+            <returntype>int</returntype>
+        </method>
+        <method>
+            <name>SaveToFileBinary</name>
+            <comment>Saves this matrix to a file as a serialized binary object.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>pathandfileName</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>PseudoInverse</name>
+            <comment>Computes the Moore-Penrose pseudo-inverse matrix of this and returns a new matrix.</comment>
+            <returntype>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</returntype>
+            <parameter>
+                <name>pathandfileName</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Mult</name>
+            <comment>Returns a matrix which is the result of matrix multiplication: C = A * B
+where C is the returned matrix, A is this matrix, and B is the passed in matrix.</comment>
+            <returntype>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</returntype>
+            <parameter>
+                <name>B</name>
+                <type>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Plus</name>
+            <comment>Returns a new matrix, the result of matrix addition: C = A + B
+where C is the returned matrix, A is this matrix, and B is the passed in matrix.</comment>
+            <returntype>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</returntype>
+            <parameter>
+                <name>B</name>
+                <type>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Trace</name>
+            <comment>Computes and returns the trace of the matrix.</comment>
+            <returntype>double</returntype>
+        </method>
+        <method>
+            <name>Minus</name>
+            <comment>Returns a matrix which is the result of matrix subtraction: C = A - B
+where C is the returned matrix, A is this matrix, and B is the passed in matrix.</comment>
+            <returntype>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</returntype>
+            <parameter>
+                <name>B</name>
+                <type>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</type>
+            </parameter>
+        </method>
+        <method>
+            <name>SetColumn</name>
+            <comment>Assigns consecutive elements inside a column to the provided array.
+A(offset:(offset + values.length),column) = values</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>column</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>offset</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>values</name>
+                <type>double[]</type>
+            </parameter>
+        </method>
+        <method>
+            <name>EIG</name>
+            <comment>Computes the Eigendecomposition of a matrix.
+Eigenvalues and eigenvectors have the following property: A*v=λ*v
+where A is a square matrix and v is an eigenvector associated with the eigenvalue λ.
+
+In general, both eigenvalues and eigenvectors can be complex numbers.
+For symmetric matrices the eigenvalues and eigenvectors are always real numbers.
+EJML does not support complex matrices but it does have minimal support for complex numbers.
+As a result complex eigenvalues are found, but only the real eigenvectors are computed.
+
+Returns a SimpleEVD for assignment to a SimpleEVD variable.</comment>
+            <returntype>anywheresoftware.b4a.agraham.ejml.SimpleEVDWrapper</returntype>
+        </method>
+        <method>
+            <name>Combine</name>
+            <comment>Creates a new matrix that is a combination of this matrix and matrix B.
+B is written into A at the specified location if needed the size of A is increased by growing it.
+A is grown by padding the new area with zeros.
+While useful when adding data to a matrix which will be solved for it is also much less efficient than
+predeclaring a matrix and inserting data into it.
+If insertRow or insertCol is set to SimpleMatrix.END then it will be combined at the last row or column respectively.</comment>
+            <returntype>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</returntype>
+            <parameter>
+                <name>insertRow</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>insertCol</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>B</name>
+                <type>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</type>
+            </parameter>
+        </method>
+        <method>
+            <name>SetRow</name>
+            <comment>Assigns consecutive elements inside a row to the provided array.
+A(offset:(offset + values.length),row) = values</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>row</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>offset</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>values</name>
+                <type>double[]</type>
+            </parameter>
+        </method>
+        <method>
+            <name>ExtractMatrix</name>
+            <comment>Extracts the diagonal from this matrix and returns the values inside a column vector.</comment>
+            <returntype>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</returntype>
+            <parameter>
+                <name>y0</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>y1</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>x0</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>x1</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Dot</name>
+            <comment>Computes the dot product (a.k.a. inner product) between this vector and vector 'V'.</comment>
+            <returntype>double</returntype>
+            <parameter>
+                <name>V</name>
+                <type>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</type>
+            </parameter>
+        </method>
+        <method>
+            <name>SVD</name>
+            <comment>Computes the Singular Value Decomposition (SVD) of this matrix, which is defined as A = U * W * V^T 
+where A is m by n, and U and V are orthogonal matrices, and W is a diagonal matrix.
+The eigenvalues are ordered from largest to smallest.
+
+Returns a SimpleSVD for assignment to a SimpleSVD variable.
+
+If compact is True then compact matrices will be returned from the SVD.
+See the help for SimpleSVD for a definition of compact matrices.</comment>
+            <returntype>anywheresoftware.b4a.agraham.ejml.SimpleSVDWrapper</returntype>
+            <parameter>
+                <name>iscompact</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Determinant</name>
+            <comment>Computes and returns the determinant of the matri.x</comment>
+            <returntype>double</returntype>
+        </method>
+        <method>
+            <name>HasUncountable</name>
+            <comment>Checks to see if any of the elements in this matrix are either NaN or infinite. 
+Returns True if an element is NaN or infinite, False otherwise.</comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>ExtractVector</name>
+            <comment>Extracts a row or column from this matrix.
+The returned vector will either be a row or column vector depending on the input type.
+extractRow - If true a row will be extracted.
+element - The row or column the vector is contained in.</comment>
+            <returntype>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</returntype>
+            <parameter>
+                <name>extractRow</name>
+                <type>boolean</type>
+            </parameter>
+            <parameter>
+                <name>element</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>IsIdentical</name>
+            <comment>Returns true if matrix 'B' is the same as this matrix within the specified tolerance.</comment>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>B</name>
+                <type>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</type>
+            </parameter>
+            <parameter>
+                <name>tol</name>
+                <type>double</type>
+            </parameter>
+        </method>
+        <method>
+            <name>SaveToFileCSV</name>
+            <comment>Saves this matrix to a file in a CSV format.
+For the file format see MatrixIO in the original EJML documentation.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>pathandfileName</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>NormF</name>
+            <comment>Computes the Frobenius normal of the matrix: normF = Sqrt{ ∑i=1:m ∑j=1:n { aij2} }</comment>
+            <returntype>double</returntype>
+        </method>
+        <property>
+            <name>Data</name>
+            <returntype>double[]</returntype>
+            <parameter>
+                <name>data</name>
+                <type>double[]</type>
+            </parameter>
+            <comment>Gets or sets a reference to the underlying Double array of data for the matrix.</comment>
+        </property>
+        <property>
+            <name>Version</name>
+            <returntype>double</returntype>
+            <comment>Returns the version of the library.</comment>
+        </property>
+        <field>
+            <name>END</name>
+            <comment>Constant for defining the last row or column of a SimpleMatrix.</comment>
+            <returntype>int</returntype>
+        </field>
+    </class>
+    <class>
+        <name>anywheresoftware.b4a.agraham.ejml.SimpleEVDWrapper</name>
+        <shortname>SimpleEVD</shortname>
+        <comment>This object holds the Eigendecomposition of a matrix.
+Eigenvalues and eigenvectors have the following property: A*v=λ*v
+where A is a square matrix and v is an eigenvector associated with the eigenvalue λ.
+
+In general, both eigenvalues and eigenvectors can be complex numbers.
+For symmetric matrices the eigenvalues and eigenvectors are always real numbers.
+EJML does not support complex matrices but it does have minimal support for complex numbers.
+As a result complex eigenvalues are found, but only the real eigenvectors are computed.</comment>
+        <owner>process</owner>
+        <method>
+            <name>GetEigenVector</name>
+            <comment>Used to retrieve real valued eigenvectors.
+If an eigenvector is associated with a complex eigenvalue then null is returned instead.</comment>
+            <returntype>anywheresoftware.b4a.agraham.ejml.SimpleMatrixWrapper</returntype>
+            <parameter>
+                <name>index</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>GetEigenvalue</name>
+            <comment>Returns an eigenvalue as a complex number, a Double(2) where 0 is the real component and 1 the imaginary.
+
+For symmetric matrices the returned eigenvalue will always be a real number,
+which means the imaginary component will be equal to zero.
+
+NOTE: The order of the eigenvalues is dependent upon the decomposition algorithm used. 
+This means that they may or may not be ordered by magnitude.</comment>
+            <returntype>double[]</returntype>
+            <parameter>
+                <name>index</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Quality</name>
+            <comment>Computes the quality of the computed decomposition.
+A value close to or less than 1e-15 is considered to be within machine precision. 
+
+This function must be called before the original matrix has been modified
+or else it will produce meaningless results.</comment>
+            <returntype>double</returntype>
+        </method>
+        <property>
+            <name>NumberOfEigenvalues</name>
+            <returntype>int</returntype>
+            <comment>Returns the number of eigenvalues/eigenvectors. This is the matrix's dimension.</comment>
+        </property>
+        <property>
+            <name>IndexMin</name>
+            <returntype>int</returntype>
+            <comment>Returns the index of the eigenvalue which has the smallest magnitude.</comment>
+        </property>
+        <property>
+            <name>IndexMax</name>
+            <returntype>int</returntype>
+            <comment>Returns the index of the eigenvalue which has the largest magnitude.</comment>
+        </property>
+    </class>
+    <version>1.4</version>
+    <comment>This library is based on EJML - efficient-java-matrix-library.
+A fast and easy to use dense matrix linear algebra library written in Java. 
+&lt;link&gt;http://code.google.com/p/efficient-java-matrix-library/|http://code.google.com/p/efficient-java-matrix-library/&lt;/link&gt;
+
+Not all the functionality of EJML is exposed to Basic4android 
+This library exposes SimpleMatrix which is an interface that provides an easy to use
+object oriented way of doing linear algebra.
+&lt;link&gt;SimpleMatrix|http://code.google.com/p/efficient-java-matrix-library/wiki/SimpleMatrix&lt;/link&gt;
+
+Simplified ways to use popular matrix decompositions are provided.
+These decompositions should meet most people needs.
+SVD : Computes the singular value decomposition of 'this' matrix.
+EIG : Computes the eigen value decomposition of 'this' matrix.
+
+EJML and therefore also this library is licensed under the GNU Lesser General Public License.
+&lt;link&gt;http://www.gnu.org/licenses/lgpl.html|http://www.gnu.org/licenses/lgpl.html&lt;/link&gt;
+Copies of both the General Public License and Lesser General Public License are in the provided archive.
+
+Copyright 2013 Anywhere Software</comment>
+    <author>Andrew Graham</author>
+    <dependsOn>ejml-0.21</dependsOn>
+</root>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <doclet-version-NOT-library-version>1.05</doclet-version-NOT-library-version>
+    <class>
+        <name>com.lmax.disruptor.util.Util</name>
+        <comment>Set of common functions used by the Disruptor</comment>
+        <owner>process</owner>
+        <method>
+            <name>ceilingNextPowerOfTwo</name>
+            <comment>Calculate the next power of 2, greater than or equal to x.&lt;p&gt;
+ From Hacker's Delight, Chapter 3, Harry S. Warren Jr.
+x: Value to round up
+Return type: @return:The next power of 2 from x inclusive</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>x</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>getMinimumSequence</name>
+            <comment>Get the minimum sequence from an array of {@link com.lmax.disruptor.Sequence}s.
+sequences: to compare.
+Return type: @return:the minimum sequence found or Long.MAX_VALUE if the array is empty.</comment>
+            <returntype>long</returntype>
+            <parameter>
+                <name>sequences</name>
+                <type>com.lmax.disruptor.Sequence[]</type>
+            </parameter>
+        </method>
+        <method>
+            <name>log2</name>
+            <comment>Calculate the log base 2 of the supplied integer, essentially reports the location
+ of the highest bit.
+i: Value to calculate log2 for.
+Return type: @return:The log2 value</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>i</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>getAddressFromDirectByteBuffer</name>
+            <comment>Gets the address value for the memory that backs a direct byte buffer.
+buffer: 
+Return type: @return:The system address for the buffers</comment>
+            <returntype>long</returntype>
+            <parameter>
+                <name>buffer</name>
+                <type>java.nio.ByteBuffer</type>
+            </parameter>
+        </method>
+        <method>
+            <name>getSequencesFor</name>
+            <comment>Get an array of {@link Sequence}s for the passed {@link EventProcessor}s
+processors: for which to get the sequences
+Return type: @return:the array of {@link Sequence}s</comment>
+            <returntype>com.lmax.disruptor.Sequence[]</returntype>
+            <parameter>
+                <name>processors</name>
+                <type>com.lmax.disruptor.EventProcessor[]</type>
+            </parameter>
+        </method>
+        <property>
+            <name>Unsafe</name>
+            <returntype>sun.misc.Unsafe</returntype>
+            <comment>Get a handle on the Unsafe instance, used for accessing low-level concurrency
+ and memory constructs.</comment>
+        </property>
+    </class>
+    <class>
+        <name>anywheresoftware.b4j.objects.MqttBroker</name>
+        <shortname>MqttBroker</shortname>
+        <owner>process</owner>
+        <method>
+            <name>Initialize</name>
+            <comment>Initializes the broker and sets the broker port (currently there are no events).</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>EventName</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>Port</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Start</name>
+            <comment>Starts the server.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>SetUserAndPassword</name>
+            <comment>The server will only allow connections with the provided user names and password.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Username</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>Password</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Stop</name>
+            <comment>Stops the server.</comment>
+            <returntype>void</returntype>
+        </method>
+        <property>
+            <name>DebugLog</name>
+            <parameter>
+                <name>b</name>
+                <type>boolean</type>
+            </parameter>
+            <comment></comment>
+        </property>
+    </class>
+    <version>1.04</version>
+    <dependsOn>moqueutte</dependsOn>
+</root>

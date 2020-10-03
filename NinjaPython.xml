@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <doclet-version-NOT-library-version>1.05</doclet-version-NOT-library-version>
+    <class>
+        <name>com.ninjadynamics.ninjapython.NinjaPython</name>
+        <shortname>NinjaPython</shortname>
+        <owner>process</owner>
+        <method>
+            <name>AddImportPath</name>
+            <comment>Adds the given import path into sys.path.
+This action is necessary to import external modules.</comment>
+            <returntype>int</returntype>
+            <parameter>
+                <name>strImportPath</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Finalize</name>
+            <comment>Terminates the Python interpreter.
+This action is required to avoid memory leaks.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>Execute</name>
+            <comment>Executes the given Python code and returns its stdout.
+This can range from a single line to an entire script.</comment>
+            <returntype>java.lang.String</returntype>
+            <parameter>
+                <name>strPythonCode</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>LogStatusMessages</name>
+            <comment>Allows you to decide whether or not should
+status messages be displayed in the log console.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>enabled</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Reset</name>
+            <comment>Clears all objects from memory
+and resets the Python interpreter.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>Initialize</name>
+            <comment>Initializes the interpreter.
+Note: The Python Standard Library files are
+installed into 'File.DirInternal' on the first run.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>LogInput</name>
+            <comment>Allows you to decide whether or not should
+the input code be displayed in the log console.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>enabled</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+        <method>
+            <name>LogOutput</name>
+            <comment>Allows you to decide whether or not should
+the Python output be displayed in the log console.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>enabled</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+        <field>
+            <name>AboutLib</name>
+            <comment>NinjaPython 1.03 - Ninja Dynamics
+Compiled: 31/10/2017 @ 21:29:53
+Package Name: com.ninjadynamics.ninjapython</comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+    </class>
+    <version>1.03</version>
+    <author>Ninja Dynamics</author>
+</root>

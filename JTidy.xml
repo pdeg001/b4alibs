@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <doclet-version-NOT-library-version>1.05</doclet-version-NOT-library-version>
+    <class>
+        <name>anywheresoftware.b4a.objects.TidyWrapper</name>
+        <shortname>Tidy</shortname>
+        <comment>Tidy allows you to convert a HTML page to XHTML format and then parse it with XML parser.
+Example&lt;code&gt;
+Sub Process_Globals
+    Dim sax As SaxParser
+    Dim tid As Tidy
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+    tid.Initialize
+    'parse the Html page and create a new xml document.
+    tid.Parse(File.OpenInput(File.DirAssets, "index.html"), File.DirRootExternal, "1.xml")
+    sax.Initialize
+    sax.Parse(File.OpenInput(File.DirRootExternal, "1.xml"), "sax")
+End Sub&lt;/code&gt;</comment>
+        <owner>process</owner>
+        <method>
+            <name>Initialize</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>Parse</name>
+            <comment>Parses the given HTML input stream and generates a XHTML file that can be parsed with a XML parser.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>In</name>
+                <type>java.io.InputStream</type>
+            </parameter>
+            <parameter>
+                <name>Dir</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>FileName</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+    </class>
+    <version>1.1</version>
+</root>

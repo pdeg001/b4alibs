@@ -1,0 +1,1343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <doclet-version-NOT-library-version>1.04</doclet-version-NOT-library-version>
+    <class>
+        <name>uk.co.martinpearman.b4a.graphics.Point</name>
+        <shortname>Point</shortname>
+        <objectwrapper>android.graphics.Point</objectwrapper>
+        <owner>process</owner>
+        <method>
+            <name>Set</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>X</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Y</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>IsInitialized</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>Initialize</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>X</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Y</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Offset</name>
+            <comment>Offset the point's coordinates by Dx, Dy.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Dx</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Dy</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Equals</name>
+            <comment>Returns true if the point's coordinates equal (X, Y).</comment>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>X</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>Y</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Initialize3</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>Initialize2</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Point1</name>
+                <type>android.graphics.Point</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Negate</name>
+            <comment>Negate the point's coordinates.</comment>
+            <returntype>void</returntype>
+        </method>
+        <property>
+            <name>X</name>
+            <returntype>int</returntype>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Y</name>
+            <returntype>int</returntype>
+            <comment></comment>
+        </property>
+    </class>
+    <class>
+        <name>uk.co.martinpearman.b4a.support.v7.media.MediaSessionStatus</name>
+        <shortname>MediaSessionStatus</shortname>
+        <objectwrapper>android.support.v7.media.MediaSessionStatus</objectwrapper>
+        <owner>process</owner>
+        <method>
+            <name>GetTimestamp</name>
+            <comment>Gets the timestamp associated with the status information in milliseconds since boot in the elapsedRealtime() time base.</comment>
+            <returntype>long</returntype>
+        </method>
+        <method>
+            <name>IsQueuePaused</name>
+            <comment>Returns true if the session's queue is paused.</comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>GetSessionState</name>
+            <comment>Gets the session state.</comment>
+            <returntype>int</returntype>
+        </method>
+        <method>
+            <name>IsInitialized</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <field>
+            <name>SESSION_STATE_INVALIDATED</name>
+            <comment>Indicates that the media session was invalidated involuntarily due to another session taking control of the route.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>SESSION_STATE_ENDED</name>
+            <comment>Indicates that the media session was ended normally using the end session action.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>SESSION_STATE_ACTIVE</name>
+            <comment>Indicates that the media session is active and in control of the route.</comment>
+            <returntype>int</returntype>
+        </field>
+    </class>
+    <class>
+        <name>uk.co.martinpearman.b4a.support.v7.media.MediaRouteSelector</name>
+        <shortname>MediaRouteSelector</shortname>
+        <objectwrapper>android.support.v7.media.MediaRouteSelector</objectwrapper>
+        <owner>process</owner>
+        <method>
+            <name>IsEmpty</name>
+            <comment>Returns True if the selector does not specify any capabilities.</comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>GetControlCategories</name>
+            <comment>Gets the list of media control categories in the selector.</comment>
+            <returntype>java.lang.String[]</returntype>
+        </method>
+        <method>
+            <name>Contains</name>
+            <comment>Returns True if this MediaRouteSelector contains all of the capabilities described by MediaRouteSelector1.</comment>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>MediaRouteSelector1</name>
+                <type>android.support.v7.media.MediaRouteSelector</type>
+            </parameter>
+        </method>
+        <method>
+            <name>HasControlCategory</name>
+            <comment>Returns True if the selector contains the specified category.</comment>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>ControlCategory</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>IsInitialized</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>IsValid</name>
+            <comment>Returns True if the selector has all of the required fields.</comment>
+            <returntype>boolean</returntype>
+        </method>
+    </class>
+    <class>
+        <name>uk.co.martinpearman.b4a.support.v7.media.MediaRouterProviderInfo</name>
+        <shortname>MediaRouterProviderInfo</shortname>
+        <objectwrapper>android.support.v7.media.MediaRouter.ProviderInfo</objectwrapper>
+        <owner>process</owner>
+        <method>
+            <name>IsInitialized</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+    </class>
+    <class>
+        <name>uk.co.martinpearman.b4a.support.v7.media.MediaRouterCallback</name>
+        <shortname>MediaRouterCallback</shortname>
+        <objectwrapper>android.support.v7.media.MediaRouter.Callback</objectwrapper>
+        <owner>process</owner>
+        <event>RouteSelected(MediaRouter1 As MediaRouter, MediaRouterRouteInfo1 As MediaRouterRouteInfo)</event>
+        <event>RouteUnselected(MediaRouter1 As MediaRouter, MediaRouterRouteInfo1 As MediaRouterRouteInfo)</event>
+        <method>
+            <name>IsInitialized</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+    </class>
+    <class>
+        <name>uk.co.martinpearman.b4a.support.v7.media.MediaRouteSelectorBuilder</name>
+        <shortname>MediaRouteSelectorBuilder</shortname>
+        <objectwrapper>android.support.v7.media.MediaRouteSelector.Builder</objectwrapper>
+        <owner>process</owner>
+        <method>
+            <name>AddControlCategory</name>
+            <comment>Adds a media control category to the builder.</comment>
+            <returntype>uk.co.martinpearman.b4a.support.v7.media.MediaRouteSelectorBuilder</returntype>
+            <parameter>
+                <name>ControlCategory</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>AddMediaRouteSelector</name>
+            <comment>Adds the contents of an existing media route selector to the builder.</comment>
+            <returntype>uk.co.martinpearman.b4a.support.v7.media.MediaRouteSelectorBuilder</returntype>
+            <parameter>
+                <name>MediaRouteSelector1</name>
+                <type>android.support.v7.media.MediaRouteSelector</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Initialize2</name>
+            <comment>Creates a media route selector descriptor builder whose initial contents are copied from an existing selector.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>MediaRouteSelector1</name>
+                <type>android.support.v7.media.MediaRouteSelector</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Build</name>
+            <comment>Builds the media route selector.</comment>
+            <returntype>uk.co.martinpearman.b4a.support.v7.media.MediaRouteSelector</returntype>
+        </method>
+        <method>
+            <name>IsInitialized</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>Initialize</name>
+            <comment>Creates an empty media route selector builder.</comment>
+            <returntype>void</returntype>
+        </method>
+    </class>
+    <class>
+        <name>uk.co.martinpearman.b4a.support.v7.media.MediaRouterRouteInfo</name>
+        <shortname>MediaRouterRouteInfo</shortname>
+        <objectwrapper>android.support.v7.media.MediaRouter.RouteInfo</objectwrapper>
+        <owner>process</owner>
+        <method>
+            <name>GetVolume</name>
+            <comment>Gets the current volume for this route.</comment>
+            <returntype>int</returntype>
+        </method>
+        <method>
+            <name>MatchesSelector</name>
+            <comment>Returns True if the route supports at least one of the capabilities described by a media route selector.</comment>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>MediaRouteSelector1</name>
+                <type>android.support.v7.media.MediaRouteSelector</type>
+            </parameter>
+        </method>
+        <method>
+            <name>GetVolumeMax</name>
+            <comment>Gets the maximum volume at which the playback associated with this route is performed.</comment>
+            <returntype>int</returntype>
+        </method>
+        <method>
+            <name>IsSelected</name>
+            <comment>Returns True if this route is currently selected.</comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>IsInitialized</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>IsConnecting</name>
+            <comment>Returns True if the route is in the process of connecting and is not yet ready for use.</comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>GetName</name>
+            <comment>Gets the user-visible name of the route.</comment>
+            <returntype>java.lang.String</returntype>
+        </method>
+        <method>
+            <name>GetPlaybackType</name>
+            <comment>Gets the type of playback associated with this route.
+ (PLAYBACK_TYPE_LOCAL or PLAYBACK_TYPE_REMOTE).</comment>
+            <returntype>int</returntype>
+        </method>
+        <method>
+            <name>GetProvider</name>
+            <comment>Gets information about the provider of this media route.</comment>
+            <returntype>uk.co.martinpearman.b4a.support.v7.media.MediaRouterProviderInfo</returntype>
+        </method>
+        <method>
+            <name>IsDefault</name>
+            <comment>Returns True if this route is the default route.</comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>IsEnabled</name>
+            <comment>Returns True if this route is enabled and may be selected.</comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>SupportsControlCategory</name>
+            <comment>Returns True if the route supports the specified media control category.</comment>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>Category</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>GetVolumeHandling</name>
+            <comment>Gets information about how volume is handled on the route.</comment>
+            <returntype>int</returntype>
+        </method>
+        <method>
+            <name>GetId</name>
+            <comment>Gets the unique id of the route.</comment>
+            <returntype>java.lang.String</returntype>
+        </method>
+        <method>
+            <name>SupportsControlAction</name>
+            <comment>Returns True if the route supports the specified media control category and action.</comment>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>Category</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>Action</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>GetPresentationDisplay</name>
+            <comment>Gets the Display that should be used by the application to show a Presentation on an external display when this route is selected.</comment>
+            <returntype>uk.co.martinpearman.b4a.View.Display</returntype>
+        </method>
+        <method>
+            <name>GetDescription</name>
+            <comment>Gets the user-visible description of the route.</comment>
+            <returntype>java.lang.String</returntype>
+        </method>
+        <method>
+            <name>GetPlaybackStream</name>
+            <comment>Gets the audio stream over which the playback associated with this route is performed.</comment>
+            <returntype>int</returntype>
+        </method>
+        <method>
+            <name>RequestSetVolume</name>
+            <comment>Requests a volume change for this route asynchronously.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Volume</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Select</name>
+            <comment>Selects this media route.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>RequestUpdateVolume</name>
+            <comment>Requests an incremental volume update for this route asynchronously.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Delta</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <field>
+            <name>PLAYBACK_TYPE_LOCAL</name>
+            <comment>The default playback type, "local", indicating the presentation of the media is happening on the same device (e.g. a phone, a tablet) as where it is controlled from.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>PLAYBACK_VOLUME_FIXED</name>
+            <comment>Playback information indicating the playback volume is fixed, i.e. it cannot be controlled from this object.
+ An example of fixed playback volume is a remote player, playing over HDMI where the user prefers to control the volume on the HDMI sink, rather than attenuate at the source.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>PLAYBACK_TYPE_REMOTE</name>
+            <comment>A playback type indicating the presentation of the media is happening on a different device (i.e. the remote device) than where it is controlled from.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>PLAYBACK_VOLUME_VARIABLE</name>
+            <comment>Playback information indicating the playback volume is variable and can be controlled from this object.</comment>
+            <returntype>int</returntype>
+        </field>
+    </class>
+    <class>
+        <name>uk.co.martinpearman.b4a.support.v7.media.RemotePlaybackClient</name>
+        <shortname>RemotePlaybackClient</shortname>
+        <objectwrapper>uk.co.martinpearman.android.support.v7.media.RemotePlaybackClient</objectwrapper>
+        <owner>process</owner>
+        <event>ItemActionError(ErrorMessage As String, ErrorCode As Int, Tag As Object)</event>
+        <event>ItemActionResult(SessionId As String, MediaSessionStatus1 As MediaSessionStatus, ItemId As String, MediaItemStatus1 As MediaItemStatus, Tag As Object)</event>
+        <event>SessionActionError(ErrorMessage As String, ErrorCode As Int, Tag As Object)</event>
+        <event>SessionActionResult(SessionId As String, MediaSessionStatus1 As MediaSessionStatus, Tag As Object)</event>
+        <event>StatusItemStatusChanged(SessionId As String, MediaSessionStatus1 As MediaSessionStatus, ItemId As String, MediaItemStatus1 As MediaItemStatus, Tag As Object)</event>
+        <event>StatusSessionChanged(SessionId As String)</event>
+        <event>StatusSessionStatusChanged(SessionId As String, MediaSessionStatus1 As MediaSessionStatus, Tag As Object)</event>
+        <method>
+            <name>IsQueuingSupported</name>
+            <comment>Returns True if the route supports queuing features.</comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>Pause</name>
+            <comment>Sends a request to pause media playback.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Tag</name>
+                <type>java.lang.Object</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Stop</name>
+            <comment>Sends a request to stop media playback and clear the media playback queue.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Tag</name>
+                <type>java.lang.Object</type>
+            </parameter>
+        </method>
+        <method>
+            <name>GetSessionId</name>
+            <comment>Gets the current session id if there is one.</comment>
+            <returntype>java.lang.String</returntype>
+        </method>
+        <method>
+            <name>Remove</name>
+            <comment>Sends a request to remove a media item from the queue.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ItemId</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>Tag</name>
+                <type>java.lang.Object</type>
+            </parameter>
+        </method>
+        <method>
+            <name>IsInitialized</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>Initialize</name>
+            <comment>Creates a remote playback client for a route.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>pBA</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>MediaRouterRouteInfo1</name>
+                <type>android.support.v7.media.MediaRouter.RouteInfo</type>
+            </parameter>
+        </method>
+        <method>
+            <name>SetStatusCallback</name>
+            <comment>Sets a callback that should receive status updates when the state of media sessions or media items created by this instance of the remote playback client changes.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Tag</name>
+                <type>java.lang.Object</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Enqueue</name>
+            <comment>Sends a request to enqueue a media item.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>MediaResourceUri</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>MimeType</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>PositionMillis</name>
+                <type>long</type>
+            </parameter>
+            <parameter>
+                <name>Tag</name>
+                <type>java.lang.Object</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Release</name>
+            <comment>Releases resources owned by the client.</comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>GetStatus</name>
+            <comment>Sends a request to get the status of a media item.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ItemId</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>Tag</name>
+                <type>java.lang.Object</type>
+            </parameter>
+        </method>
+        <method>
+            <name>IsRemotePlaybackSupported</name>
+            <comment>Returns True if the route supports remote playback.</comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>IsSessionManagementSupported</name>
+            <comment>Returns true if the route supports session management features.</comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>SetSessionId</name>
+            <comment>Sets the current session id.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>SessionId</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>EndSession</name>
+            <comment>Sends a request to end the media playback session.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Tag</name>
+                <type>java.lang.Object</type>
+            </parameter>
+        </method>
+        <method>
+            <name>StartSession</name>
+            <comment>Sends a request to start a new media playback session.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Tag</name>
+                <type>java.lang.Object</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Play</name>
+            <comment>Sends a request to play a media resource.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>MediaResourceUri</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>MimeType</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>PositionMillis</name>
+                <type>long</type>
+            </parameter>
+            <parameter>
+                <name>Tag</name>
+                <type>java.lang.Object</type>
+            </parameter>
+        </method>
+        <method>
+            <name>GetSessionStatus</name>
+            <comment>Sends a request to get the status of the media playback session.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Tag</name>
+                <type>java.lang.Object</type>
+            </parameter>
+        </method>
+        <method>
+            <name>HasSession</name>
+            <comment>Returns True if the client currently has a session.</comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>Resume</name>
+            <comment>Sends a request to resume (unpause) media playback.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>Tag</name>
+                <type>java.lang.Object</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Seek</name>
+            <comment>Sends a request to seek to a new position in a media item.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ItemId</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>PositionMillis</name>
+                <type>long</type>
+            </parameter>
+            <parameter>
+                <name>Tag</name>
+                <type>java.lang.Object</type>
+            </parameter>
+        </method>
+    </class>
+    <class>
+        <name>uk.co.martinpearman.b4a.support.v7.media.MediaRouter</name>
+        <shortname>MediaRouter</shortname>
+        <objectwrapper>android.support.v7.media.MediaRouter</objectwrapper>
+        <owner>process</owner>
+        <method>
+            <name>GetSelectedRoute</name>
+            <comment></comment>
+            <returntype>uk.co.martinpearman.b4a.support.v7.media.MediaRouterRouteInfo</returntype>
+        </method>
+        <method>
+            <name>IsRouteAvailable</name>
+            <comment>Returns True if there is a route that matches the specified selector.</comment>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>MediaRouteSelector1</name>
+                <type>android.support.v7.media.MediaRouteSelector</type>
+            </parameter>
+            <parameter>
+                <name>Flags</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>SelectRoute</name>
+            <comment>Selects the specified route.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>MediaRouterRouteInfo1</name>
+                <type>android.support.v7.media.MediaRouter.RouteInfo</type>
+            </parameter>
+        </method>
+        <method>
+            <name>IsInitialized</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>UpdateSelectedRoute</name>
+            <comment>Returns the selected route if it matches the specified selector, otherwise selects the default route and returns it.</comment>
+            <returntype>uk.co.martinpearman.b4a.support.v7.media.MediaRouterRouteInfo</returntype>
+            <parameter>
+                <name>MediaRouteSelector1</name>
+                <type>android.support.v7.media.MediaRouteSelector</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Initialize</name>
+            <comment>Gets the currently selected route.</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>pBA</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+        </method>
+        <method>
+            <name>RemoveCallback</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>MediaRouterCallback1</name>
+                <type>android.support.v7.media.MediaRouter.Callback</type>
+            </parameter>
+        </method>
+        <method>
+            <name>AddCallback</name>
+            <comment>Registers a MediaRouterCallback to discover routes that match the selector and to receive events (defined by Flags) when they change.
+ Returns a reference to the MediaRouterCallback which can be passed to RemoveCallback to remove the listener.</comment>
+            <returntype>uk.co.martinpearman.b4a.support.v7.media.MediaRouterCallback</returntype>
+            <parameter>
+                <name>pBA</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>MediaRouteSelector1</name>
+                <type>android.support.v7.media.MediaRouteSelector</type>
+            </parameter>
+            <parameter>
+                <name>Flags</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>AddCallback2</name>
+            <comment>Registers a MediaRouterCallback to discover routes that match the selector and to receive events when they change.
+ Returns a reference to the MediaRouterCallback which can be passed to RemoveCallback to remove the listener.</comment>
+            <returntype>uk.co.martinpearman.b4a.support.v7.media.MediaRouterCallback</returntype>
+            <parameter>
+                <name>pBA</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>MediaRouteSelector1</name>
+                <type>android.support.v7.media.MediaRouteSelector</type>
+            </parameter>
+        </method>
+        <method>
+            <name>GetDefaultRoute</name>
+            <comment>Gets the default route for playing media content on the system.</comment>
+            <returntype>uk.co.martinpearman.b4a.support.v7.media.MediaRouterRouteInfo</returntype>
+        </method>
+        <field>
+            <name>CALLBACK_FLAG_REQUEST_DISCOVERY</name>
+            <comment>Request that route discovery be performed while this callback is registered.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>AVAILABILITY_FLAG_IGNORE_DEFAULT_ROUTE</name>
+            <comment>Ignore the default route.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>CALLBACK_FLAG_PERFORM_ACTIVE_SCAN</name>
+            <comment>Actively scan for routes while this callback is registered.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>CALLBACK_FLAG_UNFILTERED_EVENTS</name>
+            <comment>Do not filter route events.</comment>
+            <returntype>int</returntype>
+        </field>
+    </class>
+    <class>
+        <name>uk.co.martinpearman.b4a.support.v7.media.MediaRouterControlRequestCallback</name>
+        <shortname>MediaRouterControlRequestCallback</shortname>
+        <objectwrapper>android.support.v7.media.MediaRouter.ControlRequestCallback</objectwrapper>
+        <owner>process</owner>
+        <method>
+            <name>IsInitialized</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+    </class>
+    <class>
+        <name>uk.co.martinpearman.b4a.support.v7.media.ExternalDisplaysConstants</name>
+        <shortname>ExternalDisplaysConstants</shortname>
+        <owner>process</owner>
+        <field>
+            <name>ControlIntent</name>
+            <comment>MediaControlIntent constants.</comment>
+            <returntype>uk.co.martinpearman.b4a.support.v7.media.ExternalDisplaysConstants.ControlIntent</returntype>
+        </field>
+    </class>
+    <class>
+        <name>uk.co.martinpearman.b4a.support.v7.media.ExternalDisplaysConstants.ControlIntent</name>
+        <shortname>ControlIntent</shortname>
+        <owner>process</owner>
+        <field>
+            <name>ACTION_GET_SESSION_STATUS</name>
+            <comment>Remote playback media control action: Get media session status information.</comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
+            <name>ACTION_PLAY</name>
+            <comment>Remote playback media control action: Play media item.</comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
+            <name>ACTION_ENQUEUE</name>
+            <comment>Remote playback media control action: Enqueue media item.</comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
+            <name>ACTION_REMOVE</name>
+            <comment>Remote playback media control action: Remove media item from session's queue.</comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
+            <name>ERROR_INVALID_ITEM_ID</name>
+            <comment>Error code: The item id specified in the request was invalid.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>ACTION</name>
+            <comment>Remote playback media control action: Get media item playback status and progress information.</comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
+            <name>CATEGORY_LIVE_AUDIO</name>
+            <comment>Media control category: Live audio.</comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
+            <name>ACTION_PAUSE</name>
+            <comment>Remote playback media control action: Pause media playback.</comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
+            <name>ACTION_START_SESSION</name>
+            <comment>Remote playback media control action: Start session.</comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
+            <name>ERROR_INVALID_SESSION_ID</name>
+            <comment>Error code: The session id specified in the request was invalid.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>ACTION_STOP</name>
+            <comment>Remote playback media control action: Stop media playback (clear queue and unpause).</comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
+            <name>ERROR_UNSUPPORTED_OPERATION</name>
+            <comment>Error code: The operation is not supported.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>ACTION_SEEK</name>
+            <comment>Remote playback media control action: Seek media item to a new playback position.</comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
+            <name>CATEGORY_LIVE_VIDEO</name>
+            <comment>Media control category: Live video.</comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
+            <name>CATEGORY_REMOTE_PLAYBACK</name>
+            <comment>Media control category: Remote playback.</comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
+            <name>ACTION_END_SESSION</name>
+            <comment>Remote playback media control action: End session.</comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+        <field>
+            <name>ERROR_UNKNOWN</name>
+            <comment>Error code: An unknown error occurred.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>ACTION_RESUME</name>
+            <comment>Remote playback media control action: Resume media playback (unpause).</comment>
+            <returntype>java.lang.String</returntype>
+        </field>
+    </class>
+    <class>
+        <name>uk.co.martinpearman.b4a.support.v7.media.MediaItemStatus</name>
+        <shortname>MediaItemStatus</shortname>
+        <objectwrapper>android.support.v7.media.MediaItemStatus</objectwrapper>
+        <owner>process</owner>
+        <method>
+            <name>GetTimestamp</name>
+            <comment>Gets the timestamp associated with the status information in milliseconds since boot in the elapsedRealtime() time base.</comment>
+            <returntype>long</returntype>
+        </method>
+        <method>
+            <name>GetContentPosition</name>
+            <comment>Gets the content playback position as a long integer number of milliseconds from the beginning of the content.
+Return type: @return:</comment>
+            <returntype>long</returntype>
+        </method>
+        <method>
+            <name>GetPlaybackState</name>
+            <comment>Gets the playback state of the media item.</comment>
+            <returntype>int</returntype>
+        </method>
+        <method>
+            <name>GetContentDuration</name>
+            <comment>Gets the total duration of the content to be played as a long integer number of milliseconds.</comment>
+            <returntype>long</returntype>
+        </method>
+        <method>
+            <name>IsInitialized</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <field>
+            <name>PLAYBACK_STATE_PENDING</name>
+            <comment>Indicates that the media item has not yet started playback but will be played eventually.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>PLAYBACK_STATE_PLAYING</name>
+            <comment>Indicates that the media item is currently playing.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>PLAYBACK_STATE_CANCELED</name>
+            <comment>Indicates that the media item was explicitly removed from the queue by the application.
+ Items may be canceled and removed from the queue using the remove or stop action or by issuing another play action that has the side-effect of clearing the queue.
+ A canceled media item cannot be resumed.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>PLAYBACK_STATE_BUFFERING</name>
+            <comment>Buffering or seeking to a new position.
+ Indicates that the media item has been temporarily interrupted to fetch more content. Playback will continue automatically when enough content has been buffered.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>PLAYBACK_STATE_INVALIDATED</name>
+            <comment>Indicates that the media item was invalidated permanently and involuntarily. This state is used to indicate that the media item was invalidated and removed from the queue because the session to which it belongs was invalidated (typically by another application taking control of the route).
+ When invalidation occurs, the application should generally wait for the user to perform an explicit action, such as clicking on a play button in the UI, before creating a new media session to avoid unnecessarily interrupting another application that may have just started using the route. 
+ An invalidated media item cannot be resumed.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>PLAYBACK_STATE_FINISHED</name>
+            <comment>Indicates that the media item played to the end of the content and finished normally. 
+ A finished media item cannot be resumed.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>PLAYBACK_STATE_ERROR</name>
+            <comment>Playback halted or aborted due to an error. 
+ Examples of errors are no network connectivity when attempting to retrieve content from a server, or expired user credentials when trying to play subscription-based content.
+ A media item in the error state cannot be resumed.</comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>PLAYBACK_STATE_PAUSED</name>
+            <comment>Indicates that playback of the media item has been paused. Playback can be resumed using the resume action.</comment>
+            <returntype>int</returntype>
+        </field>
+    </class>
+    <class>
+        <name>uk.co.martinpearman.b4a.cwac.mediarouter.MediaRouteButton</name>
+        <shortname>MediaRouteButton</shortname>
+        <objectwrapper>com.commonsware.cwac.mediarouter.MediaRouteButton</objectwrapper>
+        <owner>activity</owner>
+        <method>
+            <name>GetRouteSelector</name>
+            <comment>Gets the media route selector for filtering the routes that the user can select using the media route chooser dialog.</comment>
+            <returntype>uk.co.martinpearman.b4a.support.v7.media.MediaRouteSelector</returntype>
+        </method>
+        <method>
+            <name>ShowDialog</name>
+            <comment>Show the route chooser or controller dialog.
+ If the default route is selected or if the currently selected route does not match the selector, then shows the route chooser dialog.
+ Otherwise shows the route controller dialog to offer the user a choice to disconnect from the route or perform other control actions such as setting the route's volume.
+ Returns True if the dialog was actually shown.</comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>IsInitialized</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>Initialize</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>pBA</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+        </method>
+        <method>
+            <name>BringToFront</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>SetLayout</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <parameter>
+                <name>arg1</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <parameter>
+                <name>arg2</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <parameter>
+                <name>arg3</name>
+                <type Pixel="true">int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>SendToBack</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>SetRouteSelector</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>MediaRouteSelector1</name>
+                <type>android.support.v7.media.MediaRouteSelector</type>
+            </parameter>
+        </method>
+        <method>
+            <name>RemoveView</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>Invalidate3</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg1</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg2</name>
+                <type>int</type>
+            </parameter>
+            <parameter>
+                <name>arg3</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Invalidate2</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>android.graphics.Rect</type>
+            </parameter>
+        </method>
+        <method>
+            <name>SetBackgroundImage</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>android.graphics.Bitmap</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Invalidate</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>RequestFocus</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <property>
+            <name>Left</name>
+            <returntype>int</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Background</name>
+            <returntype>android.graphics.drawable.Drawable</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>android.graphics.drawable.Drawable</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Top</name>
+            <returntype>int</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Color</name>
+            <parameter>
+                <name>arg0</name>
+                <type>int</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Visible</name>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>boolean</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Enabled</name>
+            <returntype>boolean</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>boolean</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Height</name>
+            <returntype>int</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Tag</name>
+            <returntype>java.lang.Object</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type>java.lang.Object</type>
+            </parameter>
+            <comment></comment>
+        </property>
+        <property>
+            <name>Width</name>
+            <returntype>int</returntype>
+            <parameter>
+                <name>arg0</name>
+                <type Pixel="true">int</type>
+            </parameter>
+            <comment></comment>
+        </property>
+    </class>
+    <class>
+        <name>uk.co.martinpearman.b4a.util.DisplayMetrics</name>
+        <shortname>DisplayMetrics</shortname>
+        <objectwrapper>android.util.DisplayMetrics</objectwrapper>
+        <owner>process</owner>
+        <method>
+            <name>SetToDefaults</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>IsInitialized</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>SetTo</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>DisplayMetrics1</name>
+                <type>android.util.DisplayMetrics</type>
+            </parameter>
+        </method>
+        <method>
+            <name>Initialize</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <property>
+            <name>DensityDpi</name>
+            <returntype>int</returntype>
+            <comment>The screen density expressed as dots-per-inch.</comment>
+        </property>
+        <property>
+            <name>ScaledDensity</name>
+            <returntype>float</returntype>
+            <comment>A scaling factor for fonts displayed on the display.</comment>
+        </property>
+        <property>
+            <name>WidthPixels</name>
+            <returntype>int</returntype>
+            <comment>The absolute width of the display in pixels.</comment>
+        </property>
+        <property>
+            <name>Xdpi</name>
+            <returntype>float</returntype>
+            <comment>The exact physical pixels per inch of the screen in the X dimension.</comment>
+        </property>
+        <property>
+            <name>Density</name>
+            <returntype>float</returntype>
+            <comment>The logical density of the display.</comment>
+        </property>
+        <property>
+            <name>HeightPixels</name>
+            <returntype>int</returntype>
+            <comment>The absolute height of the display in pixels.</comment>
+        </property>
+        <property>
+            <name>Ydpi</name>
+            <returntype>float</returntype>
+            <comment>The exact physical pixels per inch of the screen in the Y dimension.</comment>
+        </property>
+        <field>
+            <name>DENSITY_DEFAULT</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>DENSITY_XHIGH</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>DENSITY_HIGH</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>DENSITY_TV</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>DENSITY_XXHIGH</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>DENSITY_LOW</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+        <field>
+            <name>DENSITY_MEDIUM</name>
+            <comment></comment>
+            <returntype>int</returntype>
+        </field>
+    </class>
+    <class>
+        <name>uk.co.martinpearman.b4a.View.Display</name>
+        <shortname>Display</shortname>
+        <objectwrapper>android.view.Display</objectwrapper>
+        <owner>process</owner>
+        <method>
+            <name>GetRectSize</name>
+            <comment>Gets the size of the display as a rectangle, in pixels.</comment>
+            <returntype>anywheresoftware.b4a.objects.drawable.CanvasWrapper.RectWrapper</returntype>
+        </method>
+        <method>
+            <name>GetRealMetrics</name>
+            <comment>Gets display metrics based on the real size of this display.</comment>
+            <returntype>uk.co.martinpearman.b4a.util.DisplayMetrics</returntype>
+        </method>
+        <method>
+            <name>GetCurrentSizeRanges</name>
+            <comment>Return the range of display sizes an application can expect to encounter under normal operation, as long as there is no physical change in screen size.
+ Return value is an array of Point objects where element 0 is the smallest display size and element 1 is the largest display size.</comment>
+            <returntype>uk.co.martinpearman.b4a.graphics.Point[]</returntype>
+        </method>
+        <method>
+            <name>GetSize</name>
+            <comment>Gets the size of the display, in pixels.</comment>
+            <returntype>uk.co.martinpearman.b4a.graphics.Point</returntype>
+        </method>
+        <method>
+            <name>GetRealSize</name>
+            <comment>Gets the real size of the display without subtracting any window decor or applying any compatibility scale factors.</comment>
+            <returntype>uk.co.martinpearman.b4a.graphics.Point</returntype>
+        </method>
+        <method>
+            <name>IsInitialized</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>GetRefreshRate</name>
+            <comment>Gets the refresh rate of this display in frames per second.</comment>
+            <returntype>float</returntype>
+        </method>
+        <method>
+            <name>GetFlags</name>
+            <comment>Returns a combination of flags that describe the capabilities of the display.</comment>
+            <returntype>int</returntype>
+        </method>
+        <method>
+            <name>GetMetrics</name>
+            <comment>Gets display metrics that describe the size and density of this display.</comment>
+            <returntype>uk.co.martinpearman.b4a.util.DisplayMetrics</returntype>
+        </method>
+        <method>
+            <name>GetName</name>
+            <comment>Gets the name of the display.</comment>
+            <returntype>java.lang.String</returntype>
+        </method>
+        <method>
+            <name>GetDisplayId</name>
+            <comment>Gets the display id.</comment>
+            <returntype>int</returntype>
+        </method>
+        <method>
+            <name>IsValid</name>
+            <comment>Returns true if this display is still valid, false if the display has been removed.</comment>
+            <returntype>boolean</returntype>
+        </method>
+    </class>
+    <version>0.03</version>
+    <comment>A first attempt to wrap some android classes and enable connection to and control of a Chromecast from b4a.
+ Requires:
+ Android Support V4 - android-support-v4
+ Android Support V7 AppCompat - android-support-v7-appcompat.jar
+ Android Support V7 MediaRouter - android-support-v7-mediarouter.jar
+ Don't forget to use the b4a ApplicationRes project attribute to include the 'res' folder of both of these libraries as well as the .jar files.</comment>
+    <author>Martin Pearman</author>
+    <dependsOn>android-support-v4</dependsOn>
+    <dependsOn>android-support-v7-appcompat</dependsOn>
+    <dependsOn>android-support-v7-mediarouter</dependsOn>
+</root>

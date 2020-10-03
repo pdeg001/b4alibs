@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+  <b4x_version>8.30</b4x_version>
+  <dependsOn>reflection</dependsOn>
+  <class>
+    <name>b4a.example.jarfileloader</name>
+    <shortname>JarFileLoader</shortname>
+    <comment>Class module
+</comment>
+    <owner>process</owner>
+    <method>
+      <name>IsInitialized</name>
+      <comment>Test si l'objet a été initialisé.</comment>
+      <returntype>boolean</returntype>
+    </method>
+    <method>
+      <name DesignerName="Class_Globals">_class_globals</name>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>anywheresoftware.b4a.BA</type>
+      </parameter>
+      <parameter>
+        <name>FromAssetsFile</name>
+        <type>boolean</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="LoadBitmapFromJar">_loadbitmapfromjar</name>
+      <returntype>anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper</returntype>
+      <parameter>
+        <name>FileName</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="LoadFileFileFromJar">_loadfilefilefromjar</name>
+      <returntype>anywheresoftware.b4a.objects.streams.File.InputStreamWrapper</returntype>
+      <parameter>
+        <name>FileName</name>
+        <type>String</type>
+      </parameter>
+    </method>
+  </class>
+  <class>
+    <name>b4a.example.vumeteros</name>
+    <shortname>VuMeterOS</shortname>
+    <owner>activity</owner>
+    <event>ExampleEvent (Value As Int)</event>
+    <designerProperty>Key: BooleanExample, DisplayName: Boolean Example, FieldType: Boolean, DefaultValue: True, Description: Example of a boolean property.</designerProperty>
+    <designerProperty>Key: IntExample, DisplayName: Int Example, FieldType: Int, DefaultValue: 10, MinRange: 0, MaxRange: 100, Description: Note that MinRange and MaxRange are optional.</designerProperty>
+    <designerProperty>Key: StringWithListExample, DisplayName: String With List, FieldType: String, DefaultValue: Sunday, List: Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday</designerProperty>
+    <designerProperty>Key: StringExample, DisplayName: String Example, FieldType: String, DefaultValue: Text</designerProperty>
+    <designerProperty>Key: ColorExample, DisplayName: Color Example, FieldType: Color, DefaultValue: 0xFFCFDCDC, Description: You can use the built-in color picker to find the color values.</designerProperty>
+    <designerProperty>Key: DefaultColorExample, DisplayName: Default Color Example, FieldType: Color, DefaultValue: Null, Description: Setting the default value to Null means that a nullable field will be displayed.</designerProperty>
+    <method>
+      <name>IsInitialized</name>
+      <comment>Test si l'objet a été initialisé.</comment>
+      <returntype>boolean</returntype>
+    </method>
+    <method>
+      <name DesignerName="AddToParentRatio">_addtoparentratio</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Parent</name>
+        <type>anywheresoftware.b4a.objects.PanelWrapper</type>
+      </parameter>
+      <parameter>
+        <name>Left</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>Top</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>Ratio</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="AddToParentWH">_addtoparentwh</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Parent</name>
+        <type>anywheresoftware.b4a.objects.PanelWrapper</type>
+      </parameter>
+      <parameter>
+        <name>Left</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>Top</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>Width</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>Height</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Class_Globals">_class_globals</name>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="DesignerCreateView">_designercreateview</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Base</name>
+        <type>anywheresoftware.b4a.objects.PanelWrapper</type>
+      </parameter>
+      <parameter>
+        <name>Lbl</name>
+        <type>anywheresoftware.b4a.objects.LabelWrapper</type>
+      </parameter>
+      <parameter>
+        <name>Props</name>
+        <type>anywheresoftware.b4a.objects.collections.Map</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Init">_init</name>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>anywheresoftware.b4a.BA</type>
+      </parameter>
+      <parameter>
+        <name>Callback</name>
+        <type>Object</type>
+      </parameter>
+      <parameter>
+        <name>EventName</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Valeur">_valeur</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Val</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <field>
+      <name DesignerName="Img">_img</name>
+      <returntype>anywheresoftware.b4a.objects.ImageViewWrapper</returntype>
+    </field>
+  </class>
+  <version>1</version>
+</root>
