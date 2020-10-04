@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <doclet-version-NOT-library-version>1.05</doclet-version-NOT-library-version>
+    <class>
+        <name>de.donmanfred.MaterialBarcodeScannerBuilderWrapper</name>
+        <shortname>BarcodeScannerBuilder</shortname>
+        <objectwrapper>com.edwardvanraak.materialbarcodescanner.MaterialBarcodeScannerBuilder</objectwrapper>
+        <owner>activity</owner>
+        <event>onResult(barcode As String)</event>
+        <method>
+            <name>isBleepEnabled</name>
+            <comment>Get the bleep enabled value associated with this builder
+Return type: @return:</comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>withBackfacingCamera</name>
+            <comment>Makes the barcode scanner use the camera facing back</comment>
+            <returntype>de.donmanfred.MaterialBarcodeScannerBuilderWrapper</returntype>
+        </method>
+        <method>
+            <name>isFlashEnabledByDefault</name>
+            <comment>Get the flash enabled by default value associated with this builder
+Return type: @return:</comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>IsInitialized</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>Initialize</name>
+            <comment></comment>
+            <returntype>de.donmanfred.MaterialBarcodeScannerBuilderWrapper</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>CenterTracker</name>
+            <comment>Enables the default center tracker. This tracker is always visible and turns green when a barcode is found.\n
+ Please note that you can still scan a barcode outside the center tracker! This is purely a visual change.
+Return type: @return:</comment>
+            <returntype>de.donmanfred.MaterialBarcodeScannerBuilderWrapper</returntype>
+        </method>
+        <method>
+            <name>withOnlyQRCodeScanning</name>
+            <comment>Enables exclusive scanning on QR Codes, no other barcodes will be detected
+Return type: @return:</comment>
+            <returntype>de.donmanfred.MaterialBarcodeScannerBuilderWrapper</returntype>
+        </method>
+        <method>
+            <name>CameraFacing</name>
+            <comment>Either CameraSource.CAMERA_FACING_FRONT or CameraSource.CAMERA_FACING_BACK
+cameraFacing: </comment>
+            <returntype>de.donmanfred.MaterialBarcodeScannerBuilderWrapper</returntype>
+            <parameter>
+                <name>cameraFacing</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>withCenterTracker</name>
+            <comment>Enables the center tracker with a custom drawable resource. This tracker is always visible.\n
+ Please note that you can still scan a barcode outside the center tracker! This is purely a visual change.
+trackerResourceId: a drawable resource id
+detectedTrackerResourceId: a drawable resource id for the detected tracker state
+Return type: @return:</comment>
+            <returntype>de.donmanfred.MaterialBarcodeScannerBuilderWrapper</returntype>
+            <parameter>
+                <name>trackerResource</name>
+                <type>java.lang.String</type>
+            </parameter>
+            <parameter>
+                <name>detectedTrackerResource</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <method>
+            <name>withOnly2DScanning</name>
+            <comment>Enables exclusive scanning on EAN-13, EAN-8, UPC-A, UPC-E, Code-39, Code-93, Code-128, ITF and Codabar barcodes.
+Return type: @return:</comment>
+            <returntype>de.donmanfred.MaterialBarcodeScannerBuilderWrapper</returntype>
+        </method>
+        <method>
+            <name>EnableAutoFocus</name>
+            <comment>Enables or disables auto focusing on the camera</comment>
+            <returntype>de.donmanfred.MaterialBarcodeScannerBuilderWrapper</returntype>
+            <parameter>
+                <name>enabled</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+        <method>
+            <name>BarcodeFormat</name>
+            <comment></comment>
+            <returntype>de.donmanfred.MaterialBarcodeScannerBuilderWrapper</returntype>
+            <parameter>
+                <name>BarcodeFormat</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>clean</name>
+            <comment></comment>
+            <returntype>void</returntype>
+        </method>
+        <method>
+            <name>withFrontfacingCamera</name>
+            <comment>Makes the barcode scanner use camera facing front</comment>
+            <returntype>de.donmanfred.MaterialBarcodeScannerBuilderWrapper</returntype>
+        </method>
+        <method>
+            <name>setTrackerColor</name>
+            <comment>Sets the tracker color used by the barcode scanner, By default this is Material Red 500 (#F44336).
+color: </comment>
+            <returntype>de.donmanfred.MaterialBarcodeScannerBuilderWrapper</returntype>
+            <parameter>
+                <name>color</name>
+                <type>int</type>
+            </parameter>
+        </method>
+        <method>
+            <name>withOnly3DScanning</name>
+            <comment>Enables exclusive scanning on QR Code, Data Matrix, PDF-417 and Aztec barcodes.
+Return type: @return:</comment>
+            <returntype>de.donmanfred.MaterialBarcodeScannerBuilderWrapper</returntype>
+        </method>
+        <method>
+            <name>build</name>
+            <comment>Build a ready to use MaterialBarcodeScanner
+Return type: @return:A ready to use MaterialBarcodeScanner</comment>
+            <returntype>com.edwardvanraak.materialbarcodescanner.MaterialBarcodeScanner</returntype>
+        </method>
+        <method>
+            <name>BleepEnabled</name>
+            <comment>Enables or disables a bleep sound whenever a barcode is scanned</comment>
+            <returntype>de.donmanfred.MaterialBarcodeScannerBuilderWrapper</returntype>
+            <parameter>
+                <name>enabled</name>
+                <type>boolean</type>
+            </parameter>
+        </method>
+        <method>
+            <name>FlashLightEnabledByDefault</name>
+            <comment>Shows a text message at the top of the barcode scanner</comment>
+            <returntype>de.donmanfred.MaterialBarcodeScannerBuilderWrapper</returntype>
+        </method>
+        <method>
+            <name>setText</name>
+            <comment>Shows a text message at the top of the barcode scanner</comment>
+            <returntype>de.donmanfred.MaterialBarcodeScannerBuilderWrapper</returntype>
+            <parameter>
+                <name>text</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+        <property>
+            <name>CameraSource</name>
+            <returntype>com.edwardvanraak.materialbarcodescanner.CameraSource</returntype>
+            <comment>Get the camera source associated with this builder</comment>
+        </property>
+        <property>
+            <name>BarcodeDetector</name>
+            <returntype>com.google.android.gms.vision.barcode.BarcodeDetector</returntype>
+            <comment>Get the barcode detector associated with this builder</comment>
+        </property>
+        <property>
+            <name>TrackerColor</name>
+            <returntype>int</returntype>
+            <comment>Get the tracker color associated with this builder</comment>
+        </property>
+        <property>
+            <name>Activity</name>
+            <returntype>android.app.Activity</returntype>
+            <comment>Get the activity associated with this builder</comment>
+        </property>
+        <property>
+            <name>TrackerResourceID</name>
+            <returntype>int</returntype>
+            <comment>Get the tracker resource id value associated with this builder</comment>
+        </property>
+        <property>
+            <name>Text</name>
+            <returntype>java.lang.String</returntype>
+            <comment>Get the text associated with this builder</comment>
+        </property>
+        <property>
+            <name>TrackerDetectedResourceID</name>
+            <returntype>int</returntype>
+            <comment>Get the tracker detected resource id value associated with this builder</comment>
+        </property>
+        <property>
+            <name>ScannerMode</name>
+            <returntype>int</returntype>
+            <comment>Get the scanner mode value associated with this builder</comment>
+        </property>
+        <designerProperty>key:Checked, displayname:Checked, defaultvalue:False, fieldtype:Boolean</designerProperty>
+    </class>
+    <class>
+        <name>de.donmanfred.MaterialBarcodeScannerWrapper</name>
+        <shortname>BarcodeScanner</shortname>
+        <objectwrapper>com.edwardvanraak.materialbarcodescanner.MaterialBarcodeScanner</objectwrapper>
+        <owner>process</owner>
+        <method>
+            <name>startScan</name>
+            <comment>Start a scan for a barcode
+
+ This opens a new activity with the parameters provided by the MaterialBarcodeScannerBuilder</comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+        </method>
+        <method>
+            <name>IsInitialized</name>
+            <comment></comment>
+            <returntype>boolean</returntype>
+        </method>
+        <method>
+            <name>Initialize</name>
+            <comment></comment>
+            <returntype>void</returntype>
+            <parameter>
+                <name>ba</name>
+                <type>anywheresoftware.b4a.BA</type>
+            </parameter>
+            <parameter>
+                <name>EventName</name>
+                <type>java.lang.String</type>
+            </parameter>
+        </method>
+    </class>
+    <version>1.5</version>
+    <author>DonManfred (wrapper)</author>
+    <dependsOn>com.google.android.gms:play-services-vision</dependsOn>
+    <dependsOn>com.android.support:support-v4</dependsOn>
+    <dependsOn>com.android.support:appcompat-v7</dependsOn>
+</root>
