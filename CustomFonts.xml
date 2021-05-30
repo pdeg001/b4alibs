@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+  <class>
+    <name>njdude.fontawesome.lib.customfonts</name>
+    <shortname>CustomFonts</shortname>
+    <owner>process</owner>
+    <method>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>boolean</returntype>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize</name>
+      <comment>Initializes the CustomFonts library.
+FontName: Name of the font to apply.
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>anywheresoftware.b4a.BA</type>
+      </parameter>
+      <parameter>
+        <name>FontName</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="SetCustomFonts">_setcustomfonts</name>
+      <comment>Set the CustomFonts to a single view.
+</comment>
+      <returntype>anywheresoftware.b4a.keywords.constants.TypefaceWrapper</returntype>
+    </method>
+    <method>
+      <name DesignerName="SetCustomFontsByTag">_setcustomfontsbytag</name>
+      <comment>Set the CustomFonts to all the views matching the specified tag.
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Parent</name>
+        <type>anywheresoftware.b4a.objects.PanelWrapper</type>
+      </parameter>
+      <parameter>
+        <name>ViewTag</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="SetCustomFontsToActivityTitle">_setcustomfontstoactivitytitle</name>
+      <comment>Set the CustomFonts to the Activity title.
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Activity</name>
+        <type>anywheresoftware.b4a.objects.ActivityWrapper</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="SetCustomFontsToAllViews">_setcustomfontstoallviews</name>
+      <comment>Set the CustomFonts to all views.
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Parent</name>
+        <type>anywheresoftware.b4a.objects.PanelWrapper</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="SetCustomFontsToAllViewsExcept">_setcustomfontstoallviewsexcept</name>
+      <comment>Set the CustomFonts to all the views except the ones matching the specified tag.
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Parent</name>
+        <type>anywheresoftware.b4a.objects.PanelWrapper</type>
+      </parameter>
+      <parameter>
+        <name>ViewTag</name>
+        <type>String</type>
+      </parameter>
+    </method>
+  </class>
+  <version>1</version>
+  <author>NJDude</author>
+</root>

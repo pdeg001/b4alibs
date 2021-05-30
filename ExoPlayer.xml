@@ -178,7 +178,7 @@ Pass -1 to play it indefinitely.</comment>
         <shortname>SimpleExoPlayerView</shortname>
         <comment>A player interface. Should be added as a custom view with the designer.
 The Player property must be set.</comment>
-        <objectwrapper>com.google.android.exoplayer2.ui.SimpleExoPlayerView</objectwrapper>
+        <objectwrapper>com.google.android.exoplayer2.ui.PlayerView</objectwrapper>
         <owner>process</owner>
         <method>
             <name>DesignerCreateView</name>
@@ -488,13 +488,18 @@ Pass -1 to show it indefintely.</comment>
         <designerProperty>key:UseController, displayname:Use Controller, fieldtype:Boolean, defaultvalue:True</designerProperty>
         <designerProperty>key:ControllerTimeout, displayname:Controller Timeout (ms), fieldtype:Int, defaultvalue:5000, description:Pass -1 to prevent the controller from hiding.</designerProperty>
     </class>
-    <version>1.42</version>
-    <dependsOn>exoplayer-core-2.11.3.aar</dependsOn>
-    <dependsOn>exoplayer-dash-2.11.3.aar</dependsOn>
-    <dependsOn>exoplayer-hls-2.11.3.aar</dependsOn>
-    <dependsOn>exoplayer-2.11.3.aar</dependsOn>
-    <dependsOn>exoplayer-smoothstreaming-2.11.3.aar</dependsOn>
-    <dependsOn>exoplayer-ui-2.11.3.aar</dependsOn>
-    <dependsOn>extension-rtmp-2.11.3.aar</dependsOn>
+    <version>1.5</version>
+    <dependsOn>exoplayer-2.13.3.aar</dependsOn>
+    <dependsOn>exoplayer-common-2.13.3.aar</dependsOn>
+    <dependsOn>exoplayer-core-2.13.3.aar</dependsOn>
+    <dependsOn>exoplayer-dash-2.13.3.aar</dependsOn>
+    <dependsOn>exoplayer-extractor-2.13.3.aar</dependsOn>
+    <dependsOn>exoplayer-hls-2.13.3.aar</dependsOn>
+    <dependsOn>exoplayer-smoothstreaming-2.13.3.aar</dependsOn>
+    <dependsOn>exoplayer-ui-2.13.3.aar</dependsOn>
+    <dependsOn>extension-rtmp-2.13.3.aar</dependsOn>
     <dependsOn>exoplayer_desugar.jar</dependsOn>
+    <dependsOn>androidx.media:media</dependsOn>
+    <dependsOn>androidx.recyclerview:recyclerview</dependsOn>
+    <dependsOn>guava-30.1.1.jar</dependsOn>
 </root>
